@@ -1,0 +1,201 @@
+<?
+require("GzipCompress.php");
+function format($num) {
+	$num*=100;$num="$num";
+	return (substr($num, 0,-2).".".substr($num,-2));
+	}
+$content='';
+include("../connect/mysql_connect.php");
+$sub=$total=$shipping=$insurance=$tax=0;$swap=1;
+if (!$_COOKIE[items]) {
+	$content.=	 "<tr><td colspan=5>Your Cart is empty</td></tr>";
+	}
+else {
+$item=explode('&',substr($_COOKIE['items'],1));
+$inventoryMessage='';
+foreach ($item as  $v) { 
+	$ne='';
+	$swap=$swap^1;if ($swap) {$td='bgcolor=#ffeedd'; } else {$td=''; }
+	$i=explode(':',$v);
+	$query=mysql_query("SELECT * from inventory where id=$i[0]");
+	$r=mysql_fetch_assoc($query);
+	$template=strtolower($r[category]);
+	$template=($template=='fcs' || $template=='sp')?'f':$template;
+	if ($i[1]>abs($r[quantity])) {
+		$ne=$i[1];$i[1]=abs($r[quantity]);
+		if ($r[quantity]==0) { $_COOKIE['items']=str_replace("&$v",'',$_COOKIE['items']);$inventoryMessage.="<b>Sorry, $r[item] ($r[pattern] by $r[brand]) is currently out of stock.</b><br>";continue; }
+		else {$_COOKIE['items']=str_replace("&$v","&$i[0]:$i[1]",$_COOKIE['items']);$inventoryMessage.="<b>Sorry, we only have $i[1] $r[item] ($r[pattern] by $r[brand]) in stock.</b><br>";}
+		}
+	if ($r[sale]) { $price=$r[sale]; } else { $price=$r[retail]; }
+	if ($r[pattern] && $r[brand]) {$brand="$r[pattern] by $r[brand]"; }
+$content.= "<tr>
+	<td $td><b><a href='showItem.php?id=$r[id]&category=$r[category]&template=$template' class='search'>$brand</a></td>
+	<td $td><b>$r[item]</b></td>
+	<td $td align=right><b>\$".format($price)."</b></td>
+	<td $td align=center><b><input type='text' size='2' value='$i[1]' name=quantity{$i[0]}></b></td>
+	<td $td align='center'><input type='button' value='Update' onClick=\"update($i[0],0);location='orderdetails.php'\"></td>	
+</tr>";
+	$sub+=$price*$i[1];
+	}
+	if ($inventoryMessage) { $content.= "<tr><td colspan=5>$inventoryMessage</td></tr>"; }
+$content.="
+<tr>
+	<th colspan='5' align='center'><img src='images/blank.gif' width='1' height='1'></th>	
+</tr>
+<tr>
+	<td><b class='subtotal'>Product Subtotal</b></td>
+	<td align='center'>&nbsp;</td>
+	<td align=right><b class='subprice' >$". format($sub)."</b></td>
+	<td align='center'>&nbsp;</td>
+	<td align='center'>&nbsp;</td>		
+</tr>";
+
+
+if ($sub>800) { $ship=$sub*.03; }
+else if ($sub>450) { $ship=20; }
+else if ($sub>300) { $ship=17; }
+else if ($sub>200) { $ship=15; }
+else if ($sub>135) { $ship=13; }
+else if ($sub>75) { $ship=10; }
+else if ($sub>35) { $ship=8; }
+else { $ship=6; }
+$total=$sub+$ship;
+$content.="
+<tr>
+	<td><b class='subtotal'>Shipping & Insurance</b></td>
+	<td align='center'>&nbsp;</td>
+	<td  align=right><b class='subprice'>".format($ship)."</b></td>
+	<td  align='center'>&nbsp;</td>
+	<td  align='center'>&nbsp;</td>		
+</tr>
+
+<tr>
+	<td><b class='grandtotal'>ORDER TOTAL</b></td>
+	<td  align='center'>&nbsp;</td>
+	<td  align=right><b class='totalprice'>$". format($total)."</b></td>
+	<td  align='center'>&nbsp;</td>
+	<td  align='center'>&nbsp;</td>		
+</tr>
+<tr>
+	<th colspan='5' align='center'><img src='images/blank.gif' width='1' height='1'></th>	
+</tr>
+</form>
+<form action='https://www.asyoulikeitsilvershop.com/processInfo.php' ><input type=hidden value=getInfo name=action>
+<tr>
+	<td colspan='5' align='center'><input type='button' value='Continue Shopping' onClick=\"location='/'\">&nbsp;
+<input type=hidden name=items value='".  $_COOKIE[items]."'><input type='submit' value='Check Out'></td>
+</tr>
+";
+}
+
+setcookie("items",$_COOKIE[items],0,'/');
+echo '<?xml version="1.0" encoding="ISO-8859-1"?>';
+
+?>
+
+
+
+
+
+
+<!DOCTYPE html
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title> As You Like It Silver Shop </title>
+<meta name="description" content="As You Like It Silver Shop in New Orleans Louisiana specializes in silver flatware and holloware in active, inactive and obsolete patterns." />
+<meta name="keywords" content="sterling silver, sterling flatware, silver flatware, antique silver, silver tableware, antique sterling, replacement silver, silver repair, corporate gifts, wedding gifts, silver identification, cleaning silver" />
+<script language='javascript' src='js/store.js'></script>
+<script language="javascript" src='js/images.js'></script>
+<link rel="stylesheet" href="ayliss_style.css" type="text/css">
+</head>
+
+<body class="sub">
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="left" bgcolor="#A27177" height="85">
+<tr>
+	<td width="760" background="images/ayliss_title_r.jpg" alt="" border="0" align="right" valign="top"><img src="images/blank.gif" width="760" height="1" alt="As You Like It Silver Shop" border="0"><br><p class="homenav"><!--<a href="contactus.htm" class="top">CONTACT US</a> * <a href="" class="top">VIEW CART</a> *--> 1-800-828-2311</td>
+	<td width="*"><img src="images/blank.gif" width="10" height="1" alt="" border="0"></td>
+</tr>
+</table>
+<br clear="all">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+<tr bgcolor="#000000">
+	<td width="760" bgcolor="#000000" align="center"> 
+		<p>
+		<p><b class="orderstep">1.</b> <b class="orderon">Order Details</b>
+		<img src="images/blank.gif" width="15" height="1" alt="" border="0"> 
+		<b class="orderstep">2.</b> <b class="orderoff">Shipping Information</b>
+		<img src="images/blank.gif" width="15" height="1" alt="" border="0">
+		<b class="orderstep">3.</b> <b class="orderoff">Billing Information</b>
+		<img src="images/blank.gif" width="15" height="1" alt="" border="0">
+
+		<b class="orderstep">4.</b> <b class="orderoff">Confirm Order</b>
+		<img src="images/blank.gif" width="15" height="1" alt="" border="0">
+		<b class="orderstep">5.</b> <b class="orderoff">Order Summary</b>
+	</td>
+	<td width="*"><img src="images/blank.gif" width="10" height="29" alt="" border="0"></td>
+</tr>
+<tr bgcolor="#7A121B">
+	<td width="760" bgcolor="#7A121B" align="center"> 
+		<img src="images/blank.gif" width="10" height="20" alt="" border="0">
+	</td>
+	<td width="*"><img src="images/blank.gif" width="10" height="20" alt="" border="0"></td>
+</tr>
+<tr>
+	<td width="760"><img src="images/t_orderdetails.gif" width="760" height="66" alt="Order Details"></td>
+	<td width="*"><img src="images/blank.gif" width="10" height="1" alt="" border="0"></td>
+</tr>
+</table>
+<br clear="all">
+
+<table width="760" border="0" cellpadding="0" cellspacing="0" border="0">
+<tr>
+	<td width="50"><img src="images/blank.gif" width="50" height="1" alt="" border="0"></td>
+	<td align="left">
+		<p>
+
+<!--order details-->		
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+<form name=itemsForm>
+<tr>
+	<td colspan="5"><img src="images/blank.gif" width="10" height="10"></td>
+</tr>
+
+<tr>
+	<th width="" class="search">Pattern and Brand Name</th>
+	<th width="" class="search">Item Name</th>
+	<th width="" class="search" style=text-align:center>Price</th>
+	<th width="" class="search" style=text-align:center>Quantity</th> 
+	<th width="" class="search">&nbsp;</th>
+</tr>
+<? echo $content; ?>
+</form>
+</table>
+
+</td></tr></table>
+<!--end order details-->
+
+<br clear="all">
+<table width="760" cellpadding="0" cellspacing="0" border="0" align="left">
+<tr>
+	<td width="150"><img src="images/blank.gif" width="50" height="1" alt="" border="0"></td><tr>
+	<td valign="top">
+		<hr width="710" noshade size="1" color="#A27177" align="right"></tr><tr>
+		<td align ="right"> <script src="https://siteseal.thawte.com/cgi/server/thawte_seal_generator.exe">
+</script></td></tr><tr><td><p class="bottom">&copy; Copyright 2003. As You Like It Silver Shop.</p></td></tr>
+		<p>&nbsp</p>
+	</td>
+</tr>
+</table>
+<? 
+
+header("Cache-Control: no-store, no-cache, must-revalidate");  // HTTP/1.1
+header("Pragma: no-cache");  
+setcookie("items",$_COOKIE['items'],0,'/');
+	flush();
+?>
+</body>
+</html>

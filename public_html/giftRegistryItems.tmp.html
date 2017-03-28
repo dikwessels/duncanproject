@@ -1,0 +1,62 @@
+
+<div class="container sixteen colgrid" id="giftRegistryItems">
+
+<div class="row">
+	<div class="sixteen columns">{{#registryData}}Items in registry for {{name}}{{/registryData}}</div>
+</div>
+
+ <div class="row">
+   	<div class="six columns">Description</div>
+   	<div class="two columns">Retail</div>
+   	<div class="two columns">Requested</div>
+   	<div class="two columns">Purchased</div>
+   	<div class="four columns">In Stock</div>
+  </div>
+
+{{#registryItems}}
+	<div class="row">
+	<div class="two columns">
+			{{#if image}}
+				<a href="/showItem.php?product={{id}}" style="text-decoration:none" class="$class">
+					<img src="{{image}}">
+				</a>
+			{{/if}}
+	</div>
+	<div class="four columns">
+			<span class='bold'>
+						{{#if showLink}}
+							<a rel="nofollow" title="{{itemDescription}}" alt="{{itemDescription}} href="/showItem.php?product={{id}}" class="$class"">{{itemDescription}}</a>
+						{{else}}
+							{{itemDescription}}
+						{{/if}}
+			</span>
+	</div>
+	<div class="two columns">
+		{{retail}}
+	</div>
+	<div class="two columns center">
+		{{qtyRequested}}
+	</div>
+	<div class="two columns center">
+		{{qtyPurchased}}
+	</div>
+	<div class="two columns field">
+		{{#if complete}}
+		{{else}}
+			<input style="text-align:center" class="input" value="1" size="1" name="quantity{{id}}" id="regItem{{id}}">
+		{{/if}}
+	</div>
+	<div class="two columns field">
+		{{#if complete}}
+			<span style="font-size:10pt;color:#888888;">Completed</span>
+		{{else}}		
+			<button class="addToCart two columns default pretty btn" data-itemID="{{id}}" data-regID="{{regID}}">
+			Add to Cart
+			</button>
+
+		{{/if}}
+	</div>
+	
+	</div>
+{{/registryItems}}
+</div>

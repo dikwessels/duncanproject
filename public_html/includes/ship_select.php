@@ -1,0 +1,1 @@
+		<?php				$shipArray=array(0=>"Please select...",1=>"Registrant's Address",2=>"Co-Registrant's Address");						foreach($shipArray as $k=>$v){			$selected=($k==$s?"selected=\"selected\"":"");			echo "<option value=\"$k\" $selected>$v</option>";		}				?>																						

@@ -1,0 +1,2622 @@
+	
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+	/*vertical-align: baseline;
+}
+*/
+
+a.categoryLink, 
+a.categoryLink:visited{
+    color:#FFFFFF;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:15px;
+    font-weight:normal;
+    font-variant:small-caps;
+    letter-spacing:2px;
+    text-decoration:none;
+}
+
+a.categoryLink:hover{
+  color:#FFFFAA;
+  text-decoration:underline;
+}
+
+a.currentPage,span.currentPage{
+	text-decoration: none;
+}
+a.current{
+	text-decoration: none;
+	
+}
+a.graybutton{
+	background-image: -moz-linear-gradient(center bottom , #D2D2D2 25%, #DCDCDC 50%, #F0F0F0 100%);
+	background-image: -webkit-linear-gradient(center bottom , #D2D2D2 25%, #DCDCDC 50%, #F0F0F0 100%);
+	background-image:linear-gradient(center bottom , #D2D2D2 25%, #DCDCDC 50%, #F0F0F0 100%);
+	background-image:-o-linear-gradient(center bottom , #D2D2D2 25%, #DCDCDC 50%, #F0F0F0 100%);
+    border: 1px solid #AAAAAA;
+    border-radius: 2px 2px 2px 2px;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: normal;
+    left: 0;
+    line-height: 1rem;
+    padding: 7px 10px 8px 10px;
+    position: absolute;
+    text-decoration: none;
+    vertical-align: middle;
+    width: auto;
+}
+
+a.h1Link{
+	text-decoration: none;
+}
+
+a.infoLink{	
+	 color:#ffffff;
+     font-family:serif;
+     font-size:15px;
+     font-variant:small-caps;
+ }
+a.infoLink:hover{color:#FFFFAA;}
+a.sort,a.view-registry{
+	text-decoration: underline;
+	cursor: pointer;
+	color: #CC8080;
+}
+.warning{
+	background-color: gold;
+    border: 1px solid orange;
+    border-radius: 2px;
+    color: darkred;
+    font-size: 12px;
+    line-height: 1em;
+    padding: 5px;
+}
+#apply-card{
+    margin-left: 6%;
+}
+.black{
+	color: black;
+}
+H2 a.homepageBrandLink{
+    color: #808080;
+    font-family: serif,times;
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 24px;
+    text-decoration: none;
+}
+H2 a.homepageBrandLink:hover{
+	color: black;
+}
+H2.brandLink{
+	line-height: 1em;
+	margin: 0px;
+	padding: 0px 0px 3px 35px;
+}
+a.red, 
+a.red:link,
+a.red:hover,
+a.red:visited{
+ font-weight:normal;
+}
+
+a.sideMenuLink:link,
+a.sideMenuLink:visited{
+	color: #fff;
+	font-family: Arial,Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	font-variant: small-caps;
+	text-decoration: none;
+	
+}
+
+a.sideMenuLink:hover{
+	color:#FFA;
+}
+
+
+span.valid.button{
+	background-color: #68FF64;
+    border: 1px solid #66CB66;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 0 2px #AAAAAA;
+    color: white;
+    font-family: verdana,helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 4px 7px;
+    position: relative;
+    text-shadow: 0 0 1px green;
+    top: 2px;
+}
+
+span.valid, .confirmed{
+	background-color: transparent;
+	border: none;
+	color: green;
+    font-family: verdana,helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    margin: 0px;
+    padding:0px;
+    pointer-events: relative;
+}
+div.validation-text span.error{
+	font-size:12px;
+	
+}
+div#iframeContainer:first-child{
+	display:none;
+}
+.contactLink,.contactLink:link,.contactLink:visited{
+	color: white;
+	font-family: serif;
+	font-size:18px;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.contactLink:hover{
+	color:#FFFFAA;
+}
+
+body{
+ font-family:arial, helvetica, sans serif;
+ z-index: 5;
+ min-width: 1240px;
+}
+.border-bottom{
+	border-bottom: 1px solid #aaa;
+}
+.border-top{
+	border-top: 1px solid #aaa;
+}
+
+
+#babyMenu,
+#giftMenu{
+ background-color:#8F8BAD;
+}
+
+
+#babyCatLinks,
+#babyCatLinks ul.dropdown li,
+#babyCatLinks ul.dropdown li ul.dropdown,
+#giftCatLinks,
+#giftCatLinks ul.dropdown li,
+#giftCatLinks ul.dropdown li ul.dropdown{
+ background-color:#336;
+}
+
+#babyDropdownLI,
+#giftDropdownLI{
+ background-color:#336;
+}
+
+#babyDropdownLI:hover{
+
+}
+
+#babySilverHead{
+  text-align:left;
+  width:100%;
+}
+
+#babySilverImage,
+#giftImage{
+  background: url("//www.asyoulikeitsilvershop.com/images/t_baby_main.jpg") no-repeat scroll -275px 0 transparent;
+}
+
+#babySilverMainContent{
+  width:100%
+}
+
+
+#babySilverBrandContainer,
+#babySideMenu,
+#babySilverPageHead,
+#giftPageHead{
+  background-color:#8F8BAD; 
+}
+
+#babySilverH1,
+#giftH1{
+  color: #333366;
+}
+
+#babyH1Container,
+#babyH2,
+#giftH1Container,
+#giftH2,
+.bottomBorderBlue{
+  border-bottom: 1px solid #898BAD;
+}
+
+
+.bottomBorder{
+	border-bottom: 1px solid white;
+}
+
+#babyTitleContainer{
+  border-bottom: 1px solid #898BAD;
+}
+
+.bgBaby,
+.bgGift{
+  background-color:#dedeff;
+}
+
+.bgChristmas{
+ background-color:#dfd;
+}
+
+.bgCoinSilver,
+.bgCollectibles,
+.bgFlatware,
+.bgManufacturer,
+.bgServingPieces{
+ background-color:#fed;
+}
+
+.bgCleaning,
+.bgDefault,
+.bgHollowware,
+.bgSearch,
+.bgStorage
+{
+ background-color:#fdd;
+}
+
+.bgJewelry{
+ background-color:#69C;
+}
+
+#billing-form{
+	font-size:14px;
+}
+
+#billing-container, #shipping-container{
+    left: 0;
+    padding:0px;
+    position: relative;
+    top: 0;
+    transition:all 1s ease 0s;
+}
+
+.row.giftcard-container.no-display,.row.display-none{
+	display: none;
+}
+#billing-container{
+ display: none;	
+}
+
+#shipping-form{
+	font-size:14px;
+}
+body{
+ line-height:1em;
+}
+
+.bold{
+ font-weight:bold;
+}
+
+.bottomAlign{
+	vertical-align: bottom;
+}
+button{
+    border: 1px solid #AAAAAA;
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+}
+button.viewCart{
+    background-image: -moz-linear-gradient(center top , #EEEEEE 5%, #BBBBBB 25%, #555555 87%);
+    background-image: linear-gradient(center top , #EEEEEE 5%, #BBBBBB 25%, #555555 87%);
+    background-image: -webkit-linear-gradient(center top , #EEEEEE 5%, #BBBBBB 25%, #555555 87%);
+    background-image: -ms-linear-gradient(center top , #EEEEEE 5%, #BBBBBB 25%, #555555 87%);
+    background-image: -o-linear-gradient(center top , #EEEEEE 5%, #BBBBBB 25%, #555555 87%);
+    
+    border: 1px solid #333333;
+    border-radius: 2px 2px 2px 2px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    height: 34px;
+    margin: 0;
+    min-width: 193px;
+    opacity: 0.85;
+    padding-right: 30px;
+    text-shadow: 0 1px 0 #555555;
+    vertical-align: baseline;
+}
+/*
+button.viewCart{
+	border: 0 none;
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
+    font-size: 18px;
+    text-shadow: 0 1px 0 #DDDDDD;
+    vertical-align: top;
+    width: auto;
+}
+*/
+.caption{
+	display: block;
+	font-size:70%;
+	font-size:.7rem;
+}
+
+div.alert{
+	background:#FCE9C0; 
+	border-top:2px solid #DBAC48; 
+	border-bottom:2px solid #DBAC48;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: #2F393D;
+	padding: 6px 5px 6px 5px; 
+}
+.asterik{
+    color: red;
+    padding-right: 5px;
+    position: relative;
+    top: 3px;
+}
+div#categoryFooterLinks{
+	border-top: 1px solid #aaa;
+	display: block;
+	height: auto;
+	left: 0px;
+	min-height: 230px;
+	padding-top: 25px;
+	position: relative;	
+	top:25px;	
+}
+#invoice-items{
+	transition:all 1s ease .25s;
+	-moz-transition:all 1s ease .25s;
+	-o-transition:all 1s ease .25s;
+	-webkit-transition:all 1s ease .25s;
+}
+#itemsform-overlay{
+	display: none;
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top:0px;
+	width:100%;
+}
+div#itemCount{
+    color: yellow;
+    display: inline;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 18px;
+    left: 2px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    width: 100%;
+    z-index: 10;
+}
+div#siteTitleContainer{
+	background-image: url("//www.asyoulikeitsilvershop.com/images/window.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 120px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+	
+}
+button.cartButton{
+	background-image: -moz-linear-gradient(center top , #CFCFCF 9%, #999999 57%, #666666 100%);
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #333333;
+    cursor: pointer;
+    font-size: 15px;
+    height: 40px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-shadow: 0 1px 0 #AAAAAA;
+    vertical-align: middle;
+    width: 150px;
+	
+}
+
+.paypal-payment-button{ 
+	background: linear-gradient(-180deg, #ffebc1 0%, #ffaa02 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    'box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 1px #c68200 inset, 0 2px 0 0 rgba(255, 255, 255, 0.6) inset;'
+    color: black;
+    border:1px solid #f0de13;
+    font-size: 12px;
+    padding-top: 3px;
+    height: 30px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.paypal-payment-button:hover {
+    background: linear-gradient(-180deg, #fff4db 0%, #ffbc36 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.paypal-payment-button:active {
+    background: none repeat scroll 0 0 #e69a02;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) inset, 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.paypal-payment-button img {
+    margin-top: 4px;
+}
+
+.paypal-payment-button svg{
+	position: relative;
+    top: 5px;
+}
+
+button:hover{
+	background-image: linear-gradient(bottom, rgb(220,220,220) 25%, rgb(230,230,230) 50%, rgb(250,250,250) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(220,220,220) 25%, rgb(230,230,230) 50%, rgb(250,250,250) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(220,220,220) 25%, rgb(230,230,230) 50%, rgb(250,250,250) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(220,220,220) 25%, rgb(230,230,230) 50%, rgb(250,250,250) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(220,220,220) 25%, rgb(230,230,230) 50%, rgb(250,250,250) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(220,220,220)),
+	color-stop(0.5, rgb(230,230,230)),
+	color-stop(1, rgb(250,250,250))
+);
+}
+
+button,
+.genericButton,
+.repairFormButton,
+.searchResultAddButton{
+
+background-image: linear-gradient(bottom, rgb(210,210,210) 25%, rgb(220,220,220) 50%, rgb(240,240,240) 100%);
+background-image: -o-linear-gradient(bottom, rgb(210,210,210) 25%, rgb(220,220,220) 50%, rgb(240,240,240) 100%);
+background-image: -moz-linear-gradient(bottom, rgb(210,210,210) 25%, rgb(220,220,220) 50%, rgb(240,240,240) 100%);
+background-image: -webkit-linear-gradient(bottom, rgb(210,210,210) 25%, rgb(220,220,220) 50%, rgb(240,240,240) 100%);
+background-image: -ms-linear-gradient(bottom, rgb(210,210,210) 25%, rgb(220,220,220) 50%, rgb(240,240,240) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(210,210,210)),
+	color-stop(0.5, rgb(220,220,220)),
+	color-stop(1, rgb(240,240,240))
+);
+
+cursor: pointer;
+text-shadow: 0 1px 0 #fff;
+}
+
+.genericButton{
+	width: auto;
+}
+.gray-bg{
+	background-color: #eee;
+}
+.card-address-container{
+	max-height: 0px;
+	overflow: hidden;
+	padding: 0px;
+	transition:max-height 1s ease 0s;
+}
+
+.card-address-container.active{
+	height: auto;
+	max-height: 500px;
+}
+
+#cartContainer{
+ display:inline-block;
+ left:70%;
+ position:absolute;
+ text-align: left;
+ top:0px;
+ width:auto;
+ z-index:10;
+}
+#cartContainer img{
+	border: none;
+}
+
+/*
+					"cp"=>"defaultMobileHead",
+					"h"=>"defaultMobileHead",
+					"f"=>"tanMobileHead",
+					"fcs"=>"tanMobileHead",
+					"j"=>"blueMobileHead",
+					"sp"=>"tanMobileHead",
+					"xm"=>"greenMobileHead"
+*/
+
+.categoryLinksContainer,
+.categoryLinksContainerMainPage{
+	border-bottom: 1px solid #000;
+	box-shadow: 0px 1px 3px #999;
+    height:auto;
+    position:relative;
+    padding-top:2px;
+    width:100%;
+    z-index: 15;
+}
+
+.categoryLinksContainerMainPage{
+	background-color: white;
+	border-bottom: 1px solid #aaa;
+	box-shadow: none;
+	font-family: serif;
+	font-size: 18px;
+	line-height: 1em;
+	padding-left:3.5%;
+	width: 96.5%;
+}
+.categoryLinksContainerMainPage ul.dropdown li{
+	vertical-align: middle;
+}
+.categoryLinksContainerSub{
+ width:auto;
+}
+
+.categoryLink{
+  float: left;
+  min-width: 120px;
+  text-align: center;  
+  width: auto;
+}
+
+#categoryMainContentSub{
+	display: inline-block;
+    left: 0px;
+    margin-left: 10px;
+    max-width: 720px;
+    position: relative;
+}
+#categoryMainContentSub form{
+	display: inline;
+}
+.cell{
+    display: inline-block;
+    height: auto;
+    line-height: 1em;
+    margin: 0;
+    min-width: 90px;
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+    zoom: 1;
+}
+
+.centered{
+ text-align:center;
+}
+
+#checkout-form{
+	background-color: white;
+	font-size: 15px;
+    border: 1px solid #AAAAAA;
+    border-radius: 2px 2px 2px 2px;
+    padding: 0px;
+    transition: height 1s ease 0s;
+}
+
+#checkout-form h2,#checkout-form h3{
+ text-shadow: 0 1px 0 #EFEFEF;	
+ margin: 0px;
+ padding: 0px;
+}
+#checkout-form h3{
+	font-size:18px;
+}
+#checkout-form .row{
+	padding-top:5px;
+	padding-bottom: 5px;
+	padding-left:  2%;
+	padding-right: 2%;
+	width: 96%;
+}
+
+#checkout-form .row .cell{
+	vertical-align: middle;
+}
+#checkout-form .medium-input{
+	max-width: 250px;
+}
+
+
+#christmasCatLinks,
+#christmasCatLinks ul.dropdown li,
+#christmasCatLinks ul.dropdown li ul.dropdown,
+#christmasPageHead{	
+	background-color:#779675;
+}
+
+#christmasH1{
+	color: #004e17;
+	
+}
+#christmasH1Container,
+#christmasH2,
+.bottomBorderGreen{
+	border-bottom:1px solid #004214;
+}
+#christmasImage{
+ background: url("//www.asyoulikeitsilvershop.com/images/t_xmas_main_alt.jpg") no-repeat scroll -275px 0 transparent;
+}
+
+#cleaningH1,
+#defaultH1,
+#hollowwareH1,
+#storageH1
+{
+ color:#7A121B;
+}
+#close-alert{
+	width: 100%;
+	text-align: center;
+}
+.close-link{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#collectiblesCatLinks ul.dropdown ul li a:hover,
+#flatwareCatlinks ul.dropdown ul li a:hover,
+#servingCatLinks ul.dropdown ul li a:hover{
+
+ /*background-color:#C96;*/
+}
+
+#coinSilverCatLinks,
+#coinSilverCatLinks ul.dropdown li,
+#coinSilverCatLinks ul.dropdown li ul.dropdown,
+#collectiblesCatLinks,
+#collectiblesCatLinks ul.dropdown li,
+#collectiblesCatLinks ul.dropdown li ul.dropdown,
+#flatwareCatLinks,
+#flatwareCatLinks ul.dropdown li,
+#flatwareCatLinks ul.dropdown li ul.dropdown,
+#servingCatLinks,
+#servingCatLinks ul.dropdown li,
+#servingCatLinks ul.dropdown li ul.dropdown{
+ background-color:#6A2A00;
+}
+
+#coinSilverH1,
+#collectiblesH1,
+#flatwareH1,
+#servingH1{
+ color:#6A2A00;
+}
+
+#coinSilverH1Container,
+#coinSilverH2,
+#collectiblesH1Container,
+#collectiblesH2,
+#flatwareH1Container,
+#flatwareH2,
+#servingH1Container,
+#servingH2,
+.bottomBorderTan{
+ border-bottom:1px solid #C96;
+}
+
+#collectiblesImage{
+ background: url("//www.asyoulikeitsilvershop.com/images/t_collectibles_alt.jpg") no-repeat scroll -275px 0 transparent;
+}
+
+#coinSilverBrandContainer,
+#coinSilverPageHead,
+#coinSilverSideMenu,
+#collectiblesBrandContainer,
+#collectiblesPageHead,
+#collectiblesSideMenu,
+#flatwareBrandContainer,
+#flatwarePageHead,
+#flatwareSideMenu,
+#servingPageHead{
+ background-color:#CC9966;
+}
+
+#contactInfo{
+ color: white;
+ display:inline-block;
+ font-family: serif;
+ font-size: 18px;
+ left:5%;
+ line-height: 1em;
+ position:absolute;
+ text-align: left;
+ top:10px;
+ vertical-align: top;
+ z-index:10; 
+}
+#confirmation-content.p{
+	font-size: 1em;
+}
+#contactLink,
+#contactLinkHome{
+	display:none;
+}
+#container{
+  height:100%;
+  width:100%;
+}
+
+.description{
+	color: #303030;
+	font-family: Georgia,times,serif;
+	font-size:14px;
+	line-height: 22px;
+}
+.dimInfo{
+ font-family:sans serif;
+ font-size:12px;
+}
+div.cartImageContainer{
+    display: inline;
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+div#coinSilverBrandContainer li h3,
+div#coinSilverBrandContainer a.sideMenuLink,
+div#coinSilverBrandContainer a.sideMenuLink:visited,
+div#collectiblesBrandContainer li h3,
+div#collectiblesBrandContainer a.sideMenuLink,
+div#collectiblesBrandContainer a.sideMenuLink:visited,
+div#flatwareBrandContainer a.sideMenuLink,
+div#flatwareBrandContainer a.sideMenuLink:visited,
+div#flatwareBrandContainer li h3, 
+div#coinSilverSideMenu a.sideMenuLink,
+div#coinSilverSideMenu a.sideMenuLink:visited,
+div#collectiblesSideMenu a.sideMenuLink,
+div#collectiblesSideMenu a.sideMenuLink:visited,
+div#flatwareSideMenu a.sideMenuLink,
+div#flatwareSideMenu a.sideMenuLink:visited{
+	color: #553300;
+	font-size: 15px;
+	letter-spacing: normal;
+    /*text-shadow: 0 1px 0 tan;*/
+}
+
+div#hollowwareBrandContainer li h3,
+div#hollowwareBrandContainer a.sideMenuLink,
+div#hollowwareBrandContainer a.sideMenuLink:visited,
+div#hollowwareSideMenu a.sideMenuLink,
+div#hollowwaresideMenu a.sideMenuLink:visited{
+	color: #442200;
+	font-size: 15px;
+	letter-spacing: normal;
+    /*text-shadow: 0 1px 0 #AA8888;*/
+}
+
+div#babySilverBrandContainer li h3,
+div#babySilverBrandContainer a.sideMenuLink,
+div#babySilverBrandContainer a.sideMenuLink:visited,
+div#jewelryBrandContainer li h3, 
+div#jewelryBrandContainer a.sideMenuLink,
+div#jewelryBrandContainer a.sideMenuLink:visited,
+div#jewelrySideMenu a.sideMenuLink,
+div#jewelrySideMenu a.sideMenuLink:visited,
+div#babySideMenu a.sideMenuLink,
+div#babySideMenu a.sideMenuLink:visited{
+	color: #003571;
+	font-size:15px;
+	letter-spacing: normal;
+	/*text-shadow: 0px 1px 0px #afafbb;*/
+}
+
+
+a.sideMenuLink:hover,
+div#babySilverBrandContainer a.sideMenuLink:hover,
+div#collectiblesBrandContainer a.sideMenuLink:hover,
+div#flatwareBrandContainer a.sideMenuLink:hover,
+div#hollowwareBrandContainer a.sideMenuLink:hover,
+div#jewelryBrandContainer a.sideMenuLink:hover,
+div#coinSilverSideMenu a.sideMenuLink:hover,
+div#collectiblesSideMenu a.sideMenuLink:hover,
+div#hollowwareSideMenu a.sideMenuLink:hover,
+div#flatwareSideMenu a.sideMenuLink:hover,
+div#jewelrySideMenu a.sideMenuLink:hover,
+div#babySideMenu a.sideMenuLink:hover{
+	color:#fdf9a8; 
+	text-shadow: none;
+}
+
+div.indexBannerImage{
+	background-image: url("//www.asyoulikeitsilvershop.com/images/window.jpg");
+}
+div#itemInformation{
+	background-color: white;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 3px #EEEEEE;
+    height: auto;
+    min-height: 320px;
+    max-width: 819px;
+    padding: 9px;
+	
+}
+
+div.footerCatDiv{
+	border-left: 1px solid #999;
+    color: black;
+    display: inline;
+    float: left;
+    font-family: serif;
+    font-style: italic;
+    height: 100%;
+    line-height: 1.2em;
+    padding: 0 2%;
+    position: relative;
+    text-align: left;
+    width: 15%;
+}
+
+div.footerCatDiv.first{
+border-left: none;
+	padding-left: 30px;
+}
+
+div#SEODescription{
+	border-top: 1px solid rgb(170, 170, 170); 
+	color: #303030;
+	font-family: georgia, times, serif;
+	font-size: 14px; 
+	left: 0px;
+	line-height: 22px;
+	margin: 0 auto;
+	padding: 10px 2%; 
+	position: relative;
+	text-align: justify; 
+	top:0px;
+	width: 96%;
+}
+
+.error,input.error,select.error{
+	background-color: pink;
+	padding: 5px;
+	border: 1px solid red;
+	border-radius: 2px;
+	line-height: 1em;
+	font-size: 12px;
+	color: black;
+}
+#express-submit{
+ cursor: pointer;
+}
+span.pageTab{
+	color: #333;
+	cursor: pointer;
+	font-weight: normal;
+	text-decoration: underline;
+}
+span.pageTab.currentPage{
+	text-decoration: none;
+	font-weight:bold;
+}
+span.pageTab:hover{
+	color: #777;
+}
+span.error{
+	background-color: transparent;
+		border: none;
+	color: darkred;
+	font-family: inherit;
+	font-size: 15px;
+	line-height:1.5em;
+}
+#express-checkout .row{
+	padding:6px 0px;
+}
+.featuredItemDescription{	
+	font-size:15px;
+}
+.featuredItemName{
+	font-size: 18px;
+	
+}
+
+.featuredItemHeader{
+	font-size:24px;
+	font-family: 'Times New Roman',Times,Palatino,serif;
+}
+
+#flatwareImage,
+#servingImage{
+ background:url("//www.asyoulikeitsilvershop.com/images/t_flat_main_alt.jpg") no-repeat scroll -275px 0 transparent;
+}
+
+.flatwareSideMenuLink{
+	text-shadow: 0 1px 2px #894B24;
+}
+
+form.searchBar{
+	width: 300px;
+}
+
+
+#footer{
+ display: block;
+ position:relative;
+ border-top:1px solid #8F8BAD;
+ margin: 0 auto;
+ text-align: center;
+ width:100%;
+  
+}
+footer{
+	border-top:1px solid #eee;
+	padding: 10px 0px;
+	font-size:12px;
+	background-image: url("//www.asyoulikeitsilvershop.com/images/noise-1.png");
+	text-align: center;
+}
+.footerCategoryLink{
+	color: inherit;
+	font-family: serif;
+	font-style: italic;
+}
+.footerCategoryLink:hover{
+	color: black;
+}
+
+#jewelryCatLinks ul.dropdown ul li a:hover{
+  background-color:rgb(53,41,152);
+}
+
+#cleaningCatLinks ul.dropdown ul li a:hover,
+#defaultCatLinks ul.dropdown ul li a:hover,
+#hollowwareCatLinks ul.dropdown ul li a:hover{
+  background-color:#A27177;
+}
+
+#cleaningCatLinks,
+#cleaningCatLinks ul.dropdown li,
+#cleaningCatlinks ul.dropdown li ul.dropdown,
+#defaultCatLinks,
+#defaultCatLinks ul.dropdown li, 
+#defaultCatLinks ul.dropdown li ul.dropdown,
+#hollowwareCatLinks,
+#hollowwareCatLinks ul.dropdown li, 
+#hollowwareCatLinks ul.dropdown li ul.dropdown,
+#storageCatLinks,
+#storageCatLinks ul.dropdown li,
+#storageCatLinks ul.dropdown li ul.dropdown{
+ background-color:#7A121B;
+}
+
+
+#cleaningH1Container,
+#defaultH1Container,
+#hollowwareH1Container,
+#hollowwareH2,
+#defaultH2,
+#storageH1Container,
+.bottomBorderDefault,
+.bottomBorderRed{
+  border-bottom: 1px solid #A27177;
+}
+
+
+#cleaningImage,
+#defaultImage,
+#hollowwareImage,
+#storageImage{
+ background:url("//www.asyoulikeitsilvershop.com/images/t_hol_main_alt.jpg") no-repeat scroll -275px 0 transparent;
+}
+
+
+#cleaningPageHead,
+#defaultPageHead,
+#hollowwarePageHead,
+#storagePageHead{
+ background-color:#A27178;
+}
+
+#gift-card-form,#shipping-billing-form{
+	background: none repeat scroll 0 0 white;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 5px #CCCCCC;
+    padding: 10px;
+}
+
+#gift-card-validate{
+	color:#999;
+	font-size:1em;
+	margin-left: 10px;
+}
+
+#resume-shopping{
+	cursor: pointer;
+}
+
+#shipping-billing-form{
+	left: 25px;
+	padding: 15px;
+	position: relative;
+}
+
+#shipping-billing-form .cell{
+	min-width: auto;
+}
+form#shipping-billing-form .row{
+	padding: 5px 0px;
+}
+
+form#shipping-billing-form h2{
+	border-bottom: 1px solid #777;
+	color: black;
+	font-weight: normal;
+	width: 90%;
+		
+}
+
+/*form#shipping-billing-form .medium-input{
+//	max-width: 250px;
+}
+*/
+form#shipping-billing-form .checkbox{
+	background-color: white;
+    background-image: none;
+    border: 1px solid #AAAAAA;
+    height: 100%;
+}
+
+form#shipping-billing-form .checkboxCaption{
+	font-size:.8em;
+	position: relative;
+	left: 10px;
+}
+
+.handleImageHeader{
+ border:0px solid transparent;
+ padding:5px 0px;
+ text-align:middle;
+}
+
+H1{
+	margin-bottom: 2px;
+	padding-bottom: 0px;
+	line-height: 1em;
+}
+
+H1.h1PageCatTitle{
+	display: inline-block;
+	float: left;
+    font-family:serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0;
+    padding-right:15px;
+    position: relative;
+    top: 14px;
+    z-index: 10;
+}
+
+H1.siteTitle,h2.siteTitle, H2.siteTagLine{
+	color: white; 
+	font-family: 'CardoRegular','Times',serif; 
+	font-size: 3.5em; 
+	font-weight: normal;
+	font-variant: small-caps;
+	position: relative; 
+	text-shadow: 0px 2px 4px black;
+	top: 35px; 
+}
+H2.siteTagLine{
+    font-family: serif;
+    font-size: 22px;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px black;
+    top: 32px;
+}
+
+H2.h2BreadCrumb,
+H2.h2BreadCrumb a{
+	display: inline;
+    float: left;
+    font-family: serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1em;
+    position: relative;
+    text-decoration: none;
+    top: 11px;
+}
+
+.h2PatternLink{
+	line-height: 1em;
+	margin: 0px;
+	padding: 0px;
+	font-size: 15px;
+	}
+	.h2PatternLink a{
+		text-decoration: none;
+
+	}
+
+.h2PatternHeader{
+ color:white; 
+ font-family:arial, helvetica, sans serif;
+ font-size:18px;
+ font-weight:normal;
+ letter-spacing:4px;
+ line-height:1em;
+ padding:5px;
+ width:100%;
+}
+
+.h2PatternHeader a{
+ color:white;
+ text-decoration: none;
+}
+
+.h2PatternHeader a:link{
+ color:white;
+}
+
+.h2PatternHeader a:visited{
+ color:white;
+}
+
+#h2PatternHeaderFlatware{
+ background-color:#C96;
+}
+#h2PatternHeaderDefault{
+	background-color: #A27178;
+	box-shadow: 0px 3px 4px #ddd;
+}
+
+H3{
+background-color: transparent;	
+line-height: 1em;
+padding: 0px;
+letter-spacing: normal;
+}
+
+.h3ItemDescription{
+    background: none repeat scroll 0 0 transparent;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: normal;
+    height: 15px;
+    letter-spacing: 0;
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+h4{
+ line-height:1em;
+ margin:0px;
+ padding:0px;
+ width:auto;
+}
+
+.handleImageHeader{
+	width:100%;
+	max-width: 350px;
+	padding: 0px;
+	line-height: 1em;
+	
+}
+.hidden{
+	height: 0px;
+	max-height: 0px;
+	overflow: hidden;
+	-moz-transition:max-height 2s ease-in 0s;
+	-webkit-transition: max-height 2s ease-in 0s;
+	-o-transition: max-height 2s ease-in 0s;
+	transition: max-height:2s ease-in 0s;
+	
+}
+
+.hidden.active{
+	-moz-transition:max-height 2s ease-in 0s;
+	-webkit-transition: max-height 2s ease-in 0s;
+	-o-transition: max-height 2s ease-in 0s;
+	height: auto;
+	max-height: 800px;
+	transition: max-height:2s ease-in 0s;
+}
+
+#hollowLinkDiv{
+}
+
+#hollowwareBrandContainer,
+#hollowwareSideMenu{
+	background-color: #A27177;
+}
+img{
+	/*width: 100%;
+	min-width: 80px;*/
+}
+img.currentImage{
+	  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=100);
+
+  /* Netscape */
+  -moz-opacity: 1;
+
+  /* Safari 1.x */
+  -webkit-opacity: 1;
+
+  /* Good browsers */
+  opacity: 1;
+}
+img.itemcount{
+	vertical-align: bottom;
+}
+img.notCurrent{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+	filter:alpha(opacity=75);
+	-moz-opacity: .75;
+	-webkit-opacity: .75;
+	opacity:.75;
+	
+}
+img.pageBanner{
+ max-height: 85px;
+ width:100%;
+ max-width:760px;
+ padding:0px;
+ line-height:1em;
+ margin:0px;
+ vertical-align: middle;
+}
+img.itemImageMain{
+	max-width: 350px;
+	width: 100%;
+}
+img.productThumbnail{
+ height:auto;
+ max-height:100px;
+ max-width:100px;
+ width:100%;
+ 
+}
+
+img.productThumbnail.large{
+	border: 1px solid #eee;
+	max-height: 275px;
+	max-width: 250px;
+    width: auto;
+}
+
+.inline{
+	display: inline;
+}
+input[button]{
+	cursor: pointer;
+}
+input,
+input.repairFormInput{
+	border: 1px solid #aaa;
+	height: 22px;
+	padding-left: 5px;
+	width: 200px;
+}
+input{
+	width: auto;
+}
+div#invoice-items button{
+	height:33px;
+	
+}
+div#invoice-items .row{
+	padding:5px 0px;	
+}
+#invoice-items a.search{
+	font-size:.8rem;
+	font-weight: normal;
+}
+#invoice-items a.search:hover{
+	font-size:.8rem;
+}
+#invoice-items .cell{
+	font-size: .8rem;
+}
+.large{
+	font-size: 1.2em;
+}
+
+.center-align{
+	text-align: center;
+}
+.left-align{
+	text-align: left;
+}
+.right-align{
+	text-align: right;
+}
+
+
+
+ul.dropdown li.transparentBG{
+	background-color: transparent;
+}
+
+ul.dropdown li.transparentBG a.homepageLink,
+ul.dropdown li.tranpsarentBG a.homepageLink:visited{
+	color: #79121B;
+	font-family: serif;
+	font-size:18px;
+	transition-property: color;
+transition-delay: .1s;
+transition-timing-function:  ease-out;
+}
+
+ul.dropdown li.transparentBG a.homepageLink:hover{
+	color:#C99;
+}
+
+.imgCaption{font-size:10px;}
+
+H2.itemTitle,
+H3.itemName{
+    background: none repeat scroll 0 0 transparent;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: normal;
+    height: auto;
+    letter-spacing: 0;
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.itemPrice{
+ font-size:18px;
+}
+
+.itemQty{
+ font-size:15px;
+}
+
+#jewelryCatLinks,
+#jewelryCatLinks ul.dropdown li{
+	background-color: #1F118C;
+}
+
+#jewelryBrandContainer,
+#jewelrySideMenu,
+#babyCatLinks ul.dropdown li ul.dropdown{
+ background-color:#69C;
+}
+
+#jewelryH1 a.h1Link,
+#jewelryH1 a.h1Link:visited{
+  color:#315F8D;
+}
+
+#jewelryH1Container,
+#jewelryH2{
+ border-bottom:1px solid #69C;
+}
+
+#jewelryImage{
+ background: url("//www.asyoulikeitsilvershop.com/images/t_jew_main_alt.jpg") no-repeat scroll -275px 0 transparent;
+}
+
+#jewelryPageHead{
+ background-color:#8F8BAE;
+}
+
+img.pageHeaderImage{ 
+	width: 100%;	
+}
+
+#silverCareImage{
+ url("//www.asyoulikeitsilvershop.com/images/t_caring_main_alt.jpg") no-repeat scroll -275px 0 transparent;
+}
+
+#smallCartContainer{
+ display:inline;
+ position:relative;
+ top:10px;
+}
+
+#viewMoreItems{
+    font-size: 15px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+
+.leftAlign{
+ text-align:left;
+}
+
+li.babyDropdownLI a.red:hover{
+ background-color:#8F8BAD;
+}
+
+li.hollowwareDropdownLI a.red:hover,
+li.defaultDropdownLI a.red:hover{
+ background-color:#FCC;
+}
+
+
+
+li.collectiblesDropdownLI a.red:hover,
+li.coinSilverDropdownLI a.red:hover,
+li.flatwareDropdownLI a.red:hover{
+ /*this one actually affects the dropdown background color */
+ background-color:#C96;
+}
+
+
+/*
+li.collectiblesDropdownLI a.red,
+li.flatwareDropddownLI a.red,
+li.collectiblesDropdownLI a.red:hover,
+li.flatwareDropdownLI a.red:hover{
+ /*this one actually affects the dropdown background color 
+ background-color:#6A2A00;
+}
+*/
+
+
+.mainContent,
+.mainContentIndex{
+    /*border-top: 1px solid black;*/
+    background-color: #fff;
+    /*background-image: url("//www.asyoulikeitsilvershop.com/images/noise-1.png");*/
+    display: block;
+    height: auto;
+    margin: 0;
+    min-height: 600px;
+    padding: 0;
+    padding-bottom: 25px;
+    position: relative;
+    width: 100%;
+}
+
+.mainContentIndex{
+background-image: none;
+  min-height:300px;
+}
+.mainContentHead,
+.mainContentHeadCatPage{
+/*background-image: url("http://www.asyoulikeitsilvershop.com/images/noise-1.png");*/
+ display:inline-block;
+ height:40px;
+ left:0px;
+ line-height:1em;
+ margin:0px;
+ padding:0px;
+ position:relative;
+ top:0px;
+ max-width:960px;
+ width:100%;
+}
+
+#mainFeaturedImage{
+	border: 1px solid inherit;
+	max-height: 286px;
+	height: auto;
+	min-width: 80px;
+	max-width: 250px;
+}
+.middleAlign{
+	vertical-align: middle;
+}
+
+#mobilePageHead,
+div#defaultMobileHead,
+div#mobilePageHeader,
+div#mobilePageHeader H1{
+	color:white;
+	/*color: #442222;*/
+	display: none;
+    font-family: serif;
+    font-size: 31px;
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 1em;
+    text-shadow: 0px 1px 0px black
+    /*text-shadow: 0 1px 0 #AA8888;*/
+}
+
+.modal{
+	display:none;
+	position: relative;
+	z-index: 100;
+	height:auto;
+	width:auto;
+	background-color: white;
+	top:25%;
+	left:25%;
+	border:1px solid #aaa;
+}
+
+.modal-popup{
+    background-color: white;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 8px #DDDDDD;
+    display: inherit;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    top:25%;
+    width: 250px;
+    z-index: 10;
+}
+
+.modal-popup-container{
+	display: none;
+	height:100%;
+	width:100%;
+	background-color: white;
+	opacity: .5;
+	-moz-opacity: .5;
+	-webkit-opacity: .5;
+	margin:0 auto;
+	text-align:center;
+	position:absolute;
+	z-index: 100;
+}
+.nodecoration{
+	text-decoration: none;
+	list-style: none;
+}
+
+div#tanMobileHead{
+	
+}
+.ordersteps{
+    background-color: transparent;
+    border-bottom: 1px solid #AAAAAA;
+    padding-bottom: 10px;
+	
+}
+
+li.orderstep{
+	background-color: transparent;
+	border-radius: 4px;
+	color: #888;
+	font-size: 15px;
+	font-family: arial, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
+	padding: 5px 10px;
+	transition: all 1s ease 0s;
+	-moz-transition: all 1s ease 0s;
+	-webkit-transition: all 1s ease 0s;
+	-o-transition: all 1s ease 0s;
+}
+
+li.orderstep.current{
+    background-color: #BBBBBB;  
+    color: white;
+
+ }
+
+.otherLink,
+.starContainer{
+    border: 0 solid transparent;
+    display: inline-block;
+    height: auto;
+    margin: 0;
+    padding: 1px 20px;
+    position: relative;
+    vertical-align: middle;
+    zoom: 1;
+ }
+.homepageOtherLinks .otherLink{
+	padding: 1px 10px;
+}
+ .starContainer{
+	 padding: 1px 2px;
+ }
+
+#order-summary{
+	background: none repeat scroll 0 0 white;
+    border: 1px solid #AAAAAA;
+    border-radius: 2px 2px 2px 2px;
+    max-height: 100%;
+    height: auto;
+    font-size:12px;
+    margin-left: 2%;
+    padding: 0 10px;
+}
+#order-summary-overlay{
+	background-color:white;
+	background-color:rgba(255,255,255,.8);
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    padding-top: 40%;
+    height:60%;
+}
+#order-summary-main{
+	font-size:15px;
+}
+#order-summary .row{
+	padding: 5px 0px;
+}
+
+#order-summary .cell{
+	min-width: 0px;
+}
+
+#order-summary .cell.threeColumns,#order-summary .cell.fiveColumns{
+	text-align: right;
+}
+
+#order-total,#order-balance{
+	font-size: 17px;
+}
+#payment-information{
+	max-height: 800px;
+	height: auto;
+
+	transition:max-height 1s ease;
+}
+#payment-information.hidden{
+	max-height: 0px;
+	height: 0px;
+}
+.starContainer,
+.otherLink a{
+    color: #FAFBAB;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 16px;
+    font-variant: small-caps;
+    font-weight: normal;
+    letter-spacing: 2px;
+    line-height: 1em;
+    margin: 0;
+    text-decoration: none;
+}
+
+.starContainer{
+    margin-top: 5px;
+    min-width: 20px;
+    text-align: center;
+    width: 20px;
+}
+.oneColumn{
+	/*width:6.249%;*/
+	width:4.255326%
+}
+.twoColumns{
+	/* width:12.499%;*/
+	width: 10.638315%;
+}
+.threeColumns{
+width: 17.021304%;
+ /*width:18.749%;*/
+} 
+.fourColumns{
+/* width:24.999%;*/
+width: 23.404293%; 
+}
+.fiveColumns{
+/* width:31.249%;*/
+ width: 29.787282%;
+}
+.sixColumns{
+ width: 36.170271%;
+ /*width:37.499%;*/
+}
+.sevenColumns{
+ width: 42.55326%;
+ /*width:43.749%;*/
+}
+.eightColumns{
+/* width:49.999%;*/
+  width: 48.936249%;
+}
+.nineColumns{
+/* width:56.25%;*/
+ width: 55.319238%; 
+}
+.tenColumns{
+/* width:62.499%;*/
+ width: 61.702227%;
+}
+.elevenColumns{
+/* width:68.749%;*/
+ width: 68.085216%;
+}
+.twelveColumns{
+/* width:74.999%;*/
+ width: 74.468205%;
+}
+.thirteenColumns{
+/* width:81.249%;*/
+ width:80.851194%;
+}
+.fourteenColumns{
+/* width:86.499%;*/
+ width: 87.234183%; 
+}
+.fifteenColumns{
+ /*width:93.749%;*/
+ width: 93.617172%; 
+}
+.sixteenColumns{
+ width:100%;
+}
+
+.otherLink a:hover{
+ color:rgb(187,134,139);
+}
+
+#otherLinksContainer{
+ background-color:black;
+ height:auto;
+ width:100%;
+}
+
+#otherLinksSub{
+ position:relative;
+}
+
+.verticalPad5px{
+	padding: 7px 0px 5px 0px;
+}
+
+.pageCatImage{
+    display: inline-block;
+    float: right;
+    height: 40px;
+    line-height:1em;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    width: 485px;
+}
+
+.pageHead{
+	background-image: url("//www.asyoulikeitsilvershop.com/images/noise-1.png");
+	display:block;
+	height:auto;
+	width:100%;
+}
+div#navBack{
+	padding-left: 25px;
+}
+
+div.patternHead{
+
+    background-color: #7A121B;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    min-height: 20px;
+    position: relative;
+
+	box-shadow: 0 1px 3px #eee;
+	height:auto;
+	padding: 5px 0 5px 8px;
+	width:99%;
+}
+.patternHead.baby{
+	background-color:#8F8BAD;
+}
+.patternHead.coin,.patternHead.collectibles,.patternHead.flatware{
+	background-color: #CC9966;
+}
+.patternHead.jewelry{
+	background-color: #6699CC;
+}
+
+.patternName{
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.remove-button{
+    background-color: white;
+    border: 1px solid #AAAAAA;
+    border-radius: 20px 20px 20px 20px;
+    color: #999999;
+    cursor: pointer;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 2px 6px;
+    transition: background-color 0.25s ease 0s;
+}
+
+.remove-button:hover{
+	background-color: #ddd;
+	color: white;
+}
+
+.rightAlign{
+	text-align:right;
+}
+
+.row{
+	display:block;
+	height:auto;
+	max-width: 960px;
+	padding:10px 0px;  
+	position:relative;
+	width:100%
+}
+
+span#mobileDescription{
+	font-style: normal;
+	display: none;
+	font-size:12px;
+}
+
+.searchArrowDiv{
+ height:20px;
+ width:929px;
+}
+
+.searchField{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    
+	/*background-image: linear-gradient(bottom, #FFF 2%, #FEFEFE 84%, #DDD 100%);
+	background-image: -o-linear-gradient(bottom,  #FFF 2%, #FEFEFE 84%, #DDD 100%);
+	background-image: -moz-linear-gradient(center bottom,  #FFF 2%, #FEFEFE 84%, #DDD 100%);
+	background-image: -webkit-linear-gradient(bottom, #FFF 2%, #FEFEFE 84%, #DDD 100%);
+	background-image: -ms-linear-gradient(bottom,  #FFF 2%, #FEFEFE 84%, #DDD 100%);
+
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.2, #FFF),
+	color-stop(0.84, #FEFEFE),
+	color-stop(1, #DDD)
+	);
+	*/
+	background-color:white;
+    border-color: #AAAAAA;
+    border-radius: 0px;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    color: #999;
+    font-family: inherit;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: lighter;
+    height: 25px;
+    margin: 0;
+    max-height: 25px;
+    max-width: 275px;
+    min-width: 275px;
+    padding-left: 5px;
+    width: 100%;
+}
+
+#searchLink{
+	line-height: 1em;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+}
+#searchPageNavs{
+	font-size:15px;
+}
+.searchResultAdd{
+ left:820px;
+ width:100px;
+}
+.searchButton,
+.searchResultAddButton{
+  border:1px solid #aaa;
+  font-size:15px;
+  height:25px;
+  padding:0px;
+  width:100px; 
+}
+
+.searchButton{
+	height:27px;
+    position: absolute;
+    text-align: center;
+	width:45px;
+}
+
+#searchFieldSpan{
+	display: inline-block;
+	width: 100%;
+}
+.searchResultAddQty,
+.staticItemAddQty{
+ border:1px solid #aaa;
+ padding:0px 5px;
+ width:25px;
+}
+.searchResultDimInfo{
+ font-family:sans serif;
+}
+
+.searchResults{
+ left:20px;
+ position:relative;
+ max-width:940px;
+ height:auto;
+ margin-left:0px;
+ width:90%;
+}
+.searchResultsH2{
+    font-family: times,serif;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.searchResultsH3{
+ background-color:transparent;
+ padding:0px;
+}
+
+.searchResultRow,
+.searchResultRowGrid{
+ display:inline-block;
+ height:auto;
+ height:150px;
+ width:929px;
+}
+
+.searchResultRowGrid{
+ height:300px;
+}
+
+.searchResultAdd,
+.searchResultImage,
+.searchResultItemName,
+.searchResultPattern,
+.searchResultBrand,
+.searchResultPrice,
+.searchResultQuantity,
+.searchResultFieldCenterAlign{
+ display:inline;
+ line-height:1em;
+ position:absolute;
+ width:auto;
+}
+
+.searchResultImage{
+ width:120px;
+ text-align:center;
+ margin:0 auto;
+ left:10px;
+}
+.searchResultImgContainer{
+ height:150px;
+}
+.searchResultDimInfo{
+ height:110px;
+}
+.searchResultItemContainer{
+ display:inline;
+ position:relative;
+ width:210px;
+ height:300px;
+ float:left;
+ margin:10px;
+}
+.searchResultItemName{
+  left:135px;
+  width:250px;
+}
+
+.searchResultFieldCenterAlign{
+ text-align:center;
+}
+.searchResultPattern{
+ left:400px;
+ width:200px;
+}
+
+.searchResultBrand{
+ left:620px;
+ width:100px;
+}
+
+.searchResultPrice{
+  text-align:center;
+  left:730px;
+  width:50px;
+}
+
+.searchResultQuantity{
+  text-align:center;
+  left:790px;
+  width:20px;
+}
+.searchResultsSub{
+ border-bottom:1px solid #aaa;
+ height:auto;
+ line-height:1em;
+ overflow-x:hidden;
+ overflow-y:auto;
+}
+
+.overlay{
+	display: none;	
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 100;
+}
+.overlay.white{
+	background-color: white;
+	opacity: .5;
+	-moz-opacity: .5;
+	-webkit-opacity: .5;
+	filter: alpha('opacity:50');
+}
+.ajax-overlay,#featuredItemOverlay,
+#searchResultsOverlay{
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	/* IE 5-7 */
+  	filter: alpha(opacity=50);
+	background-color: white;
+	display: none;
+    height: 100%;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0.5;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.secure{
+	padding-left:5px;
+	background-color:#eee;
+}
+
+select,
+select.searchSort{
+ border:1px solid #aaa;
+ font-family:arial, helvetica, sans serif;
+ font-size: 15px;
+ line-height:1em;
+ max-width:150px;
+ min-width: 100px;
+ padding:0px;
+ text-align:left;
+ width:100%;
+}
+select.categorySearchSelect{
+	max-width: 100%;
+	width: 100%;
+}
+span.viewCartCaption{
+    display: inline-block;
+    height: 23px;
+    vertical-align: middle;
+}
+
+.spacer{
+ display:inline-block;
+ padding:0px 0px 10px 0px;
+ margin:0px;
+ width:auto;
+ min-width:98px;
+}
+
+.staticFieldLabel{
+    display: inline;
+    font-size: 18px;
+    line-height:1em;
+    width: 50px;
+}
+
+div#staticItemAdd{
+    display: block;
+    padding-bottom: 15px;
+    position: relative;
+    width: 100%;
+}
+input[submit],
+.repairFormButton,
+.staticItemAddButton,
+.staticItemAddQty{
+  border: 1px solid #AAAAAA;
+  font-size: 16px;
+  padding: 0 5px;
+  text-align:center;
+  width: 100px;
+}
+
+.staticItemAddQty{
+ height:22px;
+ text-align:center;
+ width:78px
+}
+
+#staticItemCategoryLinks{
+ display:block;
+ position:relative;
+ width:auto;
+}
+
+#staticItemImage{
+ left:170px;
+ position:relative;
+ display:block;
+ height:350px;
+ width:300px;
+}
+
+.staticItemCatLink{
+ display:inline;
+ position:relative;
+ float:left;
+ text-align:center;
+ width:225px;
+}
+
+.staticItemCatLinkSEO{
+ display:block;
+ position: relative;
+ width:auto;
+}
+
+
+.staticItemContainer{
+ display:block;
+ width:929px;
+ height:360px;
+ position:relative;
+ top:20px;
+}
+
+#staticItemDescription{
+    display: block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    margin:10px 0px;
+    position: relative;
+    text-align:justify;
+    width: 100%;
+}
+
+#staticItemDetails{
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  display:inline;
+  left:450px;
+  position:absolute;
+  top:0px; 
+  width:450px;
+}
+
+#staticItemDimensions{
+ font-size:15px;
+ font-weight:normal;
+ margin:5px 0px;
+}
+
+#staticItemName{
+ padding:10px 0px;
+ position:relative;
+ width:auto;
+}
+
+#staticItemPrice{
+ display:block;
+ font-size:20px;
+ position:relative;
+ text-align:left;
+ width:auto;
+}
+
+#staticItemQty{
+    display: inline;
+    font-size: 18px;
+    position: relative;
+    text-align: center;
+    width: 50px;
+}
+
+div#staticItemShareLinks{ 
+    display: block;
+    left:0px;
+    position: relative;
+    padding-top:20px;
+  
+}
+
+div.suggestedItemContainer{
+    display: inline-block;
+    float: left;
+    position: relative;
+    text-align: center;
+    width: 33%;
+}
+
+div#featuredItems{
+	background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px #eee;
+    clear: none;
+    height: 100%;
+    max-width: 715px;
+    min-height: 400px;
+    padding:0px 5px;
+    transition-property: height;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1s;
+    transition-delay: 0s;
+    width: 715px;
+}
+div#suggestedItems{
+	background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px #eee;
+    display: block;
+    font-family: inherit;
+    height: auto;
+    left: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 690px;
+    overflow-y: auto;
+    padding: 10px;
+    position: relative;
+    top: 0px;  
+    text-align: center;
+    width: auto;
+}
+
+div.sideMenu{
+    font-size: 15px;
+    left: 0px;
+    padding: 5px 10px 2px 5px;
+    position: relative;
+    top: 0px;
+    width: 180px;
+}
+
+div#thawteSealContainer{
+	left: 0px;
+	position: relative;
+}
+
+span.super{
+ font-size: 95%;
+ vertical-align: super;
+}
+
+.brandContainer,
+.sideMenuContainer{
+	background-image: url("//www.asyoulikeitsilvershop.com/images/noise-1.png");
+	box-shadow: 0px 1px 3px #888;
+    float: left;
+    height: 510px;
+    left: 0;
+    line-height: 1em;
+    min-height: 400px;
+    padding-top: 15px;
+    position: relative;
+    width: 245px;
+    clear: none;
+}
+
+.brandContainer{
+	display: inline;
+	float:right;
+	overflow-y: auto;
+	width: 22	5px;
+	
+}
+
+.silverChest{
+ border-width:0px;
+ vertical-align:top; 
+ margin:0px;
+}
+
+.large-input, .medium-input,.small-input,.mini-input,textarea{
+	border: 1px solid #aaa;
+	background-color: white;
+	border-radius: 2px;
+	color: black;
+	padding: 5px;
+}
+input[class*='-input']{
+	/*height: 25px;*/
+	line-height: 1rem;
+}
+
+textarea.medium-input{
+	height:80px;
+	max-width:240px;
+}
+.large-input{
+	font-size:12px;
+	height: 15px;
+	line-height: 1em;
+	max-width: 350px;
+	width: 100%;
+}
+
+.link{
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	color: #8C1111;
+	padding: 0px;
+	text-decoration: underline;
+}
+.medium-input{
+	font-size: 12px;
+	height: 15px;
+	line-height: 1em;
+	max-width: 325px;
+	width: 100%;
+}
+
+#invoice-items select.medium-input{
+		width:auto;
+}
+.min-zero{
+	min-width: 0px;
+}
+.small-input,.mini-input{
+	font-size: 12px;
+	height: 15px;
+	line-height: 1em;
+	max-width: 150px;
+}
+.mini-input{
+	 max-width:100px;
+}
+select.medium-input{
+	max-width: 200px;
+}
+select.small-input,select.large-input,select.medium-input,select.mini-input{
+	height: 28px;
+}
+select.small-input{
+	max-width:161px;
+}
+
+table{
+	padding:0px;
+	border:none;
+	text-align:center;
+	background-color:white;
+	border-spacing:0px;
+	border-collapse:collapse;
+}
+
+.tableHead{
+ height:auto;
+}
+
+#shipping-billing-info textarea{
+	max-width: 250px;
+	width: 100%;
+}
+
+#shipping-method-overlay{
+	background-color: white;
+	background-color: rgba(255,255,255,.85);
+	text-align: left;	
+	font-size: 0.9rem;
+    padding: 5px 0 0 20px;
+}
+#showAllLink,.showAllLink{
+cursor: pointer;
+	text-decoration: underline;	
+}
+
+.showItem,#showAllLink{
+	cursor: pointer;
+}
+.status{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	width: auto;
+}
+.titleContainer{
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    line-height:1em;
+    margin: 0;
+    padding: 0 0 0 10px;
+    position: absolute;
+    top: 0;
+    max-width: 950px;
+    min-width: 349px;
+    width:100%;
+    z-index: 10;
+}
+
+.topAlign{
+	vertical-align: top;
+}
+.transparent{
+	background:transparent;
+}
+
+#transition,.divOverlay{
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.9);
+	display: none;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    z-index: 10;
+}
+.transitioning{
+	opacity: .7;
+	-moz-opacity: .7;
+	-webkit-opacity: .7;
+	-ms-filter: alpha('opacity=70');
+	
+}
+.twelvePixels{
+ font-size:12px;
+ height:12px;
+ line-height:1em;
+}
+
+.twentyFourPx{
+	font-size: 24px;
+}
+
+ul.horizontal{
+	display: inline-block;
+	width: 100%;
+	
+}
+ul.horizontal li{
+	display: inline;
+	width: auto;
+}
+ul.dropdown li a.red:hover{
+	color: yellow;
+}
+
+ul.sideMenuList{
+	margin-left: 10px;
+}
+
+ul.sideMenuList li{
+	width: 90%;
+}
+
+ul.dropdown li ul li{
+	margin: 0px;
+}
+
+
+ul.dropdown li:hover > ul {
+    visibility: hidden;
+    }
+
+    ul.dropdown li ul:hover{
+	    visibility: hidden;
+}
+
+.undecorated{
+	text-decoration: none;
+}
+.validate{
+	    transition:all .25s ease;
+}
+input.valid,select.valid{
+	/*background-color: #99ee99;*/
+	border: 1px solid green;
+	padding: 5px;	
+	line-height: 1em;
+	font-size: 12px;
+	color: green;
+}
+
+.splash-div{
+	display: inline-block;
+	width: auto;
+	position: relative;
+	float: none;
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+
+/* THESE ARE MODIFIED CLASSES AND HAVE TO BE DEFINED AFTER EVERYTHING ELSE*/
+.bottomPadFive{
+	padding-bottom: 5px;
+}
+
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.fullWidth{
+	max-width: 100%;
+}
+.last{
+	margin-right: 0;
+	
+}
+.noborder{
+	border:none;
+	
+}	
+.nopad{
+	padding: 0px;
+}
+li.transparentBG{
+	background-color:transparent;
+	border-right: 0px;
+}
+
+ul.whiteBG{
+	background-color: white;
+}
+

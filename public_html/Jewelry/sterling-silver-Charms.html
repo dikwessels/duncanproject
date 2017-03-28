@@ -1,0 +1,2353 @@
+<!DOCTYPE html
+
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title>Sterling Silver Jewelry, Available at As You Like It Silver Shop, New Orleans, Louisiana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Item: ,Maker: ,Pattern: ,Category: sterling silver ,Price: $ . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+<meta name="keywords" content="silver shop, silver shop new orleans,silverware shop new orleans,silver ware shop new orleans,
+silverware shop,silver ware Jewelry,silver ware,silverware,silver silverware,Jewelry silver,, silver storage, silver cleaning, silver storage products, silver cleaning products, silver repair, monograms, sterling silver storage, sterling silver cleaning, sterling silver storage products, sterling silver cleaning products, sterling silver repair, sterling silver monograms" />
+
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript" src="/js/images.js"></script>
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript" src="/js/giftRegistry.js"></script>
+<script type="text/javascript" src="/js/suggestedItems.js"></script>
+<script type="text/javascript" src="/js/share.js"></script>
+
+<link rel="stylesheet" href="/ayliss_style.css" type="text/css">
+<link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
+<link rel="stylesheet" href="/css/dropdown/imports.css">
+
+<script type="text/javascript">
+
+function sortResults(cat,brand,pattern,recent,searchCat,item,itemname,pos,limit){
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+  	 action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+
+  	 document.getElementById('searchResultsOverlay').style.display='inline';
+ 
+ var totalResults=parseInt(document.getElementById('results').value);
+ 
+ var waitAction='';
+ 
+ var f=document.searchValues;
+ var item=f.searchItem.value;
+ var pattern=f.pattern.value;
+ var brand=f.brand.value;
+ var searchCat=f.searchCategory.value;
+ var recent=f.recent.value;
+ var cat=f.category.value;
+ 
+ var searchURL='';
+ 
+ var display=document.getElementById('displayNResults');
+ 
+ try{
+ 	var limit=parseInt(display.options[display.selectedIndex].value);
+ }
+ catch(err){
+	 limit=10;
+ }
+ 
+if(limit<totalResults){
+	 if(document.getElementById('searchPageNavs').innerHTML==''){
+		document.getElementById('searchPageNavs').innerHTML=createPageNavs(totalResults,limit);
+	 }	
+}
+
+ var orderOptions=document.getElementById('resultsOrder');
+ var order=orderOptions.options[orderOptions.selectedIndex].value;
+ 
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+ if(brand){searchURL=searchURL+'&brand='+brand;}
+ 
+ //alert(item);
+ 
+ if(item){
+  item=item.replace('+', '%2B');
+  searchURL=searchURL+'&searchItem='+item;
+ }
+ if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ if(recent){searchURL=searchURL+'&recent='+recent;}
+ if(searchCat){searchURL=searchURL+'&searchCategory='+searchCat;}
+ if(itemname){searchURL=searchURL+'&itemname='+itemname;}
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){searchURL=searchURL+'&order='+order; }
+ 
+ 
+ //alert(searchURL);
+ requestURL(url,searchURL,action,waitAction);
+ 
+}
+
+function changeDisplayLimit(cat,brand,pattern,recent,searchCat,item,itemname,pos){
+
+ //resets results display with new limit
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ var overlay=document.getElementById('searchResultsOverlay');
+ 
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+ action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+ 
+ var waitAction='';
+ var searchURL='';
+
+ overlay.style.display='inline';
+       
+ var totalResults=parseInt(document.getElementById('results').value);
+ var display=document.getElementById('displayNResults');
+ 
+ var limit=parseInt(display.options[display.selectedIndex].value);
+ //alert(totalResults);
+ 
+ var orderOptions=document.getElementById('resultsOrder');
+ var order=orderOptions.options[orderOptions.selectedIndex].value;
+ var endPos=limit;
+ 
+ 
+ if(limit<totalResults){
+  document.getElementById('searchPageNavs').innerHTML=createPageNavs(totalResults,limit);
+ }
+ else
+ {
+  if(limit>=totalResults){endPos=totalResults;}
+  document.getElementById('searchPageNavs').innerHTML='';		 
+ }
+ 
+ 
+ action=action+'document.getElementById(\'searchResultsPosition\').innerHTML = \'Now Showing 1 - ' + endPos+'\';'; 
+
+ 
+ 
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+ if(brand){searchURL=searchURL+'&brand='+brand;}
+ 
+ try{
+ 	item=document.getElementById('item').value;
+ 	}
+ catch(err){
+ 	item='';
+ }
+  
+ if(item){searchURL=searchURL+'&searchItem='+item;}
+ if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ if(recent){searchURL=searchURL+'&recent='+recent;}
+ if(searchCat){searchURL=searchURL+'&searchCategory='+searchCat;}
+ if(itemname){searchURL=searchURL+'&itemname='+itemname;}
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){ searchURL=searchURL+'&order='+order; }
+ 
+ requestURL(url,searchURL,action,waitAction);
+	
+}
+
+function createPageNavs(totalResults,limit){ 
+  var pages= Math.ceil(totalResults/limit);
+  var nextPos=0;
+  var pageNav='';
+  
+ var  endPos=limit;
+  
+  
+  	//alert (pages);
+	for(i=1;i<=pages;i++){
+		
+		nextPos=((i-1)*limit)+1;
+		pageNav=pageNav+'<a id="pageNum'+i+'" href="javascript:changeResultsPage(\''+nextPos+'\',\'pageNum'+i+'\',\''+limit+'\');">'+i+'</a>';
+		if(i<pages){
+			pageNav=pageNav+' | ';
+		}
+	}
+	return pageNav;
+}
+
+
+function changeResultsPage(pos,linkID,limit){
+ 
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+ 	 action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+
+ document.getElementById('searchResultsOverlay').style.display='inline';
+ var waitAction='';
+ 
+ var totalResults=document.getElementById('results').value;
+ var order=document.getElementById('resultsOrder').value;
+ var searchURL='';
+ var endPos=pos;
+ var startPos=pos;
+ 
+ 
+ //alert('Position:'+pos+' Limit:'+limit);
+ 
+ var f=document.getElementById('searchVariables');
+ var cat=f.category.value;
+ var brand=f.brand.value;
+ var item=f.item.value;
+ var pattern=f.pattern.value;
+ var searchCat=f.searchCategory.value;
+ var recent=f.recent.value;
+ 
+ pos=parseInt(pos);
+ limit=parseInt(limit);
+ totalResults=parseInt(totalResults);
+ 
+ if((pos+limit)<totalResults){
+	 endPos=pos+limit-1;
+ }
+
+ else{
+	 endPos=totalResults;
+ }
+ 
+ document.getElementById('searchResultsPosition').innerHTML = 'Now Showing '+startPos+ ' - ' + endPos;
+ 
+ var links=document.getElementById('searchPageNavs').childNodes;
+ 
+    for(i=0;i<links.length;i++){
+	    if(links[i].id==linkID){
+		    links[i].style.textDecoration='none';
+		    links[i].style.fontWeight='bold';
+	    }
+	    else{
+		    try{
+		    links[i].style.textDecoration='underline';
+			links[i].style.fontWeight='normal';    
+		    }
+		    catch(err){}
+	    }
+	    
+    }
+
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+ if(brand){searchURL=searchURL+'&brand='+brand;}
+ if(item){searchURL=searchURL+'&searchItem='+item;}
+ if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ if(recent){searchURL=searchURL+'&recent='+recent;}
+ if(searchCat){searchURL=searchURL+'&searchCategory='+searchCat;}
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){searchURL=searchURL+'&order='+order;}
+ 
+ requestURL(url,searchURL,action,waitAction);
+ 
+}
+
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31581272-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body class="sub" onLoad="preLoad();">
+<div id="container">
+<!-- begin page head -->
+<div class="pageHead" id="jewelryPageHead">
+
+  <!-- begin cart container --> 
+  <div id="cartContainer">
+  <p class="homenav">
+   YOUR SILVER CHEST HAS 
+   <img src='/images/c__.gif' name=nums3 align=bottom>
+   <img src='/images/c__.gif' name=nums2 align=bottom>
+   <img src='/images/c_0.gif' name=nums1 align=bottom> ITEMS.
+   <a href="/orderdetails.php" class="top">
+     <img class="silverChest" src="/images/silverchest_empty.gif" name=chest>
+   </a>
+  </p>
+ </div> <!-- end cart container -->
+
+  <!-- page Header image -->
+  <div class="pageHeaderImage" id="jewelryHead">
+    <img class="pageBanner" src="/images/ayliss_title_b.jpg" alt="<!--pageHeadImageAlt-->" title="<!--pageHeadImageTitle-->">
+  </div>  
+   <!-- end page header image -->
+
+<!-- begin other links -->
+<!-- begin other links 
+<div id="otherLinksContainer">
+
+   <div class="otherLink" id="giftsLink">
+  		
+    
+    <a href="/gifts.html" onMouseOver="document.blair.src=greatgiftson.src" onMouseOut="document.blair.src=greatgiftsoff.src">
+                 <img name="blair" title="Great Sterling Silver Gift Ideas at As You Like It Silver Shop" alt="Great Sterling Silver Gift Ideas at As You Like It Silver Shop" src="/images/nav_greatgifts_1.gif" width="101" height="29" alt="Great Gifts" border="0">
+                </a>
+   </div>
+
+   <div class="starContainer">		
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+   </div>
+   <div class="otherLink" id="cleaningLink">
+		<a href="/cleaning.php" onMouseOver="document.chuck.src=cleaningon.src" onMouseOut="document.chuck.src=cleaningoff.src">
+                  <img name="chuck" src="/images/nav_cleaning_1.gif" width="200" height="29" title="View our inventory of sterling silver cleaning and storage products at As You Like It Silver Shop" alt="View our inventory of sterling silver cleaning and storage products at As You Like It Silver Shop" border="0">
+               </a>
+  </div>
+   <div class="starContainer">		
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+   </div>
+
+
+   <div class="otherLink" id="servicesLink">
+	 <a href="/otherservices.php" onMouseOver="document.daniel.src=otheron.src" onMouseOut="document.daniel.src=otheroff.src">
+                  <img name="daniel" src="/images/nav_other_1.gif" width="135" height="29" alt="Other Products" border="0">
+          </a>
+   </div>
+ 
+ <div class="starContainer">
+   <img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+ </div>
+
+  <div class="otherLink" id="searchLink">
+
+    <a href="/search.php" onMouseOver="document.fritz.src=searchon.src" onMouseOut="document.fritz.src=searchoff.src">
+         <img name="fritz" src="/images/nav_search_1.gif" width="68" height="29" title="Search Our Inventory of Sterling Flatware, Hollowware, Baby Silver and More at As You Like It Silver Shop" alt="Search Our Inventory of Sterling Flatware, Hollowware, Baby Silver and More at As You Like It Silver Shop" border="0"></a>
+    </a>
+  </div>
+
+
+</div> end other links container -->  
+
+
+<!-- begin other links -->
+<div id="otherLinksContainer">
+<div id="otherLinksSub">
+   <div class="otherLink" id="giftsLink">
+    <a href="/gifts.html">Great Gifts</a>
+   </div>
+
+   <div class="starContainer">*</div>
+
+   <div class="otherLink" id="cleaningLink">
+      <a href="/cleaning.php">Caring for Your Silver</a>
+   </div>
+
+   <div class="starContainer">*</div>
+
+
+   <div class="otherLink" id="servicesLink">
+	 <a href="/otherservices.php">
+              Other Services
+          </a>
+   </div>
+ 
+ <div class="starContainer">
+   *
+ </div>
+
+  <div class="otherLink" id="searchLink">
+   <!-- <form name="searchField" target="searchInventory.php" method="post">
+     <input name="searchTerms" value="Search by Pattern, Maker or Item">
+     <input type="button" class="searchResultAddButton" value="Search">
+    </form> -->   
+
+ <a href="/search.php">Search</a>
+  </div>
+
+</div>
+
+</div> <!-- end other links container -->
+
+
+ <!--end other links -->
+
+<!-- begin category links -->
+<div class="categoryLinksContainer" id="jewelryCatLinks">
+  <div class="categoryLinksContainerSub">
+      <ul class="dropdown dropdown-horizontal"><li><a class="red" href="/flatware.php">Flatware</a><ul><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Gorham&pattern=Chantilly&h2=Chantilly+by+Gorham" class="red">Chantilly by Gorham</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Reed%20%26%20Barton&pattern=Francis%20I&h2=Francis+I+by+Reed+%26+Barton" class="red">Francis I by Reed & Barton</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=all&pattern=Fairfax&h2=Fairfax+by+Durgin%2FGorham" class="red">Fairfax by Durgin/Gorham</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Gorham&pattern=Strasbourg&h2=Strasbourg+by+Gorham" class="red">Strasbourg by Gorham</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Towle&pattern=Old%20Master&h2=Old+Master+by+Towle" class="red">Old Master by Towle</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Gorham&pattern=Buttercup&h2=Buttercup+by+Gorham" class="red">Buttercup by Gorham</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=all&pattern=all&searchItem=pearl&h2=Mother+of+Pearl+Items" class="red">Mother of Pearl Items</a>
+                    </li></ul></li><li><a class="red" href="/hollowware.php">Hollowware</a><ul><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=Bread%2B%26%2BButter%2BPlate&h2=Bread+%26+Butter+Plates" class="red">Bread & Butter Plates</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=Napkin%2BRing&h2=Napkin+Rings" class="red">Napkin Rings</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=Mint%2BJulep&h2=Mint+Julep+Cups" class="red">Mint Julep Cups</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=Picture%2BFrame&h2=Picture+Frames" class="red">Picture Frames</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=Goblet&h2=Goblets" class="red">Goblets</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=tray&h2=Trays" class="red">Trays</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=tea%2Bservice&h2=Tea+%26+Coffee+Services" class="red">Tea & Coffee Services</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=h&searchItem=Chafing%2BDish&h2=Chafing+Dishes" class="red">Chafing Dishes</a>
+                    </li></ul></li><li><a class="red" href="/jewelry.php">Jewelry</a><ul><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=ring&h2=Rings" class="red">Rings</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=cuff%2Blink&h2=Cuff+Links" class="red">Cuff Links</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=earring&h2=Earrings" class="red">Earrings</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=necklace%20pendant&h2=Necklaces+and+Pendants" class="red">Necklaces and Pendants</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=pin&h2=Pins" class="red">Pins</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=sterling%20money%20clips&h2=Miscellaneous" class="red">Miscellaneous</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=bracelet&h2=Bracelets" class="red">Bracelets</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=j&brand=all&pattern=all&searchItem=charm&h2=Charms" class="red">Charms</a>
+                    </li></ul></li><li><a class="red" href="/babyS.php">Baby Silver</a><ul><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=baby%2Bcup%2Bjuice%20cup&h2=Baby+Cups" class="red">Baby Cups</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=picture%20frame&h2=Baby+Picture+Frames" class="red">Baby Picture Frames</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=baby%2Bbrush%2Band%2Bcomb%2Bset&h2=Brush+and+Comb+Sets" class="red">Brush and Comb Sets</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=feeding%20spoon&h2=Infant+Feeding+Spoons" class="red">Infant Feeding Spoons</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=baby%2Brattle&h2=Rattles" class="red">Rattles</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=baby%2Bset%202-piece&h2=Two-Piece+Baby+Sets" class="red">Two-Piece Baby Sets</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=youth%2Bset&h2=Youth+Sets" class="red">Youth Sets</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=pacifier%20bib%20clip%20bracelet&h2=Other+Baby+Accessories" class="red">Other Baby Accessories</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=teething%2Bring&h2=Teething+Rings" class="red">Teething Rings</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&searchItem=baby%2Bfood%20pusher&h2=Baby+Food+Pushers" class="red">Baby Food Pushers</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=bs&brand=all&pattern=all&searchItem=charms&h2=Charms" class="red">Charms</a>
+                    </li></ul></li><li><a class="red" href="/collectibles.php">Collectibles</a><ul><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=cl&brand=all&pattern=all&searchItem=Souvenir%20Spoon&h2=Souvenir+Spoons" class="red">Souvenir Spoons</a>
+                    </li><li class="jewelryDropdownLI">
+                        <a href="/productSearchNew.php?category=cl&brand=all&pattern=all&searchItem=Match%20Safe&h2=Vestas" class="red">Vestas</a>
+                    </li></ul></li><li><a class="red" href="/repairs.php">Repairs</a></li><li><a class="red" href="/giftRegistry.php">Gift Registry</a></li></ul></div>
+</div>
+<!-- end category links -->
+
+</div>
+<!-- end page head -->
+
+<!-- begin main content -->
+
+<div class="mainContent">
+  <!-- begin main content head with h1 -->
+  <div class="mainContentHead">
+ 
+    <div class="titleContainer" id="jewelryH1Container">
+        <h1 class="h1PageCatTitle" id="jewelryH1">
+            Sterling Silver Jewelry
+        </h1>
+    </div>
+  
+  <div id="jewelryImage" class="pageCatImage"></div>
+  
+</div>
+
+<!-- end main content head with h1 -->
+<div class="sideMenuContainer" id="<!--sideMenuID-->">
+  <ul>
+ 
+ </ul>
+</div>
+
+ <div class="searchResults">
+      <div class="row tableHead">
+ 	<div class="cell sixteenColumns ">
+ 		<h2 class="searchResultsH2" id="">Charms</h2>
+ 	</div>
+ </div>
+   <div class="row tableHead bottomBorderBlue" id="searchResultsOptions">
+   <form name="searchValues" id="searchVariables">
+                    <input type="hidden" name="searchCategory" value="">
+                    <input type="hidden" name="category" value="j">
+                    <input type="hidden" name="template" value="">
+                    <input type="hidden" name="searchItem" value="charm" id="item">
+                    <input type="hidden" name="recent" value="">
+                    <input type="hidden" name="brand" value="all">
+                    <input type="hidden" name="pattern" value="all">
+                    <input type="hidden" name="pos" value="1">
+                    <input type="hidden" name="order" value="brand, pattern, listOrder, category, item">
+                    <input type="hidden" name="gift" value="">
+                    <input type="hidden" name="limit" value="100">
+                    <input type="hidden" id="results" name="nResults" value="39">
+                <div class="cell twoColumns middleAlign"><strong>39 results</strong></div><div class="cell fourColumns middleAlign" id="searchResultsPosition">
+                                Now Showing 1 - 39
+                            </div>
+            <div class="cell twoColumns middleAlign">Sort by:</div>
+	    <div class="cell fourColumns middleAlign">
+             <select id="resultsOrder" class="searchSort" onchange="sortResults('j','all','all','','','charm','','1','100');">
+                <option value="category,item,pattern,brand" >Item A to Z</option>
+                 <option value="category,item DESC,pattern,brand" >Item Z to A</option>
+                <option value="pattern,brand,category,item" >Pattern</option>
+                <option value="brand,pattern,category,item" >Manufacturer</option>
+                <option value="dimension,pattern,brand">Dimensions</option>
+                <option value="retail ASC" >Price: Low to High</option>
+                <option value="retail DESC" >Price: High to Low</option>
+             </select>  
+            </div><div class="cell threeColumns rightAlign middleAlign">
+                <select class="searchSort" id="displayNResults" name="limit" onChange="changeDisplayLimit('j','all','all','','','charm','','0');">
+                    <option value="10" >Display 10 Items
+                    <option value="50" >Display 50 Items
+                    <option value="100" selected >Display 100 Items
+                </select>
+            </div></form></div><div class="row tableHead twelvePixels bottomBorderDefault">
+               <div class="cell sixteenColumns" id="searchPageNavs">
+               </div>
+               </div><div class="searchResultsSub" id="searchResultsListing">
+				<div class="searchResultsSub" id="searchResultsOverlay">
+				 <div class="row">
+				   <div class="cell sixteenColumns centered">
+				    <img src="/images/resultsLoader.gif"><br>
+				    Loading...
+				   </div>
+				 </div>
+				</div>
+				<form name="itemsForm"><div class="row tableHead bgJewelry">
+                <div class="cell sixteenColumns centered">
+                    <strong class="recentadesc">
+                    FEATURED ITEMS:
+                    </strong>
+                </div>
+            </div><div class="row bgJewelry">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - POPE-44418" class=search>
+                 <img src='/productImages/_TN/CHARM-POPE-82824_TN.jpg' class="productThumbnail" title="charm - pope" alt="charm - pope">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns bgJewelry">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - POPE-44418" class=search>
+                 	Charm - Pope <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 in. diameter</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$45</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns bgJewelry">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=44418&quantity='+this.form.quantity44418.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity44418">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row bgJewelry">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - STREET LAMP-44416" class=search>
+                 <img src='/productImages/_TN/CHARM-STREET-LAMP-82822_TN.jpg' class="productThumbnail" title="charm - street lamp" alt="charm - street lamp">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns bgJewelry">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - STREET LAMP-44416" class=search>
+                 	Charm - Street Lamp <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 in. H x 3/8 in. W</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$28</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns bgJewelry">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=44416&quantity='+this.form.quantity44416.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity44416">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - BIRD-46625" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - bird" alt="charm - bird">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - BIRD-46625" class=search>
+                 	Charm - Bird <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$20</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46625&quantity='+this.form.quantity46625.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46625">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - BIRTHDAY CAKE-46624" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - birthday cake" alt="charm - birthday cake">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - BIRTHDAY CAKE-46624" class=search>
+                 	Charm - Birthday Cake <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$32</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46624&quantity='+this.form.quantity46624.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46624">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - BRIDE AND GROOM-46617" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - bride and groom" alt="charm - bride and groom">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - BRIDE AND GROOM-46617" class=search>
+                 	Charm - Bride And Groom <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$18</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46617&quantity='+this.form.quantity46617.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46617">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CHURCH-46626" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - church" alt="charm - church">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CHURCH-46626" class=search>
+                 	Charm - Church <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$15</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46626&quantity='+this.form.quantity46626.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46626">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CRAB-46571" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - crab" alt="charm - crab">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CRAB-46571" class=search>
+                 	Charm - Crab <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 in H x 1 in. W</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46571&quantity='+this.form.quantity46571.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46571">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CROWN-45887" class=search>
+                 <img src='/productImages/_TN/CHARM-CROWN-83822_TN.jpg' class="productThumbnail" title="charm - crown" alt="charm - crown">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CROWN-45887" class=search>
+                 	Charm - Crown <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>3/8 in. diameter</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">2</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45887&quantity='+this.form.quantity45887.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45887">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CZ SHOE-45240" class=search>
+                 <img src='/productImages/_TN/CHARM-CZ-SHOE-83153_TN.jpg' class="productThumbnail" title="charm - cz shoe" alt="charm - cz shoe">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - CZ SHOE-45240" class=search>
+                 	Charm - Cz Shoe <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 in. H x 3/4 in. W</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$28</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45240&quantity='+this.form.quantity45240.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45240">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - DOLPHINS-46572" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - dolphins" alt="charm - dolphins">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - DOLPHINS-46572" class=search>
+                 	Charm - Dolphins <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 5/8 in. H x 3/4 in. W</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46572&quantity='+this.form.quantity46572.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46572">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - DRUNK-45702" class=search>
+                 <img src='/productImages/_TN/CHARM-DRUNK-83636_TN.jpg' class="productThumbnail" title="charm - drunk" alt="charm - drunk">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - DRUNK-45702" class=search>
+                 	Charm - Drunk <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 1/8 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$28</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45702&quantity='+this.form.quantity45702.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45702">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - DRUNK ON POLE-45673" class=search>
+                 <img src='/productImages/_TN/CHARM-DRUNK-ON-POLE-83607_TN.jpg' class="productThumbnail" title="charm - drunk on pole" alt="charm - drunk on pole">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - DRUNK ON POLE-45673" class=search>
+                 	Charm - Drunk On Pole <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 1/8 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$38</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45673&quantity='+this.form.quantity45673.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45673">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - FDL-45671" class=search>
+                 <img src='/productImages/_TN/CHARM-FDL-83605_TN.jpg' class="productThumbnail" title="charm - fdl" alt="charm - fdl">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - FDL-45671" class=search>
+                 	Charm - Fdl <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>3/4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$15</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45671&quantity='+this.form.quantity45671.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45671">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - FLOWER-46628" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - flower" alt="charm - flower">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - FLOWER-46628" class=search>
+                 	Charm - Flower <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$18</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46628&quantity='+this.form.quantity46628.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46628">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - HEART-46573" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - heart" alt="charm - heart">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - HEART-46573" class=search>
+                 	Charm - Heart <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 1/2 in. H x 1 1/8 in. W</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$45</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46573&quantity='+this.form.quantity46573.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46573">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - MANATEE-46616" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - manatee" alt="charm - manatee">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - MANATEE-46616" class=search>
+                 	Charm - Manatee <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$22</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46616&quantity='+this.form.quantity46616.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46616">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - NO DISK WITH COMEDY TRAGEDY-45674" class=search>
+                 <img src='/productImages/_TN/CHARM-NO-DISK-WITH-COMEDY-TRAGEDY-83608_TN.jpg' class="productThumbnail" title="charm - no disk with comedy tragedy" alt="charm - no disk with comedy tragedy">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - NO DISK WITH COMEDY TRAGEDY-45674" class=search>
+                 	Charm - No Disk With Comedy Tragedy <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 in. diameter</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45674&quantity='+this.form.quantity45674.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45674">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - OPEN SURREY-45675" class=search>
+                 <img src='/productImages/_TN/CHARM-OPEN-SURREY-83609_TN.jpg' class="productThumbnail" title="charm - open surrey" alt="charm - open surrey">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - OPEN SURREY-45675" class=search>
+                 	Charm - Open Surrey <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45675&quantity='+this.form.quantity45675.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45675">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - PALM TREE-46618" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - palm tree" alt="charm - palm tree">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - PALM TREE-46618" class=search>
+                 	Charm - Palm Tree <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$20</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46618&quantity='+this.form.quantity46618.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46618">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - RAINBOW ROW-46619" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - rainbow row" alt="charm - rainbow row">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - RAINBOW ROW-46619" class=search>
+                 	Charm - Rainbow Row <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46619&quantity='+this.form.quantity46619.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46619">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - SHOPPING QUEEN CROWN-44131" class=search>
+                 <img src='/productImages/_TN/CHARM-SHOPPING-QUEEN-CROWN-82528_TN.jpg' class="productThumbnail" title="charm - shopping queen crown" alt="charm - shopping queen crown">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - SHOPPING QUEEN CROWN-44131" class=search>
+                 	Charm - Shopping Queen Crown <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1/2 inches</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$18</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=44131&quantity='+this.form.quantity44131.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity44131">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - TURTLE-46568" class=search>
+                 <img src='/productImages/_TN/CHARM-TURTLE-84491_TN.jpg' class="productThumbnail" title="charm - turtle" alt="charm - turtle">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - TURTLE-46568" class=search>
+                 	Charm - Turtle <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1 1/4 in. H x 3/4 in. W</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46568&quantity='+this.form.quantity46568.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46568">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - VIRGIN MARY-46605" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charm - virgin mary" alt="charm - virgin mary">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_/_/STERLING-SILVER-CHARM - VIRGIN MARY-46605" class=search>
+                 	Charm - Virgin Mary <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46605&quantity='+this.form.quantity46605.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46605">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_CHARLES THOMAE AND SON/_/STERLING-SILVER-CHARM-36204" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="charles thomae & son charm" alt="charles thomae & son charm">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_CHARLES THOMAE AND SON/_/STERLING-SILVER-CHARM-36204" class=search>
+                 	Charm <br>
+                 	Charles Thomae & Son
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>7/8in. diameter</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">2</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=36204&quantity='+this.form.quantity36204.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity36204">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_GRANDMOTHERS BUTTONS/_/STERLING-SILVER-CHARM BRACELET-FDL-39347" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="grandmother's buttons charm bracelet-fdl" alt="grandmother's buttons charm bracelet-fdl">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_GRANDMOTHERS BUTTONS/_/STERLING-SILVER-CHARM BRACELET-FDL-39347" class=search>
+                 	Charm Bracelet-fdl <br>
+                 	Grandmother's Buttons
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>8 inches long</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$65</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">2</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=39347&quantity='+this.form.quantity39347.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity39347">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_GRANDMOTHERS BUTTONS/_/STERLING-SILVER-CHARM BRACELET-ST LOUIS CATHEDRAL-38944" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="grandmother's buttons charm bracelet-st. louis cathedral" alt="grandmother's buttons charm bracelet-st. louis cathedral">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_GRANDMOTHERS BUTTONS/_/STERLING-SILVER-CHARM BRACELET-ST LOUIS CATHEDRAL-38944" class=search>
+                 	Charm Bracelet-st. Louis Cathedral <br>
+                 	Grandmother's Buttons
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>8 inches long</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$65</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">2</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38944&quantity='+this.form.quantity38944.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38944">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-CLASSIC FDL-38936" class=search>
+                 <img src='/productImages/_TN/MADISON-AVERY-DESIGNS-CHARM-CLASSIC-FDL-80130_TN.jpg' class="productThumbnail" title="madison-avery designs charm-classic fdl" alt="madison-avery designs charm-classic fdl">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-CLASSIC FDL-38936" class=search>
+                 	Charm-classic Fdl <br>
+                 	Madison-avery Designs
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>1/2in. h x 3/8in. w</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$15</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">4</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38936&quantity='+this.form.quantity38936.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38936">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-HERITAGE CROSS FDL-39116" class=search>
+                 <img src='/productImages/_TN/MADISON-AVERY-DESIGNS-CHARM-HERITAGE-CROSS-FDL-80311_TN.jpg' class="productThumbnail" title="madison-avery designs charm-heritage cross fdl" alt="madison-avery designs charm-heritage cross fdl">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-HERITAGE CROSS FDL-39116" class=search>
+                 	Charm-heritage Cross Fdl <br>
+                 	Madison-avery Designs
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>3/4in. H x 1/2in. W</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$18</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=39116&quantity='+this.form.quantity39116.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity39116">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-HERITAGE FDL-38938" class=search>
+                 <img src='/productImages/_TN/MADISON-AVERY-DESIGNS-CHARM-HERITAGE-FDL-80132_TN.jpg' class="productThumbnail" title="madison-avery designs charm-heritage fdl" alt="madison-avery designs charm-heritage fdl">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-HERITAGE FDL-38938" class=search>
+                 	Charm-heritage Fdl <br>
+                 	Madison-avery Designs
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>5/8in. h x 7/6in. w</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$15</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">2</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38938&quantity='+this.form.quantity38938.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38938">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-VICTORIAN  FDL-38937" class=search>
+                 <img src='/productImages/_TN/MADISON-AVERY-DESIGNS-CHARM-VICTORIAN--FDL-80131_TN.jpg' class="productThumbnail" title="madison-avery designs charm-victorian  fdl" alt="madison-avery designs charm-victorian  fdl">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_MADISON-AVERY DESIGNS/_/STERLING-SILVER-CHARM-VICTORIAN  FDL-38937" class=search>
+                 	Charm-victorian  Fdl <br>
+                 	Madison-avery Designs
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>3/4in. h x 1/2in. w</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$18</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">3</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38937&quantity='+this.form.quantity38937.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38937">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_MARIAH/_/STERLING-SILVER-CHARM BRACELET-38988" class=search>
+                 <img src='/productImages/_TN/MARIAH-CHARM-BRACELET-80194_TN.jpg' class="productThumbnail" title="mariah charm bracelet" alt="mariah charm bracelet">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_MARIAH/_/STERLING-SILVER-CHARM BRACELET-38988" class=search>
+                 	Charm Bracelet <br>
+                 	Mariah
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>7 1/4in. length</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38988&quantity='+this.form.quantity38988.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38988">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - ALLIGATOR-46600" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm - alligator" alt="unknown charm - alligator">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - ALLIGATOR-46600" class=search>
+                 	Charm - Alligator <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46600&quantity='+this.form.quantity46600.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46600">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - COLORADO-46601" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm - colorado" alt="unknown charm - colorado">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - COLORADO-46601" class=search>
+                 	Charm - Colorado <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$15</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46601&quantity='+this.form.quantity46601.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46601">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - O HOLY GHOST ENLIGHTEN ME-46623" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm - o holy ghost enlighten me" alt="unknown charm - o holy ghost enlighten me">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - O HOLY GHOST ENLIGHTEN ME-46623" class=search>
+                 	Charm - O Holy Ghost Enlighten Me <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46623&quantity='+this.form.quantity46623.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46623">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - PENGUIN-46599" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm - penguin" alt="unknown charm - penguin">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - PENGUIN-46599" class=search>
+                 	Charm - Penguin <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$32</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46599&quantity='+this.form.quantity46599.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46599">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - PINEAPPLE-46597" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm - pineapple" alt="unknown charm - pineapple">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - PINEAPPLE-46597" class=search>
+                 	Charm - Pineapple <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$22</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46597&quantity='+this.form.quantity46597.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46597">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - SILVER DOLLAR-46596" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm - silver dollar" alt="unknown charm - silver dollar">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM - SILVER DOLLAR-46596" class=search>
+                 	Charm - Silver Dollar <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$17</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46596&quantity='+this.form.quantity46596.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46596">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM BRACELET-46538" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm bracelet" alt="unknown charm bracelet">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM BRACELET-46538" class=search>
+                 	Charm Bracelet <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>7 1/4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46538&quantity='+this.form.quantity46538.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46538">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM- BASKET-46598" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="unknown charm- basket" alt="unknown charm- basket">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Jewelry/_UNKNOWN/_/STERLING-SILVER-CHARM- BASKET-46598" class=search>
+                 	Charm- Basket <br>
+                 	
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong></strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$22</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46598&quantity='+this.form.quantity46598.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46598">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div></form></div>
+    </div>    
+ </div>
+  <!-- end main content -->
+
+ <div id="footer">
+   
+ </div>
+
+</div>
+<!-- end container -->
+
+</body>
+</html>
+
+
+
+
+

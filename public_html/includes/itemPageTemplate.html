@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><!--pageTitle--></title>
+<meta charset="UTF-8"/>
+<meta name="description" content="<!--pageDescription--> . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+<meta name="keywords" content="<!--keywords-->" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<!--ogTags-->
+<base href="//www.asyoulikeitsilvershop.com">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/images.js"></script>
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript" src="/js/giftRegistry.js"></script>
+<script type="text/javascript" src="/js/suggestedItems.js"></script>
+<script type="text/javascript" src="/js/share.js"></script>
+
+<link rel="stylesheet" href="/css/dropdown/imports.css">
+
+<link rel="stylesheet" href="/ayliss_style<!--cs-->.css" type="text/css">
+<link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
+<link rel="stylesheet" href="/css/lightbox.css" type="text/css">
+<link rel="stylesheet" href="/css/mobile.css" type="text/css">
+
+<script>
+	
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31581272-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">
+	var imageData=[];
+	
+	//var pluginUrl ='//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  
+  /*var _gaq = _gaq || [];
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-31581272-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  */
+  
+ $(document).ready(function(){
+	 $.bindChangePictures();
+ });
+  $.bindChangePictures=function(){
+	
+	$('.changepicture').each(function(){
+		
+		
+		$(this).on('click',function(){
+	    	var index=$(this).data('index');
+			var smallImage = $(this).data('file');
+			$('#lightboxLink').attr('href',$(this).data('lightbox'));
+			console.log($(this).data('lightbox'));
+			$('#mainItemImage').attr('src',smallImage);
+		
+		});
+   });
+
+};
+  
+</script>
+
+<style>
+ 
+ div#suggestedItems{
+	 display: inline-block;	 
+	 margin-left: 0px;
+	 max-width: 817px;
+	 width: 100%;
+	 
+ }
+ div.patternHead{
+	 width: 99%;
+ }
+ 
+</style>
+
+</head>
+
+<body class="sub" onLoad="preLoad(<!--onLoad-->);getItemCount();">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="container">
+<!-- begin page head -->
+<div class="pageHead" id="<!--pageHeadID-->">
+<!-- page Header image -->
+  <div class="pageHeaderImage row nopad" id="<!--pageHeadImageID-->">
+  <div class="row centered" id="mobilePageHeader">
+  As You Like It Silver Shop
+	  <span id="mobileDescription"> 
+		  Antique Silver Flatware, Hollowware, Jewelry, Baby Silver, Repairs
+		  </span>
+  </div>
+    <img class="pageBanner" src="<!--pageHeadImage-->" alt="<!--pageHeadImageAlt-->" title="<!--pageHeadImageTitle-->">
+ 
+ <div id="contactInfo" class="cell eightColumns">
+	<a href="contact.php" class="contactLink">Contact Us</a>
+	1-800-828-2311	
+</div>
+   <!-- begin cart container --> 
+  <div class="cell sevenColumns" id="cartContainer">
+   <a href="/shoppingCart.php" class="top">
+    Your Cart Has <img src='/images/c__.gif' name=nums3 align=bottom>
+	       <img src='/images/c__.gif' name=nums2 align=bottom>
+	       <img src='/images/c_0.gif' name=nums1 align=bottom>
+    Items
+     <img class="silverChest" src="/images/silverchest_empty.gif" name=chest>
+    <div style="display:none">
+    <button class="viewCart">
+     <span class="viewCartCaption" id="cartStatus">Your Cart Is Empty </span>   
+     <div class="cartImageContainer">
+     		<div id="itemCount"></div>
+     		<img src="/images/shoppingcart.png">
+     	</div>
+     
+    </button>
+    </div>
+   </a>
+<!-- end cart link -->
+ </div>
+ <!-- end cart container -->
+ 
+  </div>  
+   <!-- end page header image -->
+
+<!-- begin other links -->
+<!--otherLinks-->
+
+
+ <!--end other links -->
+
+<!-- begin category links -->
+<div class="categoryLinksContainer" id="<!--catLinksID-->">
+  <!--catLinks-->
+</div>
+<!-- end category links -->
+
+
+
+</div>
+<!-- end page head -->
+
+
+
+<!-- begin main content -->
+
+<div class="mainContent">
+  <!-- begin main content head with h1 -->
+  <div class="mainContentHead fullWidth" id="<!--h1ContainerID-->">
+    <div class="titleContainer">
+     <h1 class="h1PageCatTitle" id="<!--h1ID-->"><!--h1--></h1>
+     <!--breadCrumb-->
+    </div>
+   <div id="<!--mainContentHeaderImage-->" class="pageCatImage"></div>
+
+ </div>
+  <!-- end main content head with h1 -->
+
+   <div class="row" id="navBack">
+   <div class="cell oneColumn"></div>
+   		<div class="cell fifteenColumns">
+   			<!--backNav-->
+   		</div>
+   </div>
+  <form name="itemsForm">
+  
+  <!-- <div class="row">
+   	 <div class="cell oneColumn"></div>
+   	 <div class="cell fifteenColumns">
+	   	 <div class="patternHead">
+        	<h2 class="patternName"><!--patternHead--><!--</h2>
+        </div>
+   	 </div>
+   </div>
+   -->
+   
+   <div class="row">
+    <div class="cell oneColumn" ></div>
+    <div class="cell fifteenColumns" id="itemInformation">
+    
+    <div class="row">
+     <div class="patternHead">
+	     <h2 class="patternName"><!--patternHead--></h2>
+     </div>
+    </div>
+    
+    <div class="row">
+     <div class="cell sixColumns centered" >
+       <!--itemImage-->
+       <!--imageThumbnails-->
+          <div id="staticItemShareLinks">
+	       	<!--shareLinks-->
+	       	<!--pinItButton-->
+	       	<!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-annotation="none"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+	      </div> 
+     </div>
+     <div class="cell oneColumn"></div>
+     <div class="cell sixColumns" id="">
+        <div id="staticItemName">
+	        <h2 class="itemTitle"><!--item--></h2>
+        </div>
+        <div id="staticItemDimensions"><!--dimensions--></div>
+        <div id="staticItemDescription"><!--description--></div>
+        <div id="staticItemPrice">$<!--price--></div><br>
+        <div class="staticFieldLabel">In Stock:</div>
+        <div id="staticItemQty"><!--qty--></div>
+        <br>
+        <br>
+        <div id="staticItemAdd"><!--addItem--></div>
+          	       	
+        <div id="viewMoreItems"><!--moreItems--></div>  
+        <div id="staticItemCategoryLinks">
+         <div class="staticItemCatLinkSEO" id="hollowLink"><!--hlink--></div>
+         <div class="staticItemCatLinkSEO" id="flatwareLink"><!--flink--></div>
+         <div class="staticItemCatLinkSEO" id="babyLink"><!--blink--></div>
+         <div class="staticItemCatLinkSEO" id="jewelLink"><!--jlink--></div>
+       </div> 
+
+</div>   
+     <!--end details --> 
+    </div>
+   
+    </div>
+      
+      <div class="row">
+	     <div class="cell oneColumn"></div>
+	     <!--suggestedItems-->
+	  </div>
+  </form>
+ 
+
+  <!-- end main content -->
+</div>
+
+ <footer>
+   <!--copyright-->
+ </footer>	
+</div>
+<!-- end container -->
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+</body>
+</html>
+
+
+
+
+

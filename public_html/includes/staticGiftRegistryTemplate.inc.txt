@@ -1,0 +1,110 @@
+<!DOCTYPE html
+
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title><!--title--></title>
+
+<meta name="description" content="<!--description--> . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+
+<meta name="keywords" content="<!--keywords-->, silver storage, silver cleaning, silver storage products, silver cleaning products, silver repair, monograms, sterling silver storage, sterling silver cleaning, sterling silver storage products, sterling silver cleaning products, sterling silver repair, sterling silver monograms" />
+ 
+<script language="javascript" src='/js/images.js'></script>
+<script language='javascript' src='/js/store.js'></script>
+<script language='javascript' src='/js/cookie.js'></script>
+<script language='javascript' src='/js/giftRegistry.js'></script>
+<script language='javascript' src='/js/suggestedItems.js'></script>
+<script language='javascript' src='/js/share.js'></script>
+<script language='javascript' src='/js/fade/js'></script>
+<link rel="stylesheet" href="/ayliss_style.css" type="text/css">
+
+</head>
+
+<body class="sub" onLoad="loadRegistryItems(<!--regID-->)">
+
+
+<div id="pageHead" style="background-color:#A27177;width:100%;height:85px;position:relative;top:0px;left:0px;display:block;">
+
+  	<div id="pageGraphic" style="display:inline;width:760px;background-image:url('/images/ayliss_title_r.jpg');text-align:right;vertical-align:top;">
+		<img src="/images/blank.gif" width="760" height="1" alt="As You Like It Silver Shop" border="0">
+	</div>
+
+	<div id="contactUs" style="display:inline;position:absolute;top:10px;float:left;left:10px;>
+		<p class="homenav"><a href="/contactus.php" class="top">CONTACT US</a> * 1-800-828-2311</p>
+	</div>
+
+	<div id="shoppingCart" style="display:inline;float:right;width:auto;top:10px;">
+	<p class="homenav">YOUR SILVER CHEST HAS <img src='images/c__.gif' name=nums3 align=bottom><img src='images/c__.gif' name=nums2 align=bottom><img src='images/c_0.gif' name=nums1 align=bottom> ITEMS.<a href="/orderdetails.php" class="top"><img src="/images/silverchest_empty.gif" border="0" align="top" hspace="0" vspace="0" border="0" name=chest></a></p>
+	</div>
+</div>
+
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+
+<tr bgcolor="#000000">
+
+	<td width="760" bgcolor="#000000" align="left"> 
+
+		<img src="/images/blank.gif" width="10" height="1" alt="" border="0">
+
+		<a href="/gifts.html" onMouseOver="document.blair.src=/greatgiftson.src" onMouseOut="document.blair.src=/greatgiftsoff.src"><img name="blair" src="/images/nav_greatgifts_1.gif" width="101" height="29" title="Great Sterling Silver Gifts" alt="Great Sterling Silver Gifts" border="0"></a>
+
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+
+		<a href="/cleaning.php" onMouseOver="document.chuck.src=/cleaningon.src" onMouseOut="document.chuck.src=/cleaningoff.src"><img name="chuck" src="/images/nav_cleaning_1.gif" width="200" height="29" title="Sterling Silver Cleaning and Storage Products" alt="Sterling Silver Cleaning and Storage Products" border="0"></a>
+
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+
+		<a href="/otherservices.php" onMouseOver="document.daniel.src=/otheron.src" onMouseOut="document.daniel.src=/otheroff.src"><img name="daniel" src="/images/nav_other_1.gif" width="135" height="29" alt="Other Products" alt="Other Products and Services" border="0"></a>
+
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+
+		<a href="/search.php" onMouseOver="document.fritz.src=/searchon.src" onMouseOut="document.fritz.src=/searchoff.src"><img name="fritz" src="/images/nav_search_1.gif" width="68" height="29" title="Search Our Sterling Silver Inventory" alt="Search Our Sterling Silver Inventory" border="0"></a>
+
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+
+		<img onClick="javascript:location='http://www.asyoulikeitsilvershop.com'" onMouseOver="document.edwin.src=/returnhomeon.src" onMouseOut="document.edwin.src=/returnhomeoff.src" name="edwin" src="/images/nav_home_1.gif" width="52" height="29" title="As You Like It Silver Shop Home" style="cursor:pointer;" alt="As You Like It Silver Shop Home" border="0">	
+	
+	</td>
+
+	<td width="*"><img src="/images/blank.gif" width="10" height="1" alt="" border="0"></td>
+
+</tr>
+
+</table>
+
+<br clear="all">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="left">
+
+<tr class=mainsub>
+
+	<td width="760" align="center"> 
+
+	<!--silver_cats-->
+
+	</td>
+
+	<td width="*"><img src="/images/blank.gif" width="10" height="1" alt="" border="0"></td>
+
+</tr>
+
+</table>
+
+<br clear="all">
+
+<table width="760" cellpadding="0" cellspacing="0" border="0" align="left">
+
+<tr>
+
+	<td colspan="3"><img src="/images/<!--title--> width="760" height="66" alt="<!--category-->"></td>
+
+</tr>
+
+</table><br clear="all">

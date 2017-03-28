@@ -1,0 +1,46 @@
+<div class="container sixteen colgrid">
+<div class="row border-bottom">
+	<div class="six columns push_two middleAlign">Item</div>
+	<div class="two columns">Price</div>
+	<div class="six columns">Quantity</div>
+</div>
+{{#items}}
+{{#if giftCard}}
+<div class="row">
+	<div class="six columns push_two middleAlign">As You Like It Silver Shop Gift Card<br>
+		<span class="addressDetails">Delivery to: {{deliverTo}}</span>
+	</div>
+	<div class=" two  columns bold rightAlign middleAlign">
+		<div class="field">
+			<input class="input center" type="text" value="{{retail}}" id="quantitygc{{id}}" name="quantitygc{{id}}">
+		</div>
+		<input name="emailgc{{id}}" type="hidden" value="">
+	</div>
+    <div class=" two columns center">1</div>
+	<div class=" one column middleAlign">
+		<span title="Remove Item" class="remove-button" data-remove="gc{{id}}">X</span>
+	</div>
+</div>
+{{else}}	
+<div class="row">
+	<div class="two columns"><img class="shoppingCartImage" src="{{image}}" title="{{itemName}}" alt="{{itemName}}"></div>
+	<div class="six  columns bold middleAlign">
+		<a href="showItem.php?product={{id}}" title="{{itemName}}" class="search">{{itemName}}</a>
+	</div>
+	<div class=" two  columns bold rightAlign middleAlign">
+		${{retail}}
+	</div>
+	<div class=" two  columns bold middleAlign">
+		<div class="field">
+			<input class="small input center" type="text" size="2" value="{{quantity}}" id="quantity{{id}}" name="quantity48873">
+	</div>
+	</div>
+	<div class=" one column middleAlign">
+		<span title="Remove Item" class="remove-button" data-remove="{{id}}">X</span>
+	</div>	
+</div>
+{{/if}}
+
+{{/items}}
+
+</div>

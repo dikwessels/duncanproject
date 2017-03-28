@@ -1,0 +1,165 @@
+/*
+hue of blue is 247 in pshop
+1 - #6699CC
+2 - #060033
+3 - #1F118C
+4 - #1E1278
+5 - #2E12FF
+6 - #0000aa
+7 - #dedeff
+8 - #151545
+9 - $B7B4CF
+*/
+ 
+ 
+ 
+  body {background-color:#6699CC; margin:0px;}
+  body.sub {background-color:#ffffff; margin:0px;}
+  
+  a:link {color:#1F118C;}
+  a:active {color:#060033;}
+  a:hover {color:#060033;}
+  a:visited {color:#1F118C;}
+  
+  a.cool:link, a.cool:visited {color:#1E1278; text-decoration: none; font-size: 12px; font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; }
+  a.cool:hover, a.cool:active {color:#1E1278; text-decoration: underline; font-size: 12px; font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; }  
+  
+  a.top:link, a.top:visited {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight: bold; text-decoration: none;}
+  a.top:hover, a.top:active  {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#ffffaa; font-weight: bold; text-decoration: underline;}
+  
+  a.red:link, a.red:visited {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight: bold; text-decoration: none; letter-spacing: 2px;}
+  a.red:hover, a.red:active  {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#ffffaa; font-weight: bold; text-decoration: underline; letter-spacing: 2px;}
+  
+  a.onred:link, a.onred:visited {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFaa; font-weight: bold; text-decoration: none; letter-spacing: 2px;}
+  a.onred:hover, a.onred:active  {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#ffffaa; font-weight: bold; text-decoration: underline; letter-spacing: 2px;}
+  
+  a.search:link, a.search:visited {font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#1E1278; font-weight: bold; text-decoration: underline; letter-spacing: 0px;}
+  a.search:hover, a.search:active  {font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#000000; font-weight: bold; text-decoration: underline; letter-spacing: 0px;}
+  
+  a.searchrecent:link, a.searchrecent:visited {font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#2E12FF; font-weight: bold; text-decoration: underline; letter-spacing: 0px;}
+  a.searchrecent:hover, a.searchrecent:active  {font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#000000; font-weight: bold; text-decoration: underline; letter-spacing: 0px;}
+
+  a.searchnostock:link, a.searchnostock:visited {font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#bbbbbb; font-weight: bold; text-decoration: underline; letter-spacing: 0px;}
+  a.searchnostock:hover, a.searchnostock:active  {font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#666666; font-weight: bold; text-decoration: underline; letter-spacing: 0px;}
+
+  a.outofstock:link, a.outofstock:visited {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#0000aa; font-weight: bold; text-decoration: none; letter-spacing: 0px;}
+  a.outofstock:hover, a.outofstock:active  {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#000000; font-weight: bold; text-decoration: underline; letter-spacing: 0px;}
+
+  a.bottom:link, a.bottom:visited {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; font-weight: bold; text-decoration: none;}
+  a.bottom:hover, a.bottom:active  {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#ffffaa; font-weight: bold; text-decoration: underline; }
+
+  a.listme:link, a.listme:visited {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; font-weight: bold; text-decoration: none;}  
+  a.listme:hover, a.listme:active  {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFaa; font-weight: bold; text-decoration: underline;}
+
+  a.listmebold:link, a.listmebold:visited {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFaa; font-weight: bold; text-decoration: none;}  
+  a.listmebold:hover, a.listmebold:active  {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight: bold; text-decoration: underline;}
+
+  a.recentacqs:link, a.recentacqs:visited {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size:16px; color:#ffffff; font-weight: normal; text-decoration: none; letter-spacing: 0px;}
+  a.recentacqs:hover, a.recentacqs:active  {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size:16px; color:#000000; font-weight: normal; text-decoration: underline; letter-spacing: 0px;}
+
+  th a:link {color: #ffffff; text-decoration: none;}
+  th a:visited {color: #ffffff; text-decoration: none;}
+  th a:hover {color: #dedeff; text-decoration: underline;} 
+  th a:hover {color: #dedeff; text-decoration: underline;} 
+  
+  p {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#333333;}
+  p.body {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#333333; margin-right:50px; line-height: 16px;}
+  p.fancybody {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size: 16px; color:#1E1278; margin-right:50px; text-align: center;}
+  p.address {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#ffffaa; text-align: center;}
+  p.bold {font-family: Arial, Helvetica, sans-serif; font-size:14px; color:#ffffff; font-weight: bold; letter-spacing: 1px; margin-top:20px;}
+  p.phone {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:80%; color:#FFFFFF;}
+  p.homenav {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; font-weight: bold; letter-spacing: 1px; margin: 10px 30px 0 10px;}
+  p.bottom {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#000000; margin-top; 10px;}
+  
+  p.search {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#333333;}
+  p.searchnostock {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#bbbbbb;}
+  
+  b.searchnostock {font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#aa0000; font-weight: bold;}
+  b.example {font-family: Verdana, Arial, Helvetica, sans-serif; font-size:10px; color:#999999; font-weight: normal;}
+  b.title {font-family: Arial, Helvetica, sans-serif; font-size:12px; text-align:center; color=#ffffff; font-weight: bold; background-color:#6699CC; padding: 1px;}
+
+
+ div.patternHead{
+     background-color:#6699CC;
+    color:#FFFFFF;
+    font-size:18px;
+    min-height:20px;
+    padding:0 0 2px 10px;
+    position:relative;
+    width:400px;
+ }
+  div.shareDiv{
+   border-style:none;
+   display:inline;
+   position:absolute;
+   width:auto;
+  }
+div#suggestedItems{
+    border:1px solid #6699CC;
+    display:block;
+    font-family:inherit;
+    height:auto;
+    left:0px;
+    margin-left:50px;
+    overflow-y:hidden;
+    padding:10px;
+    position:relative;
+    text-align:left;
+    width:690px;
+}
+
+div#suggestedItems a img{border:1px solid #aaaaaa;max-height:75px;max-width:100px;}
+
+  td {font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+  td.bigcell {text-align:center; vertical-align:top; border-color:white; background-color:#ffffff;}
+  td.smallcell {text-align:center; vertical-align:top; background-color:#000000;}
+  td.leftcell {text-align:left; vertical-align:top; background-color:#ffffff; width:50%;}
+  td.rightcell {text-align:center; vertical-align:top; background-color:#ffffff; width:50%;}
+  td.bottom {vertical-align:middle; background-color:#ffffff; width:50%;}
+  td.cart {text-align:right; vertical-align:top}
+  td.nav {font-size:16px }
+  
+  th {font-family: Arial, Helvetica, sans-serif; font-size:12px; text-align:center; color=#ffffff; font-weight: bold; background-color:#6699CC; padding: 1px;}
+  th.search {font-family: Arial, Helvetica, sans-serif; font-size:12px; text-align: left; color=#ffffff; font-weight: bold; background-color:#6699CC; padding: 1px;}
+  th.control {font-family: Arial, Helvetica, sans-serif; font-size:18px; color:#ffffff; font-weight: bold; letter-spacing: 1px; background-color: #000000; padding: 10px;}
+
+  H3  {font-family: Arial, Helvetica, sans-serif; font-size:16px; color:#333333; letter-spacing: 2px; background-color:#eeeeee; padding: 5px;}
+  H5 {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size:18px; color:#ffffff; letter-spacing: 0px; font-weight: normal; background-color:#6699CC; padding-top: 2px; padding-bottom: 2px; padding-left: 10px;}
+
+
+  
+  ul {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; font-weight: bold; list-style-type: none;}
+  li {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; font-weight: bold; list-style-type: none; margin-top: 6px;}
+  li.on {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFaa; font-weight: bold; list-style-type: disc; text-decoration: underline;}
+
+  li li {font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#FFFFFF; font-weight: bold; list-style-type: circle;}
+
+  .category {font-family: Arial, Helvetica, sans-serif; color:#6699CC; font-weight: normal;}
+  
+   
+  input {background-color: #dedeff; font-size: 12px; color:#151545;}	
+  select {background-color: #dedeff; font-size: 10px;  color:#151545;}
+  textarea {background-color: #dedeff; font-size: 10px;  color:#151545;} 
+  submit {background-color: #dedeff; font-size: 10px;  color:#151545;} 
+  checkbox {background-color: #dedeff; font-size: 10px;  color:#151545;} 
+  radio {background-color: #dedeff; font-size: 10px;  color:#151545;} 
+    	
+  table.recentacqs th {background-color: #6699CC; text-align: left; padding: 3px 0 3px 20px; }
+  table.recentacqs td.color {background-color: #dedeff; padding: 5px 0 5px 3px;}
+
+ 
+  b.recentatitle {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size: 20px; color:#666666; font-weight: normal;}
+  b.recentadesc {font-family: 'Times New Roman', Times, Palatino, serif; font-size: 14px; color: #1F118C; font-weight: normal;}
+
+  a:link.recentadesc, a:visted.recentadesc {font-family: 'Times New Roman', Times, Palatino, serif; font-size: 14px; color: #1F118C; font-style: italic; font-weight: normal; text-decoration: underline;}
+  a:active.recentadesc, a:hover.recentadesc {font-family: 'Times New Roman', Times, Palatino, serif; font-size: 14px; color: #000000; font-style: italic; font-weight: normal; text-decoration: underline;}
+  
+  td.bottomline {background-color: #6699CC;}
+
+  td.searcharrownav {color: #1F118C; font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size: 14px; font-weight: bold;}
+  
+  table.mainsub{background-color:#8F8BAE;}
+  tr.mainsub{background-color:#6699CC;}
+  hr.mainsub{background-color:#6699CC;}
+
+  span.imgCaption{font-size:10px;} 

@@ -1,0 +1,124 @@
+a.closeDialog{
+ color:#aaaaaa;
+ font-size:12pt;
+ text-decoration:none;
+ border-style:none;
+}
+
+a.closeDialog:visited{
+ color:#aaaaaa;
+}
+
+a.closeDialog:hover{
+ color:#666666;
+}
+
+#closeDialog{
+    position:relative;
+    top:5px;
+    display:inline;
+    float:right;
+    width:auto;
+    text-align:right;
+    color:#aaaaaa;
+    font-size:10pt;"
+}
+
+.dialog_block {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+
+	-moz-border-radius:8px;
+        -webkit-border-radius:8px;
+ 	
+	//border:8px solid rgba(82,82,82,.695312);
+	border-bottom-left-radius: 8px 8px;
+        border-bottom-right-radius: 8px 8px;
+        border-top-left-radius: 8px 8px;
+        border-top-right-radius: 8px 8px;
+
+        background: rgba(82, 82, 82, 0.695312) none repeat scroll 0 0;
+        //background-color:;	
+	       
+	padding: 0px 8px 0px 8px;
+	
+	position:relative;
+	float:left;
+        left:50%;
+	margin:0px 0px 0px -250px;
+	top:26%;
+
+	width:auto;
+	z-index:100;
+}
+
+.dialogBody {
+	//-moz-background-clip:border;
+	//-moz-background-inline-policy:continuous;
+	//-moz-background-origin:padding;
+	background:#FFFFFF none repeat scroll 0 0;
+	float:left;
+	margin:10px 0;
+	padding:10px 0;
+	width:100%;
+   // max-width:400px;
+}
+
+.dialogBorder{
+        -moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	-moz-border-radius:8px;
+        -webkit-border-radius:8px;
+
+        background:#ffffff none repeat scroll 0 0;
+        background-color: rgba(82, 82, 82, 0.695312);	
+        border-bottom-left-radius: 8px 8px;
+        border-bottom-right-radius: 8px 8px;
+        border-top-left-radius: 8px 8px;
+        border-top-right-radius: 8px 8px;
+
+        float:left;
+	left:50%;
+	margin:0 0 0 -250px;
+        min-width:400px;
+	position:relative;
+	top:26%;
+	width:auto;
+	z-index:100;
+}
+
+#dialogHeader{
+    position:relative;
+    display:inline;
+}
+
+#fade {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#aaaaaa none repeat scroll 0 0;
+	height:100%;
+	filter:alpha(opacity=40);
+        left:0;
+	opacity:0.4;
+	position:fixed;
+	width:100%;
+	z-index:10;
+}
+
+#hideshow {
+    	height:100%;
+	left:0;
+	position:absolute;
+	top:0;
+        visibility:hidden;
+	width:100%;
+}
+
+
+
+ 
+ 
+ 

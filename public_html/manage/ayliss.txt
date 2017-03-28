@@ -1,0 +1,39 @@
+.jpg	brand	pattern	item	description	"type: h, f, sp, cs, b"	 retail 
+centerbowl5s.jpg	Whiting		Bowls	Pedestal Fruit Bowl	h	 $685 
+centerbowl6s.jpg	Reed and Barton		Bowls	Fruit Bowl	h	 $875 
+candelabra8s.jpg	Sheffield 		candelabra	3-Lite	h	" $4,700 "
+candelabra5S.jpg	Sheffield 		candelabra	3-Lite	h	" $4,500 "
+CNDLSTK5	George III		candlestick		h	" $1,800 "
+CNDLSTK6	Kirk	Calvert	candlestick	Pair 	h	 $265 
+BOWL4	Gorham 		bowls	Pierced Centerpiece	h	" $2,500 "
+BOWL1	Sheffield		bowls		h	" $3,800 "
+LUNTORN1	Lunt		ornament		h	 $64 
+LUNTORN6	Lunt		ornament		h	 $80 
+GOBLET7A	Wallace		goblet		h	 $165 
+GOBLET7B	Gorham		goblet		h	 $165 
+DOME3	English Silver		dome		h	 $995 
+DOME8	Black Star & Frost		dome		h	" $1,100 "
+JULEP1A			julep cup	Etched Design with Horse Emblem	h	 $110 
+JULEP1B			julep cup	Banded Design with Fleur De Lis Emblem	h	 $155 
+NR1			napkin ring	Stag	h	 $165 
+NR9			napkin ring	Pierced	h	 $48 
+FRAME21			frame	Lined Border	h	 $110 
+FRAME20			frame	Single Beaded Border	h	 $98 
+SP4			salt cellars	Set of 4	h	 $825 
+SP5	Stieff		pepper shaker		h	 $210 
+TS14	Hirsch	Victoria	tea set		h	" $6,500 "
+TS11	English Sterling 		tea set	5-PC	h	" $6,800 "
+TRAY2			tray	Beaded Rim English Silver Tray	h	" $2,200 "
+TRAY7	Gorham 	Chantilly	tray	Oval Tray	h	 $695 
+WP9	Rosepoint 		pitcher	Water Pitcher	h	" $1,950 "
+WP2	International Sterling 		pitcher	Water Pitcher	h	" $1,200 "
+WINE16			pitcher	Floral Motif Claret Pitcher	h	" $1,100 "
+WINE14			decantur	Crystal Decantur	h	 $825 
+WINE16			pitcher	Floral Motif Claret Pitcher	h	" $1,100 "
+SRVNG4			orange peeler	Set English	sp	 $245 
+SRVNG9				English Asparagus Serving Tongs	sp	 $87 
+BABY16	Tuttle	Pantheon	Baby Cup		b	 $155 
+BABY10		Repousse Style	Baby Cup	"Monogramm ""Theodora from her cousin Theodore"""	b	 $675 
+						
+						
+						

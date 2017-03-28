@@ -1,0 +1,28 @@
+<div class="cell fiveColumns centered">
+ 
+                     <p class="search">
+                    <!--image goes here ok--> {{imagecontent}}         
+            
+                     </p>
+                           <h3 class="searchResultsH3" data-version="2.0">
+                     <strong>
+                      <a data-test="hello" title="{{imgTitle}}" class="search" href="{{statURL}}">{{item}} {{monogram}} </a>
+                     </strong>
+                    </h3>
+                    
+        <p class="search">
+       		<strong class="itemPrice">${{price}}</strong>
+       	</p>
+        <div class="spacer">
+           <strong class="itemQty">In Stock: {{instock}}</strong>
+        </div>
+<div>
+	<strong>    
+			<input type="button" data-itemid="{{id}}" value="Add to Cart" class="searchResultAddButton">
+            <input class="staticItemAddQty" type="text" value="1" size="2" id="quantity{{id}}" name="quantity{{id}}">
+                    <!--                  
+<input type="button" onclick="javascript:location='/addItem.php?id={{id}}&quantity='+this.form.quantity{{id}}.value+'&temp=h'" value="Add to Cart" class="searchResultAddButton">&nbsp;
+    </strong>
+                     <input type="text" name="quantity{{id}}" size="2" value="1" class="staticItemAddQty">-->
+                   </div>
+  </div>

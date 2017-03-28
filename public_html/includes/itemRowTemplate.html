@@ -1,0 +1,35 @@
+<div class='row {{bgcolor}}'>
+
+		 <div class='cell eightColumns'>
+                     <h3 data-version='2.0' class='searchResultsH3'>
+                     <strong>
+                      <a href='{{statURL}}' class={{class}} title='{{imgTitle}}'>{{item}} {{monogram}}</a>
+                     </strong>
+                    </h3>
+                    
+                     <p class={{class}}>
+                    <!--image goes here ok--> {{imagecontent}}
+                     <strong>{{dimension}}</strong>
+                     </p>
+                </div>
+		<div class='cell twoColumns'>
+                    <p class={{class}}><strong class='itemPrice'>${{price}}</strong></p>
+                </div>
+                
+                <div class='cell alignRight sixColumns'>
+                    <div class='spacer'>
+                    <strong class='itemQty'>In Stock: </strong>
+                   </div>
+
+                   <div class='spacer centered'>
+                    <strong class='itemQty'>{{instock}}</strong>
+                   </div>
+                    <p class={{class}}>
+                     <strong>
+                      <input class='searchResultAddButton' id="button{{id}}" data-product="{{id}}" type='button' value='Add to Cart' onClick="document.location.href='/addItem.php?id={{id}}&quantity='+this.form.quantity{{id}}.value+'&temp=h;'">&nbsp;
+                     </strong>
+                     <input class='staticItemAddQty' type='text' value='1' size="2" id="quantity{{id}}" name="quantity{{id}}">
+                    </p>
+                </div>
+                
+                </div>

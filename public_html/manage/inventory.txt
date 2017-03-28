@@ -1,0 +1,75 @@
+productId	brand	pattern	quantity	item   	description  	dimension	weight	retail	image	monogram	category	sale	time
+	REED & BARTON	BURGUNDY 	1	COLD MEAT FORK			_	85.00	BURGUNDY COLD MEAT FORK LG.jpg		SP		N
+	REED & BARTON	BURGUNDY 	1	CREAM / SAUCE LADLE				32.00	BURGUNDY CREAM SAUCE LADLE LG.jpg		SP		N
+									Burgundy Cream Sauce Spoon		SP		N
+									Burgundy Jelly Spoon		SP		N
+	REED & BARTON	BURGUNDY 	1	POULTRY SHEARS				110.00	BURGUNDY POULTRY SHEARS LG.jpg		SP		N
+	GORHAM	BUTTERCUP	1	ASPARAGUS SERVER (HOODED)				78.00	BUTTERCUP ASPARAGUS SERVER LG.jpg		SP		N
+	GORHAM	BUTTERCUP	3	ICE SCOOP				65.00	BUTTERCUP ICE SCOOP LG.jpg		SP		N
+	GORHAM	BUTTERCUP	4	WEDDING CAKE KNIFE (SWORD)				65.00	BUTTERCUP WEDDING KNIFE LG.jpg		SP		N
+	TOWLE	CANDLELIGHT	1	ASPARAGUS SERVER (HOODED)				78.00	CANDLELIGHT ASPARAGUS SERVER LG.jpg		SP		N
+									Candlelight Gravy Ladle		SP		N
+	GORHAM	CHANTILLY	2	ASPARAGUS SERVER (HOODED)				78.00	CHANTILLY ASPARAGUS SERVER LG.jpg		SP		N
+	GORHAM	CHANTILLY	3	COCKTAIL FORK				25.00	CHANTILLY COCKTAIL FORK LG.jpg		F		N
+	GORHAM	CHANTILLY	1	COCKTAIL FORK				18.00	CHANTILLY COCKTAIL FORK LG.jpg		F		N
+	GORHAM	CHANTILLY	6	DEMITASSE SPOON				25.00	CHANTILLY DEMITASSE SPOON LG.jpg		F		N
+	GORHAM	CHANTILLY	1	DEMITASSE SPOON				15.00	CHANTILLY DEMITASSE SPOON LG.jpg		F		N
+	GORHAM	CHANTILLY	2	ICE SCOOP				65.00	CHANTILLY ICE SCOOP LG.jpg		SP		N
+									Chantilly Sugar Spoon		SP		N
+									Chantilly Teaspoon		F		N
+									Chantilly Wedding Knife and Cake Server		SP		N
+									Contour Jelly Server		SP		N
+									Contour Pickle Fork		SP		N
+									Contour Steak Carving Set		CS		N
+									Contour Tomato Server		SP		N
+									Etruscan Cheese Server		SP		N
+	GORHAM	ETRUSCAN	1	CHEESE SERVER - HH				45.00	ETRUSCAN CHEESE SERVER LG.jpg		SP		N
+	GORHAM	ETRUSCAN	1	PRESERVE SPOON		"7 1/2"""		58.00	ETRUSCAN PRESERVES SPOON LG.jpg		SP		N
+	GORHAM	ETRUSCAN	1	STEAK CARVING SET 2-PIECE				65.00	ETRUSCAN STEAK CARVING SET LG.jpg		CS		N
+	GORHAM	ETRUSCAN	2	SUGAR SPOON				32.00	ETRUSCAN SUGAR SPOON LG.jpg		SP		N
+	GORHAM	ETRUSCAN	1	SUGAR SPOON				30.00	ETRUSCAN SUGAR SPOON LG.jpg		SP		N
+	DURGIN/GORHAM	FAIRFAX	1	BON BON / NUT SPOON				58.00	FAIRFAX BONBON NUT SERVER LG.jpg		SP		N
+	DURGIN/GORHAM	FAIRFAX	2	JELLY SERVER				45.00	FAIRFAX JELLY SERVER LG.jpg		SP		N
+	DURGIN/GORHAM	FAIRFAX	1	TOMATO SERVER				95.00	FAIRFAX TOMATO SERVER LG.jpg		SP		N
+	REED & BARTON	FRANCIS	1	ASPARAGUS SERVER (FLAT END)				385.00	FRANCIS I ASPARAGUS SERVER FLAT LG.jpg		SP		N
+	REED & BARTON	FRANCIS	4	ASPARAGUS SERVER (HOODED)				78.00	FRANCIS I ASPARAGUS SERVER LG.jpg		SP		N
+	REED & BARTON	FRANCIS	1	ICE SPOON				295.00	FRANCIS I ICE SPOON LG.jpg		SP		N
+	REED & BARTON	FRANCIS	1	LEMON FORK				42.00	FRANCIS I LEMON FORK LG.jpg		F		N
+									Francis I Steak Carving Set		CS		N
+									Grand Baroque Jelly Server		SP		N
+									Grand Baroque Pickle Fork		SP		N
+									Grand Baroque Wedding Knife		SP		N
+									Joan of Arc Salad Set		CS		N
+									Joan of Arc Steak Knife		F		N
+									Joan of Arc Sugar Shell		SP		N
+									King Richard Cold Meat Fork		SP		N
+									King Richard Letter Opener		F		N
+									Louis XIV Grapefruit Spoon		F		N
+									Marlborough Cocktail Fork		F		N
+									Marlborough Pickle Fork		SP		N
+									Marlborough Sugar Shell		SP		N
+									Old Master Cake Comb		SP		N
+									Old Master Ice Scoop		SP		N
+									Onslow Butter Spreader		SP		N
+									Onslow Tablespoon		F		N
+									Repousse Bonbon/Nut Server		SP		N
+									Repousse Salad Spoon		F		N
+									Repousse Sugar Shell		SP		N
+									Repousse Tomato Server		SP		N
+									Rosepoint Cake Comb		SP		N
+									Rosepoint Magnifying Glass		F		N
+									Rosepoint Pickle Fork		SP		N
+									Royal Danish Cream/Sauce Spoon		SP		N
+									Royal Danish Pickle Fork		SP		N
+									Royal Danish Roast Carving Set		CS		N
+									Royal Danish Sugar Tongs		SP		N
+									Sir Christopher Berry Spoon		SP		N
+									Sir Christopher Pierced Tablespoon		F		N
+									Sir Christopher Steak Carving Set		CS		N
+									Sir Christopher Steak Knife		F		N
+									Strasbourg Cake Server		SP		N
+									Strasbourg Ice Spoon		SP		N
+									Versailles Berry Spoon		F		N
+									Versailles Salad Set		CS		N
+									Versailles Serving Spoon		SP		N
+									Violet Pie Fork		F		N

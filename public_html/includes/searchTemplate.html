@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title><!--pageTitle--></title>
+<meta charset="UTF-8"/>
+<meta name="description" content="<!--pageDescription--> . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+<meta name="keywords" content="<!--keywords-->"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<base href="//www.asyoulikeitsilvershop.com/">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/sortingFunctions.jquery.js"></script>
+
+<link rel="stylesheet" href="/css/dropdown/imports.css">
+<link rel="stylesheet" href="/ayliss_style<!--cs-->.css" type="text/css">
+<link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
+
+<script type="text/javascript">
+var curTab='pageNum1';
+
+$(document).ready(function(){	
+	
+	$.refreshCart();
+	$.bindAddButtons();
+	$.bindSortButtons();
+	
+	if($('#searchPageNavs').html()){
+		$.bindPageLinks();
+	}
+	
+});
+$.refreshCart=function(){
+	
+	var msg='Your cart has ';
+	var items=' Items';
+	var c=unescape(document.cookie);
+	var begin=c.indexOf("items=");
+	
+	if(begin<0){  
+		$('#chest').attr('src','/images/silverchest_empty.gif');
+		$('#itemCount').html('Your Silver Chest Is Empty');
+	}
+	else{
+	
+	var end=c.indexOf(";",begin+6)
+	
+	if (end<1) {end=c.length;} 
+	
+	var items=c.substring((	begin+6),end);
+
+	var numItems=items.split("&");
+	var n=0;
+	var i=1;
+	var temp='';
+	var msgitems=' Items';
+	
+		for(i=1;i<(numItems.length);i++) {
+			temp=numItems[i].split(":");
+			if(temp[0]==0||temp[0].substring(0,2)=='gc'){
+			n+=1;
+        }
+        else{
+        	n+=parseInt(temp[1]);
+        }
+		}
+	
+	if(n>0){ 
+	  if(n==1){msgitems=' Item';}
+	  $('#chest').attr('src','/images/silverchest_full.gif');		
+	  $('#itemCount').html(msg+n+msgitems);
+	 }
+	 else{
+	  $('#chest').attr('src','/images/silverchest_empty.gif');		
+	  $('#itemCount').html('Your silver chest is empty');
+	 } 
+
+	
+	}
+	
+};
+$.bindAddButtons=function(){
+	$('.searchResultAddButton').each(function(){
+		$(this).on('click',function(){
+		  console.log('binding button'+ $(this).attr('id'));
+		  var itemID=$(this).data('itemid');
+		  var quantity=$('#quantity'+itemID).val();
+			document.location.href='/addItem.php?temp=h&quantity='+quantity+'&id='+itemID;
+		});
+	});
+};
+$.bindSortButtons=function(){
+	$('.searchSort').each(function(){
+		$(this).on('change',function(){
+		curTab='pageNum1';
+			$.sortResults(true);
+			//$.bindPageLinks();
+		});
+	});	
+};
+
+$.bindPageLinks=function(){
+
+	$('.pageLink').each(function(){
+		$(this).on('click',function(){
+			console.log('Remove current class to tab: '+curTab);
+		  	$('#'+curTab).toggleClass('current');
+		  	curTab=$(this).attr('id');
+		  	console.log('Add current class to pressed: '+curTab);
+		  	$('#'+curTab).toggleClass('current');
+			$('#position').val($(this).data('nextpos'));
+			$.sortResults(false);
+		});
+	});
+};
+
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31581272-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">
+span.pageLink.current{
+    color: #333;
+	font-weight: bold;
+	text-decoration: none;
+}
+span.pageLink{
+cursor: pointer;
+	color: #999;
+	text-decoration: underline;
+	font-weight: normal;
+}
+</style>
+</head>
+
+<body class="sub" onLoad="">
+
+
+<div id="container">
+<!-- begin page head -->
+<div class="pageHead" id="<!--pageHeadID-->">
+  <!-- page Header image -->
+  <div class="pageHeaderImage row nopad" id="<!--pageHeadImageID-->">
+  <div class="row centered" id="mobilePageHeader">
+ 	 As You Like It Silver Shop
+ 	 <span id="mobileDescription">
+ 	 	Antique Silver Flatware, Hollowware, Jewelry, Baby Silver, Repairs
+ 	 </span>
+  </div>
+
+    <img class="pageBanner" src="<!--pageHeadImage-->" alt="<!--pageHeadImageAlt-->" title="<!--pageHeadImageTitle-->">
+    
+    <div class="cell eightColumns" id="contactInfo">
+	<a href="https://www.asyoulikeitsilvershop.com/contact.php" class="contactLink">Contact Us</a>
+	1-800-828-2311	
+</div>
+    <!-- begin cart container --> 
+     <div class="cell sevenColumns" id="cartContainer">
+      <!-- the following code will be removed once new site is up -->
+       	<p class="homenav"><span id="itemCount"></span>
+	     	<a href="https://www.asyoulikeitsilvershop.com/shoppingCart.php">
+     		<img alt="View your shopping cart" class="silverChest" src="/images/silverchest_empty.gif" id="chest">
+     	</a>
+     	</p>
+	</div>  
+    
+   <!-- end cart container -->  
+  
+  </div>  
+   <!-- end page header image -->
+
+<!-- begin other links -->
+<!--otherLinks-->
+
+
+ <!--end other links -->
+
+<!-- begin category links -->
+<div class="categoryLinksContainer" id="<!--catLinksID-->">
+  <!--catLinks-->
+</div>
+<!-- end category links -->
+
+</div>
+<!-- end page head -->
+
+<!-- begin main content -->
+  <!-- begin main content head with h1 -->
+  <div class="mainContentHead nopad fullWidth clearfix" id="<!--h1ContainerID-->">
+    <div class="titleContainer" >
+        <h1 class="h1PageCatTitle" id="<!--h1ID-->">
+            <!--h1-->
+        </h1>
+       <!--breadCrumb-->
+    </div>
+  
+  <div id="<!--mainContentHeaderImage-->" class="pageCatImage"></div>
+  
+</div>
+
+<!-- end main content head with h1 -->
+
+<div class="mainContent">
+
+ <div class="searchResults">
+ <div id="searchResultsOverlay" class="searchResultsSub">
+				 <div class="row">
+				   <div class="cell sixteenColumns centered">
+				    <img src="/images/resultsLoader.gif"><br>
+				    Loading...
+				   </div>
+				 </div>
+				</div>
+      <!--searchResults-->
+    </div>    
+ </div>
+  <!-- end main content -->
+
+ <footer>
+   <!--copyright-->
+ </footer>
+
+</div>
+<!-- end container -->
+
+</body>
+</html>
+
+
+
+
+

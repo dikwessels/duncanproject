@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /manage/
+Disallow: /statichtml/
+Disallow: /orderdetails.php
+Disallow: /wishlist.php
+Disallow: /tracking.php
+Disallow: /repairs.php
+Disallow: /ourguarantee.php
+Disallow: /privacy.php
+Disallow: /showflatware.php
+Disallow: /showProducts.php
+Disallow: /showbabyS.php
+

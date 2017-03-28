@@ -1,0 +1,391 @@
+<!DOCTYPE html
+
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title><!--pageTitle--></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="<!--pageDescription--> . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+<meta name="keywords" content="<!--keywords-->"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript" src="/js/images.js"></script>
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript" src="/js/giftRegistry.js"></script>
+<script type="text/javascript" src="/js/suggestedItems.js"></script>
+<script type="text/javascript" src="/js/share.js"></script>
+<link rel="stylesheet" href="/css/dropdown/imports.css">
+<link rel="stylesheet" href="/ayliss_style<!--cs-->.css" type="text/css">
+<link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
+
+
+<script type="text/javascript">
+
+function sortResults(){
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ 
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+  	 action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+
+  	 document.getElementById('searchResultsOverlay').style.display='inline';
+ 
+ var totalResults=parseInt(document.getElementById('results').value);
+ 
+ var waitAction='';
+
+ var f=document.searchValues;
+ 
+ var item=encodeURI(f.searchItem.value);
+ var pattern=encodeURI(f.pattern.value);
+ var brand=encodeURI(f.brand.value);
+ var searchCat=encodeURI(f.searchCategory.value);
+ var recent=encodeURI(f.recent.value);
+ var cat=encodeURI(f.category.value);
+ var keys=encodeURI(f.keywords.value);
+ 
+ var pos=1;
+ 
+ var searchURL='';
+ 
+ var display=document.getElementById('displayNResults');
+ 
+ try{
+ 	var limit=parseInt(display.options[display.selectedIndex].value);
+ }
+ catch(err){
+	 limit=10;
+ }
+
+//var endPos=limit;
+
+if(limit<totalResults){
+		document.getElementById('searchPageNavs').innerHTML=createPageNavs(totalResults,limit);		
+		changeResultsPage(1,'pageNum1',limit);
+}
+
+
+ var orderOptions=document.getElementById('resultsOrder');
+ var order=orderOptions.options[orderOptions.selectedIndex].value;
+ 
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+ if(searchCat){
+	 //search category searches will override all other variables except category
+	  if(searchCat){searchURL=searchURL+'&searchCategory='+searchCat;}
+ }
+ else{
+ if(brand){searchURL=searchURL+'&brand='+brand;}
+ 
+ //alert(item);
+ 
+ if(item){
+ 	item=item.replace('+', '%2B');
+ 	searchURL=searchURL+'&searchItem='+item;
+ }
+ 
+ if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ if(recent){searchURL=searchURL+'&recent='+recent;}
+ }
+ if(keys){searchURL=searchURL+'&keywords='+keys;}
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){searchURL=searchURL+'&order='+order; }
+ 
+ //alert(searchURL);
+ requestURL(url,searchURL,action,waitAction);
+ 
+}
+
+function changeDisplayLimit(){
+
+ //resets results display with new limit
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ var overlay=document.getElementById('searchResultsOverlay');
+ 
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+ action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+ 
+ var waitAction='';
+ var searchURL='';
+
+ overlay.style.display='inline';
+ 
+ var f=document.searchValues;
+ 
+ var item=f.searchItem.value;
+ var pattern=f.pattern.value;
+ var brand=f.brand.value;
+ var searchCat=f.searchCategory.value;
+ var recent=f.recent.value;
+ var cat=f.category.value;
+ var keys=f.keywords.value;
+ var pos=f.pos.value;
+ 
+ 
+ var totalResults=parseInt(document.getElementById('results').value);
+ var display=document.getElementById('displayNResults');
+ 
+ var limit=parseInt(display.options[display.selectedIndex].value);
+ //alert(totalResults);
+ 
+ var orderOptions=document.getElementById('resultsOrder');
+ var order=orderOptions.options[orderOptions.selectedIndex].value;
+ var endPos=limit;
+ 
+ if(limit<totalResults){
+  document.getElementById('searchPageNavs').innerHTML=createPageNavs(totalResults,limit);
+  changeResultsPage(1,'pageNum1',limit); 
+ }
+ else
+ {
+  if(limit>=totalResults){endPos=totalResults;}
+  document.getElementById('searchPageNavs').innerHTML='';	
+  
+  action=action+'document.getElementById(\'searchResultsPosition\').innerHTML = \'Now Showing 1 - ' + endPos+'\';'; 
+
+ 
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+ 
+ if(searchCat){
+	 searchURL=searchURL+'&searchCategory='+searchCat;
+ }
+ else{
+ 
+ if(keys){searchURL=searchURL+'&keywords='+keys;}
+ if(brand){searchURL=searchURL+'&brand='+brand;}
+ if(item){searchURL=searchURL+'&searchItem='+item;}
+ if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ if(recent){searchURL=searchURL+'&recent='+recent;}
+ }
+ 
+ 
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){ searchURL=searchURL+'&order='+order; }
+ 
+ requestURL(url,searchURL,action,waitAction);
+  
+ 
+ }
+ 
+}
+
+function createPageNavs(totalResults,limit){ 
+  var pages= Math.ceil(totalResults/limit);
+  var nextPos=0;
+  var pageNav='';
+  
+ var  endPos=limit;
+  
+  
+  	//alert (pages);
+	for(i=1;i<=pages;i++){
+		
+		nextPos=((i-1)*limit)+1;
+		pageNav=pageNav+'<a id="pageNum'+i+'" href="javascript:changeResultsPage(\''+nextPos+'\',\'pageNum'+i+'\',\''+limit+'\');">'+i+'</a>';
+		if(i<pages){
+			pageNav=pageNav+' | ';
+		}
+	}
+	return pageNav;
+}
+
+
+function changeResultsPage(pos,linkID,limit){
+ 
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+ 	 action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+
+ document.getElementById('searchResultsOverlay').style.display='inline';
+ var waitAction='';
+ 
+ var totalResults=document.getElementById('results').value;
+ var order=document.getElementById('resultsOrder').value;
+ var searchURL='';
+ var endPos=pos;
+ var startPos=pos;
+ 
+ 
+ //alert('Position:'+pos+' Limit:'+limit);
+ 
+ var f=document.getElementById('searchVariables');
+ var cat=f.category.value;
+ var brand=f.brand.value;
+ var item=f.item.value;
+ var pattern=f.pattern.value;
+ var searchCat=f.searchCategory.value;
+ var recent=f.recent.value;
+ var keys=f.keywords.value;
+ 
+ pos=parseInt(pos);
+ limit=parseInt(limit);
+ 
+ totalResults=parseInt(totalResults);
+ 
+ if((pos+limit)<totalResults){
+	 endPos=pos+limit-1;
+ }
+
+ else{
+	 endPos=totalResults;
+ }
+ 
+ document.getElementById('searchResultsPosition').innerHTML = 'Now Showing '+startPos+ ' - ' + endPos;
+ 
+ var links=document.getElementById('searchPageNavs').childNodes;
+ 
+    for(i=0;i<links.length;i++){
+	    if(links[i].id==linkID){
+		    links[i].style.textDecoration='none';
+		    links[i].style.fontWeight='bold';
+	    }
+	    else{
+		    try{
+		    links[i].style.textDecoration='underline';
+			links[i].style.fontWeight='normal';    
+		    }
+		    catch(err){}
+	    }
+	    
+    }
+
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+  if(searchCat){
+  	searchURL=searchURL+'&searchCategory='+searchCat;
+  }
+  else{
+ 	if(keys){searchURL=searchURL+'&keywords='+keys;}
+	if(brand){searchURL=searchURL+'&brand='+brand;}
+ 	if(item){searchURL=searchURL+'&searchItem='+item;}
+ 	if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ 	if(recent){searchURL=searchURL+'&recent='+recent;}
+ 	
+  }
+ 
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){searchURL=searchURL+'&order='+order;}
+ 
+ requestURL(url,searchURL,action,waitAction);
+ 
+}
+
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31581272-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body class="sub" onLoad="preLoad(<!--onLoad-->);">
+
+
+<div id="container">
+<!-- begin page head -->
+<div class="pageHead" id="<!--pageHeadID-->">
+  <!-- page Header image -->
+  <div class="pageHeaderImage row nopad" id="<!--pageHeadImageID-->">
+  <div class="row centered" id="mobilePageHeader">
+ 	 As You Like It Silver Shop
+ 	 <span id="mobileDescription">
+ 	 	Antique Silver Flatware, Hollowware, Jewelry, Baby Silver, Repairs
+ 	 </span>
+  </div>
+
+    <img class="pageBanner" src="<!--pageHeadImage-->" alt="<!--pageHeadImageAlt-->" title="<!--pageHeadImageTitle-->">
+    
+    <div class="cell eightColumns" id="contactInfo">
+Questions?
+	<a href="contact.php" class="contactLink">Contact Us</a>
+	1-800-828-2311	
+</div>
+  <!-- begin cart container --> 
+  <div id="cartContainer" class="cell sevenColumns">
+  <p class="homenav">
+   YOUR SILVER CHEST HAS 
+   <img src='/images/c__.gif' name=nums3 align=bottom>
+   <img src='/images/c__.gif' name=nums2 align=bottom>
+   <img src='/images/c_0.gif' name=nums1 align=bottom> ITEMS.
+   <a href="/orderdetails.php" class="top">
+     <img class="silverChest" src="/images/silverchest_empty.gif" name=chest>
+   </a>
+  </p>
+ </div> <!-- end cart container -->
+  </div>  
+   <!-- end page header image -->
+
+<!-- begin other links -->
+<!--otherLinks-->
+
+
+ <!--end other links -->
+
+<!-- begin category links -->
+<div class="categoryLinksContainer" id="<!--catLinksID-->">
+  <!--catLinks-->
+</div>
+<!-- end category links -->
+
+</div>
+<!-- end page head -->
+
+<!-- begin main content -->
+
+<div class="mainContent">
+  <!-- begin main content head with h1 -->
+  <div class="mainContentHead row nopad fullWidth clearfix" id="<!--h1ContainerID-->">
+ 
+    <div class="titleContainer" >
+        <h1 class="h1PageCatTitle" id="<!--h1ID-->">
+            <!--h1-->
+        </h1>
+       <!--breadCrumb-->
+    </div>
+  
+  <div id="<!--mainContentHeaderImage-->" class="pageCatImage"></div>
+  
+</div>
+
+<!-- end main content head with h1 -->
+
+
+ <div class="searchResults">
+      <!--searchResults-->
+    </div>    
+ </div>
+  <!-- end main content -->
+
+ <div id="footer">
+   <!--copyright-->
+ </div>
+
+</div>
+<!-- end container -->
+
+</body>
+</html>
+
+
+
+
+

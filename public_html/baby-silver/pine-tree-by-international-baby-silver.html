@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+
+<html data-version="2.0">
+
+<head>
+
+<title>Pine Tree By International  Baby Silver | International  Baby Silver |  Baby Silver | As You Like It Silver Shop</title>
+<meta charset="UTF-8"/>
+<meta name="description" content="Item: ,Maker: ,Pattern: ,Category: sterling silver ,Price: $. Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+<meta name="keywords" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<base href="//www.asyoulikeitsilvershop.com/">
+
+<script type="text/javascript" src="/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="/js/images.js"></script>
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript" src="/js/giftRegistry.js"></script>
+<script type="text/javascript" src="/js/suggestedItems.js"></script>
+<script type="text/javascript" src="/js/share.js"></script>
+
+<link rel="stylesheet" href="/css/dropdown/imports.css">
+<link rel="stylesheet" href="/ayliss_style_blue.css" type="text/css">
+<link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
+
+<script type="text/javascript">
+ var brand='INTERNATIONAL';
+ var pattern='PINE TREE';
+ var cat='bs';
+ var item='';
+ var keys='';
+ var searchCat='';
+ var recent='';
+ var monogram='';
+ var gift='';
+ var pos='';
+ var limit='';
+ var order='';
+ var params='';
+ var total='';
+ var curtab='pageNum1';
+ 
+
+ $.bindPageNavs=function(){
+	$('.pageTab').each(function(){
+		$(this).bind('click',function(){
+		  
+		  	$('#'+curtab).toggleClass('currentPage bold');
+		  
+		   
+		    $(this).toggleClass('currentPage bold');
+			//$.setCurrentLink($(this).attr('id'));
+			curtab=$(this).attr('id');
+			
+			pos=$(this).data('nextpos');
+			var l=0;
+			//alert(pos);
+			//alert(limit);
+			$.searchMain('update',pos,limit,order,'');
+			if((parseInt(pos)+parseInt(limit)-1)>total){
+				l=total;
+			}
+			else{
+				l=parseInt(pos)+parseInt(limit)-1;
+			}
+			$('#searchResultsPosition').html('Now Showing '+ pos +' - ' + l);
+		});	 
+	 }); 
+ };
+ 
+ $.bindSort=function(){
+	 $('#resultsOrder').bind('change',function(){
+		order=$('#resultsOrder').val();
+		$.searchMain('update',pos,limit,order,'');	 
+	 });
+	 
+	 $('#displayNResults').bind('change',function(){
+		limit=$('#displayNResults').val();
+		$.searchMain('update',pos,limit,order,'');
+		var total=$('#result-count').val();
+		$.updatePageNavs(total,limit);
+	 });
+ };
+ 
+ $.setCurrentLink=function(id){
+	 
+	 alert(id);
+	 $('.pageTab').each(function(id){
+	    alert($(this).attr('id'));
+		 if($(this).attr('id')==id){
+		 alert('match');
+			 $(this).addClass('currentPage');
+			 $(this).addClass('bold');
+		 }
+		 else{
+			 $(this).removeClass('currentPage');
+			 $(this).removeClass('bold');
+		 }
+	 }
+	 
+	 ); 
+ };
+ 
+ $.updatePageNavs=function(totalResults,limit){
+  var pages= Math.ceil(totalResults/limit);
+  var nextPos=0;
+  var pageNav='';
+  var endPos=limit;
+  var c='';
+ if(pages>1){
+  	//alert (pages);
+	for(i=1;i<=pages;i++){
+		c='pageTab';
+	    if(i==1){c='pageTab currentPage bold';}
+		nextPos=((i-1)*limit)+1;
+		pageNav=pageNav+'<span class="'+c+'" data-nextpos="'+nextPos+'" id="pageNum'+i+'">'+i+'</span>';
+		if(i<pages){
+			pageNav=pageNav+' | ';
+		}
+	}
+	 $('#searchPageNavs').html(pageNav);
+	 $.bindPageNavs();
+
+}
+else{$('#searchPageNavs').html('');}
+   
+//	return pageNav;
+ 
+ };
+ 
+ $.getParams=function(){
+ 
+ 	var p='';
+ 
+ 	if(cat){p=p+'&cat='+cat;}
+ 	if(gift){p=p+'&gift='+gift;}
+ 	
+ 	if(searchCat){
+		 //search category searches will override all other variables except category
+		 if(searchCat){p=p+'&searchCategory='+searchCat;}
+	}
+ 
+	else{
+ 
+		if(brand){p=p+'&brand='+brand;}
+		if(item){
+			item=item.replace('+', '%2B');
+			p=p+'&searchItem='+item;
+		}
+ 
+ if(pattern){p=p+'&pattern='+pattern;}
+ 	if(recent){p=p+'&recent='+recent;}
+ }
+
+ 	return p;	 
+ 
+ };
+ 
+ $.searchMain=function(action,pos,limit,order,bind){
+ 
+  var u='';
+  var target='';
+  var sort='';
+   
+  switch(action){
+	  case 'update':
+	  	u='updateSearchResultsBeta';
+	    target='searchResultsListing';
+	    break;
+	  default:
+	   params=$.getParams();
+	   u='search-inventory';
+	   target='search-results';
+	   break;
+  }
+  
+ //apply transition fade
+ $('#'+target).append('<div id="searchResultsOverlay"><img src="/images/resultsLoader.gif"><br>Loading...</div>');	    
+ $('#searchResultsOverlay').fadeIn();
+ 
+ u='www.asyoulikeitsilvershop.com/'+u+'.php';
+ u=('https:'==document.location.protocol ? 'https://'+u:'http://'+u);
+
+ //apply sorting variables
+ if(pos){sort=sort+'&pos='+pos;}
+ if(limit){sort=sort+'&limit='+limit;}
+ if(order){sort=sort+'&order='+order;}
+
+	 $.ajax({
+	 	type:'post',
+	 	url:u,
+	 	data:params+sort,
+	 	success:function(result){
+	 	  total=$('#result-count').val();
+	 	  $('#'+target).html(result);
+	 			if(bind){$.bindSort();}
+		 	}
+	 	});
+ }
+
+
+$.refreshCart=function(){
+	
+	var msg='Your cart has ';
+	var items=' Items';
+	var c=unescape(document.cookie);
+	var begin=c.indexOf("items=");
+	
+	if(begin<0){  
+		$('#chest').attr('src','/images/silverchest_empty.gif');
+		$('#itemCount').html('Your Silver Chest Is Empty');
+	}
+	else{
+	
+	var end=c.indexOf(";",begin+6)
+	
+	if (end<1) {end=c.length;} 
+	
+	var items=c.substring((	begin+6),end);
+
+	var numItems=items.split("&");
+	var n=0;
+	var i=1;
+	var temp='';
+	var msgitems=' Items';
+	
+		for(i=1;i<(numItems.length);i++) {
+			temp=numItems[i].split(":");
+			if(temp[0]==0||temp[0].substring(0,2)=='gc'){
+			n+=1;
+        }
+        else{
+        	n+=parseInt(temp[1]);
+        }
+		}
+	
+	if(n>0){ 
+	  if(n==1){msgitems=' Item';}
+	  $('#chest').attr('src','/images/silverchest_full.gif');		
+	  $('#itemCount').html(msg+n+msgitems);
+	 }
+	 else{
+	  $('#chest').attr('src','/images/silverchest_empty.gif');		
+	  $('#itemCount').html('Your silver chest is empty');
+	 } 
+
+	
+	}
+	
+};
+
+ $(document).ready(function(){
+	 //do search
+	 $.refreshCart();
+	 $.searchMain('search','','','',1);
+ });
+ 
+</script>
+
+<script type="text/javascript">
+
+  var pluginUrl ='//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  var _gaq = _gaq || [];
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-31581272-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body class="sub">
+
+
+<div id="container">
+<!-- begin page head -->
+<div class="pageHead" id="babySilverPageHead">
+  <!-- page Header image -->
+  <div class="pageHeaderImage row nopad" id="babySilverHead">
+  <div class="row centered" id="mobilePageHeader">
+ 	 As You Like It Silver Shop
+ 	 <span id="mobileDescription">
+ 	 	Antique Silver Flatware, Hollowware, Jewelry, Baby Silver, Repairs
+ 	 </span>
+  </div>
+
+    <img class="pageBanner" src="/images/ayliss_title_b.jpg" alt="{pageHeadImageAlt}" title="<!--pageHeadImageTitle-->">
+    
+    <div class="cell eightColumns" id="contactInfo">
+	<a href="https://www.asyoulikeitsilvershop.com/contact.php" class="contactLink">Contact Us</a>
+	1-800-828-2311	
+</div>
+    <!-- begin cart container --> 
+     <div class="cell sevenColumns" id="cartContainer">
+      <!-- the following code will be removed once new site is up -->
+       	<p class="homenav"><span id="itemCount"></span>
+	     	<a href="https://www.asyoulikeitsilvershop.com/shoppingCart.php">
+     		<img alt="View your shopping cart" class="silverChest" src="/images/silverchest_empty.gif" id="chest">
+     	</a>
+     	</p>
+	</div>  
+    
+   <!-- end cart container -->
+ 
+  
+  </div>  
+   <!-- end page header image -->
+
+<!-- begin other links -->
+<!-- begin other links -->
+<div id="otherLinksContainer">
+<ul id="otherLinksSub" class="row nopad fullWidth">
+   <li class="otherLink" id="homeLink">
+    <a href="/index.php">
+    	Home
+    </a>
+   </li>
+
+   <li class="otherLink" id="giftsLink">
+    <a href="/silver-gift-ideas.html">Great Gifts</a>
+   </li>
+
+ <!-- <div class="starContainer">*</div>-->
+
+   <li class="otherLink" id="cleaningLink">
+      <a href="/cleaning.php">Caring for Your Silver</a>
+   </li>
+
+   <!--<div class="starContainer">*</div>-->
+   <li class="otherLink" id="repairsLink">
+      <a href="/repairs.php">Silver Repairs</a>
+   </li>
+
+   <li class="otherLink" id="servicesLink">
+	 	<a href="/otherservices.php">
+              Other Services
+          </a>
+   </li>
+<!--
+   <li class="otherLink" id="contactLink">
+	   	<a rel="nofollow" href="/contact.php">
+	   		Contact Us: 1 800 828 2311
+	   	</a>
+   </li>
+-->
+
+<!-- <div class="starContainer">
+ </div>
+-->
+  <li class="otherLink" id="searchLink">
+   <form class="searchBar" name="searchForm" action="/silver-search.php" method="post">
+    <span id="searchFieldSpan">
+     <input id="searchInput" class="searchField" name="terms" placeholder="Search by Pattern, Maker, Category or Item">
+     <button type="submit" class="searchButton"><img src="/images/icon_search.png"></button>
+    </span>
+    </form>  
+  </li>
+</ul>
+
+</div> <!-- end other links container -->
+ <!--end other links -->
+
+<!-- begin category links -->
+<div class="categoryLinksContainer" id="babyCatLinks">
+  <div class="categoryLinksContainerSub clearfix">
+      <ul class="dropdown dropdown-horizontal"><li><a  class='red' href='/silver-flatware/'>Flatware</a><ul><!--,Chantilly by Gorham--><li class="<!--li class-->">
+                        <a href="/silver-flatware/chantilly-by-gorham-sterling-silver-flatware.html" class="red">Chantilly by Gorham</a>
+                    </li><!--,Francis I by Reed & Barton--><li class="<!--li class-->">
+                        <a href="/silver-flatware/francis-i-by-reed-and-barton-sterling-silver-flatware.html" class="red">Francis I by Reed & Barton</a>
+                    </li><!--,Fairfax by Durgin/Gorham--><li class="<!--li class-->">
+                        <a href="/productSearch.php?category=f&pattern=Fairfax&h2=Fairfax+by+Durgin%2FGorham" class="red">Fairfax by Durgin/Gorham</a>
+                    </li><!--,Strasbourg by Gorham--><li class="<!--li class-->">
+                        <a href="/silver-flatware/strasbourg-by-gorham-sterling-silver-flatware.html" class="red">Strasbourg by Gorham</a>
+                    </li><!--,Old Master by Towle--><li class="<!--li class-->">
+                        <a href="/silver-flatware/old-master-by-towle-sterling-silver-flatware.html" class="red">Old Master by Towle</a>
+                    </li><!--,Buttercup by Gorham--><li class="<!--li class-->">
+                        <a href="/silver-flatware/buttercup-by-gorham-sterling-silver-flatware.html" class="red">Buttercup by Gorham</a>
+                    </li><!--,Mother of Pearl Items--><li class="<!--li class-->">
+                        <a href="/productSearch.php?category=f&h2=Mother+of+Pearl+Items" class="red">Mother of Pearl Items</a>
+                    </li></ul></li><li><a  class='red' href='/silver-hollowware/'>Hollowware</a><ul><!--,Bread & Butter Plates--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-bread-and-butter-plates.html" class="red">Bread & Butter Plates</a>
+                    </li><!--,Napkin Rings--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-napkin-rings.html" class="red">Napkin Rings</a>
+                    </li><!--,Mint Julep Cups--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-mint-julep-cups.html" class="red">Mint Julep Cups</a>
+                    </li><!--,Picture Frames--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-picture-frames.html" class="red">Picture Frames</a>
+                    </li><!--,Goblets--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-goblets.html" class="red">Goblets</a>
+                    </li><!--,Trays--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-trays.html" class="red">Trays</a>
+                    </li><!--,Tea & Coffee Services--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-tea-and-coffee-services.html" class="red">Tea & Coffee Services</a>
+                    </li><!--,Chafing Dishes--><li class="<!--li class-->">
+                        <a href="/silver-hollowware/silver-chafing-dishes.html" class="red">Chafing Dishes</a>
+                    </li></ul></li><li><a  class='red' href='/silver-jewelry/'>Jewelry</a><ul><!--,Rings--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-rings.html" class="red">Rings</a>
+                    </li><!--,Cuff Links--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-cuff-links.html" class="red">Cuff Links</a>
+                    </li><!--,Earrings--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-earrings.html" class="red">Earrings</a>
+                    </li><!--,Necklaces and Pendants--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-necklaces-and-pendants.html" class="red">Necklaces and Pendants</a>
+                    </li><!--,Pins--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-pins.html" class="red">Pins</a>
+                    </li><!--,Miscellaneous--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-miscellaneous.html" class="red">Miscellaneous</a>
+                    </li><!--,Bracelets--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-bracelets.html" class="red">Bracelets</a>
+                    </li><!--,Charms--><li class="<!--li class-->">
+                        <a href="/silver-jewelry/silver-charms.html" class="red">Charms</a>
+                    </li></ul></li><li><a  class='red' href='/baby-silver/'>Baby Silver</a><ul><!--,Baby Cups--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-baby-cups.html" class="red">Baby Cups</a>
+                    </li><!--,Baby Picture Frames--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-baby-picture-frames.html" class="red">Baby Picture Frames</a>
+                    </li><!--,Brush and Comb Sets--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-brush-and-comb-sets.html" class="red">Brush and Comb Sets</a>
+                    </li><!--,Infant Feeding Spoons--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-infant-feeding-spoons.html" class="red">Infant Feeding Spoons</a>
+                    </li><!--,Rattles--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-rattles.html" class="red">Rattles</a>
+                    </li><!--,Two-Piece Baby Sets--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-two-piece-baby-sets.html" class="red">Two-Piece Baby Sets</a>
+                    </li><!--,Youth Sets--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-youth-sets.html" class="red">Youth Sets</a>
+                    </li><!--,Other Baby Accessories--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-other-baby-accessories.html" class="red">Other Baby Accessories</a>
+                    </li><!--,Teething Rings--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-teething-rings.html" class="red">Teething Rings</a>
+                    </li><!--,Baby Food Pushers--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-baby-food-pushers.html" class="red">Baby Food Pushers</a>
+                    </li><!--,Charms--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-charms.html" class="red">Charms</a>
+                    </li><!--,Porringer--><li class="<!--li class-->">
+                        <a href="/baby-silver/silver-porringer.html" class="red">Porringer</a>
+                    </li></ul></li><li><a  class='red' href='/silver-collectibles/'>Collectibles</a><ul><!--,Souvenir Spoons--><li class="<!--li class-->">
+                        <a href="/silver-collectibles/silver-souvenir-spoons.html" class="red">Souvenir Spoons</a>
+                    </li></ul></li><li><a  class='red' href='/productSearch.php?category=xm'>Christmas Items</a></li><li><a  class='red' href='/coin-silver/'>Coin Silver</a><ul><!--,Sugar Tongs/Shells--><li class="<!--li class-->">
+                        <a href="/coin-silver/silver-sugar-tongsshells.html" class="red">Sugar Tongs/Shells</a>
+                    </li><!--,Tablespoons--><li class="<!--li class-->">
+                        <a href="/coin-silver/silver-tablespoons.html" class="red">Tablespoons</a>
+                    </li><!--,Knives--><li class="<!--li class-->">
+                        <a href="/coin-silver/silver-knives.html" class="red">Knives</a>
+                    </li><!--,Dessert Spoons--><li class="<!--li class-->">
+                        <a href="/coin-silver/silver-dessert-spoons.html" class="red">Dessert Spoons</a>
+                    </li><!--,Teaspoons--><li class="<!--li class-->">
+                        <a href="/coin-silver/silver-teaspoons.html" class="red">Teaspoons</a>
+                    </li></ul></li><li><a rel='nofollow' class='red' href='/giftRegistry.php'>Gift Registry</a></li>
+<li><a href='/silver-patterns.php' class='red'>Pattern Guide</a></li></ul></div>
+</div>
+<!-- end category links -->
+
+</div>
+<!-- end page head -->
+
+<!-- begin main content -->
+  <!-- begin main content head with h1 -->
+  <div class="mainContentHead nopad fullWidth clearfix" id="babyH1Container">
+    <div class="titleContainer" >
+        <h1 class="h1PageCatTitle" id="babySilverH1">
+            <a class='h1Link' href='/baby-silver/' title='Baby Silver' alt=''>Baby Silver</a>
+        </h1>
+       <h2 class="h2BreadCrumb"><a href="http://www.asyoulikeitsilvershop.com/baby-silver/international-baby-silver.html"> / International Baby Silver</a></h2>
+    </div>
+  
+  <div id="babySilverImage" class="pageCatImage"></div>
+  
+</div>
+
+<!-- end main content head with h1 -->
+
+<div class="mainContent">
+
+ <div class="searchResults" id="search-results">
+     
+ </div>    
+ </div>
+  <!-- end main content -->
+
+ <footer>
+  &copy; Copyright 2003-2015. As You Like It Silver Shop.<br>3033 Magazine Street New Orleans, LA 70115 (504) 897-6915
+ </footer>
+
+</div>
+<!-- end container -->
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META name="description" content="">
+<META name="keywords" content="">
+<script language='javascript'>
+
+function showData(c) {
+parent.right.location="sideMenu.php?cat="+c
+}
+</script>
+<link rel="stylesheet" href="managestyle.css" type="text/css">
+</HEAD>
+<BODY>
+
+<table width="190" cellpadding="10" border="0" height="*">
+	<tr>
+		<td width="170" valign="top">
+<h4>Side Menu:</h4><br>
+<a href="javascript:showData('f')">Flatware</a><br>
+<a href="searchCategories.php" target=right>Hollowware</a><br>
+<a href="javascript:showData('bs')">Baby Silver</a><br>
+<a href="javascript:showData('j')">Jewelry</a><br>
+<a href="javascript:showData('cs')">Coin Silver</a><br>
+<a href="javascript:showData('cl')">Collectibles</a>
+
+		</td>
+		<td width="20" valign="top" align="left"><img src="../images/vert_line.gif" alt="" height="300" width="1"></td>
+	</tr>
+
+</table>
+</BODY>
+</HTML>

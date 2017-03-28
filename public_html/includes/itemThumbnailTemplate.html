@@ -1,0 +1,57 @@
+<div class="row {{bgcolor}}">
+			
+			<div class="cell fiveColumns centered imageThumbnail">
+               <a href="{{statURL}}" class="{{class}}">
+                 <img src="{{image}}" class="productThumbnail large" title="{{imgTitle}}" alt="{{imgTitle}}">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			 <div class="cell fiveColumns {{bgcolor}}">   
+               <h3 data-version="2.0" class="searchResultsH3">
+                 <a href="/showItem.php?product={{id}}" class="{{class}}" title="{{imgTitle}}">
+                 	{{itemName}} {{monogram}}<br>
+                 	{{patternName}}
+                 </a>
+               </h3>
+                            
+               <p class="{{class}}">
+               <!--image goes here-->
+                  	<strong>
+                  		{{dimension}}
+				  		{{weight}}
+				  		{{origin}}	
+				  	</strong>
+               </p>
+
+              <!-- end item information div -->
+              </div>
+              
+              <div class="cell sixColumns {{bgcolor}}">
+                  <div class="row nopad">
+                  <div class="spacer"> 
+                  	 <p class="{{class}}">
+					  	 <strong class="itemPrice">${{price}}</strong>
+				   		</p>
+				   	</div>
+                  </div>
+                  
+                   <div class="row nopad">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">{{instock}}</strong>
+                   </div>
+   <br>
+                    <input type="button" data-itemid="{{id}}" value="Add to Cart" class="searchResultAddButton">
+                    <input class="staticItemAddQty" type="text" value="1" size="2" id="quantity{{id}}" name="quantity{{id}}">
+                  
+                  </div>
+                  
+                  
+              </div>
+</div>

@@ -1,0 +1,25 @@
+compression.php Gzipd Output
+Before compression size 88696 bytes
+ After compression size 17725 bytescompression.php Gzipd Output
+Before compression size 88696 bytes
+ After compression size 17725 bytescompression.php Gzipd Output
+Before compression size 5879 bytes
+ After compression size 1739 bytescompression.php Gzipd Output
+Before compression size 52684 bytes
+ After compression size 5180 bytescompression.php Gzipd Output
+Before compression size 17808 bytes
+ After compression size 4173 bytescompression.php Gzipd Output
+Before compression size 88696 bytes
+ After compression size 17725 bytescompression.php Gzipd Output
+Before compression size 88696 bytes
+ After compression size 17725 bytescompression.php Gzipd Output
+Before compression size 35681 bytes
+ After compression size 4054 bytescompression.php Gzipd Output
+Before compression size 35685 bytes
+ After compression size 4053 bytescompression.php Gzipd Output
+Before compression size 52684 bytes
+ After compression size 5180 bytescompression.php Gzipd Output
+Before compression size 21498 bytes
+ After compression size 3240 bytescompression.php Gzipd Output
+Before compression size 84493 bytes
+ After compression size 6608 bytes

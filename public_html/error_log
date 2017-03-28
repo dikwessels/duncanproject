@@ -1,0 +1,1 @@
+[05-Aug-2016 22:09:19 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20131226/magickwand.so' - libMagickCore-6.Q16.so.2: failed to map segment from shared object: Cannot allocate memory in Unknown on line 0

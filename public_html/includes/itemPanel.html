@@ -1,0 +1,40 @@
+<div class="four columns" style="border:1px solid #aaa;min-height:200px;" id="{{productId}}-{{id}}">
+		
+		<div class="container sixteen colgrid">
+			<div class="row">
+				<div class="fifteen columns push_one">
+					<span style="font-size:.75rem;">{{pattern}} by {{brand}}</span>
+					<br><span style="font-size:.75rem">{{item}}</span>
+				</div>
+			
+			</div>
+			<div class="row">
+				<div class="fifteen columns push_one">
+					<img src="{{handle}}" alt="{{pattern}} by {{brand}} {{item}} - ${{retail}}" title="{{pattern}} by {{brand}} {{item}} - ${{retail}}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="eight columns">	
+					<img style="margin:5px;border:1px solid #aaa;"src="{{image}}">
+				</div>
+				<div class="seven columns push_one">
+				  	<div style="font-size:.75rem">
+				  	{{dimension}}<br>
+				  	{{weight}}<br>
+				  	</div>
+				  	<span style="color:#333">{{retail}}</span><br>
+				  	In Stock:{{quantity}}
+				  	<div class="field">
+				  	<button class="small metro btn primary">
+				  		<a href='#' class='add-item' data-item="{{productId}}-{{id}}">Add</a>
+				  	</button>
+				  	</div>
+				</div>
+			</div>
+			<div class="row">
+			  	<div class="sixteen columns">
+				  	<span style="font-size:.75rem">{{desc}}</span>
+			  	</div>
+			</div>
+		</div>
+</div>

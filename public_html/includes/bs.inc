@@ -1,0 +1,68 @@
+brands['any']=new Array('');
+brands['all']=new Array("CUNILL","DOMINICK & HAFF","DURGIN","EMPIRE","FRANK M. WHITING","GEORG JENSEN","GORHAM","INTERNATIONAL","J. WAGNER & SON, INC.","KIRK","LULLABY","LUNT","MARIAH","MATTHEWS COMPANY","MERIDEN CUTLERY CO.","NATIONAL SILVER COMPANY","ONEIDA","RAIMOND","REED & BARTON","RICHARD DIMES","SAART BROTHERS","SHEETS ROCKFORD & CO.","SILVERSTAR INTERNATIONAL","TIFFANY","TOWLE","UNKNOWN","WALLACE","WEB SILVER CO.","WEBSTER COMPANY","WOLFENDEN SILVER COMPANY","WOOD & HUGHES")
+
+brands["No Pattern"]=new Array('CUNILL','EMPIRE','FRANK M. WHITING','GORHAM','INTERNATIONAL','J. WAGNER & SON, INC.','LULLABY','LUNT','MARIAH','MATTHEWS COMPANY','MERIDEN CUTLERY CO.','RAIMOND','RICHARD DIMES','SAART BROTHERS','SHEETS ROCKFORD & CO.','SILVERSTAR INTERNATIONAL','TIFFANY','TOWLE','UNKNOWN','WEB SILVER CO.','WEBSTER COMPANY','WOLFENDEN SILVER COMPANY')
+
+brands["ACORN"]=new Array('GEORG JENSEN')
+
+brands["ANGELO"]=new Array('WOOD & HUGHES')
+
+brands["AUTUMN LEAVES"]=new Array('REED & BARTON')
+
+brands["BLOSSOM TIME"]=new Array('INTERNATIONAL')
+
+brands["BRETON ROSE"]=new Array('INTERNATIONAL')
+
+brands["BRIDAL VEIL"]=new Array('INTERNATIONAL')
+
+brands["BURGUNDY"]=new Array('REED & BARTON')
+
+brands["CHANTILLY"]=new Array('GORHAM')
+
+brands["CHARLES II"]=new Array('DOMINICK & HAFF')
+
+brands["CORDIS"]=new Array('TIFFANY')
+
+brands["EIGHTEENTH CENTURY"]=new Array('REED & BARTON')
+
+brands["ENGAGEMENT"]=new Array('ONEIDA')
+
+brands["ETON"]=new Array('WALLACE')
+
+brands["FRANCIS I"]=new Array('REED & BARTON')
+
+brands["GRANDE BAROQUE"]=new Array('WALLACE')
+
+brands["GRECIAN"]=new Array('GORHAM')
+
+brands["IRIS"]=new Array('DURGIN')
+
+brands["KING RICHARD"]=new Array('TOWLE')
+
+brands["MARGARET ROSE"]=new Array('NATIONAL SILVER COMPANY')
+
+brands["MARLBOROUGH"]=new Array('REED & BARTON')
+
+brands["MELROSE"]=new Array('GORHAM')
+
+brands["MEMORY LANE"]=new Array('LUNT')
+
+brands["MODERN VICTORIAN"]=new Array('LUNT')
+
+brands["OLD MARYLAND ENGRAVED"]=new Array('KIRK')
+
+brands["OLD MASTER"]=new Array('TOWLE')
+
+brands["PRELUDE"]=new Array('INTERNATIONAL')
+
+brands["REPOUSSE"]=new Array('KIRK')
+
+brands["ROYAL DANISH"]=new Array('INTERNATIONAL')
+
+brands["SERENITY"]=new Array('INTERNATIONAL')
+
+brands["STRADIVARI"]=new Array('WALLACE')
+
+brands["STRASBOURG"]=new Array('GORHAM')
+
+brands["WILLIAM & MARY"]=new Array('LUNT')

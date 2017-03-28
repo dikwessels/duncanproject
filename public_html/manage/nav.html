@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META name="description" content="">
+<META name="keywords" content="">
+<script language='javascript'>
+
+function showData(c) {
+var ck=document.cookie;
+
+//if(ck.indexOf('cat')>0){
+ 
+//}
+//else{
+ //document.cookie=ck+";cat="+c;
+ //alert(document.cookie);
+//}
+
+ letter=(arguments[1])?'':escape("='A'");
+ parent.right.location="display.php?letter="+letter+"&cat="+c;
+}
+
+</script>
+<link rel="stylesheet" href="managestyle.css" type="text/css">
+</HEAD>
+<BODY>
+
+<table width="190" cellpadding="10" border="0" height="*">
+	<tr>
+		<td width="170" valign="top">
+<h4>Inventory:</h4><br>
+<a href="javascript:showData('f',1)">Flatware</a><br>
+<a href="javascript:showData('h',1)">Hollowware</a><br>
+<a href="javascript:showData('bs',1)">Baby Silver</a><br>
+<a href="javascript:showData('j',1)">Jewelry</a><br>
+<a href="javascript:showData('sp',1)">Serving Pieces</a><br>
+<a href="javascript:showData('fcs',1)">Complete Sets</a><br>
+<a href="javascript:showData('cp',1)">Cleaning Products</a><br>
+<a href="javascript:showData('stp',1)">Storage Products</a><br>	
+<a href="displayPS.php?cat=ps&order=brand,pattern,item" target=right>4-Piece Sets</a><br>
+<a href="javascript:showData('xm',1)">Christmas Ornaments</a><br>
+	</td>
+		<td width="20" valign="top" align="left"><img src="../images/vert_line.gif" alt="" height="300" width="1"></td>
+	</tr>
+<form action=edit.php target=_top>
+<tr><td colspan=2>Product Id: <input size=8 name=productId></td></tr></form>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,975 @@
+<!DOCTYPE html
+
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title>Harlequin by Reed & Barton Sterling Silver ,  Available at As You Like It Silver Shop, New Orleans, Louisiana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Item: ,Maker: ,Pattern: ,Category: sterling silver ,Price: $ . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+<meta name="keywords" content="silver shop, silver shop new orleans,silverware shop new orleans,silver ware shop new orleans,
+silverware shop,silver ware All,silver ware,silverware,silver silverware,All silver,, silver storage, silver cleaning, silver storage products, silver cleaning products, silver repair, monograms, sterling silver storage, sterling silver cleaning, sterling silver storage products, sterling silver cleaning products, sterling silver repair, sterling silver monograms" />
+
+<script type="text/javascript" src="/js/ajax.js"></script>
+<script type="text/javascript" src="/js/images.js"></script>
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript" src="/js/giftRegistry.js"></script>
+<script type="text/javascript" src="/js/suggestedItems.js"></script>
+<script type="text/javascript" src="/js/share.js"></script>
+
+<link rel="stylesheet" href="/ayliss_style.css" type="text/css">
+<link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
+<link rel="stylesheet" href="/css/dropdown/imports.css">
+
+<script type="text/javascript">
+
+function sortResults(){
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ 
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+  	 action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+
+  	 document.getElementById('searchResultsOverlay').style.display='inline';
+ 
+ var totalResults=parseInt(document.getElementById('results').value);
+ 
+ var waitAction='';
+ 
+ var f=document.searchValues;
+ var item=f.searchItem.value;
+ var pattern=f.pattern.value;
+ var brand=f.brand.value;
+ var searchCat=f.searchCategory.value;
+ var recent=f.recent.value;
+ var cat=f.category.value;
+ 
+ var pos=1;
+ 
+ var searchURL='';
+ 
+ var display=document.getElementById('displayNResults');
+ 
+ try{
+ 	var limit=parseInt(display.options[display.selectedIndex].value);
+ }
+ catch(err){
+	 limit=10;
+ }
+
+//var endPos=limit;
+
+if(limit<totalResults){
+		document.getElementById('searchPageNavs').innerHTML=createPageNavs(totalResults,limit);		
+		changeResultsPage(1,'pageNum1',limit);
+}
+
+
+ var orderOptions=document.getElementById('resultsOrder');
+ var order=orderOptions.options[orderOptions.selectedIndex].value;
+ 
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+ if(searchCat){
+	 //search category searches will override all other variables except category
+	  if(searchCat){searchURL=searchURL+'&searchCategory='+searchCat;}
+ }
+ else{
+ if(brand){searchURL=searchURL+'&brand='+brand;}
+ 
+ //alert(item);
+ 
+ if(item){
+ 	item=item.replace('+', '%2B');
+ 	searchURL=searchURL+'&searchItem='+item;
+ }
+ 
+ if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ if(recent){searchURL=searchURL+'&recent='+recent;}
+ }
+ 
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){searchURL=searchURL+'&order='+order; }
+ 
+ //alert(searchURL);
+ requestURL(url,searchURL,action,waitAction);
+ 
+}
+
+function changeDisplayLimit(cat,brand,pattern,recent,searchCat,item,itemname,pos){
+
+ //resets results display with new limit
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ var overlay=document.getElementById('searchResultsOverlay');
+ 
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+ action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+ 
+ var waitAction='';
+ var searchURL='';
+
+ overlay.style.display='inline';
+       
+ var totalResults=parseInt(document.getElementById('results').value);
+ var display=document.getElementById('displayNResults');
+ 
+ var limit=parseInt(display.options[display.selectedIndex].value);
+ //alert(totalResults);
+ 
+ var orderOptions=document.getElementById('resultsOrder');
+ var order=orderOptions.options[orderOptions.selectedIndex].value;
+ var endPos=limit;
+ 
+ 
+ if(limit<totalResults){
+  document.getElementById('searchPageNavs').innerHTML=createPageNavs(totalResults,limit);
+  changeResultsPage(1,'pageNum1',limit);
+ }
+ else
+ {
+  if(limit>=totalResults){endPos=totalResults;}
+  document.getElementById('searchPageNavs').innerHTML='';		 
+ }
+ 
+ 
+ action=action+'document.getElementById(\'searchResultsPosition\').innerHTML = \'Now Showing 1 - ' + endPos+'\';'; 
+
+ 
+ 
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+ 
+ if(searchCat){
+	 searchURL=searchURL+'&searchCategory='+searchCat;
+ }
+ else{
+ if(brand){searchURL=searchURL+'&brand='+brand;}
+ 
+ try{
+ 	item=document.getElementById('item').value;
+ 	}
+ catch(err){
+ 	item='';
+ }
+  
+ if(item){searchURL=searchURL+'&searchItem='+item;}
+ if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ if(recent){searchURL=searchURL+'&recent='+recent;}
+ if(itemname){searchURL=searchURL+'&itemname='+itemname;}
+ }
+ 
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){ searchURL=searchURL+'&order='+order; }
+ 
+ requestURL(url,searchURL,action,waitAction);
+	
+}
+
+function createPageNavs(totalResults,limit){ 
+  var pages= Math.ceil(totalResults/limit);
+  var nextPos=0;
+  var pageNav='';
+  
+ var  endPos=limit;
+  
+  
+  	//alert (pages);
+	for(i=1;i<=pages;i++){
+		
+		nextPos=((i-1)*limit)+1;
+		pageNav=pageNav+'<a id="pageNum'+i+'" href="javascript:changeResultsPage(\''+nextPos+'\',\'pageNum'+i+'\',\''+limit+'\');">'+i+'</a>';
+		if(i<pages){
+			pageNav=pageNav+' | ';
+		}
+	}
+	return pageNav;
+}
+
+
+function changeResultsPage(pos,linkID,limit){
+ 
+ var url='http://www.asyoulikeitsilvershop.com/updateSearchResults.php';
+ var action='document.getElementById(\'searchResultsListing\').innerHTML=request.responseText;';
+ 	 action=action+'document.getElementById(\'searchResultsOverlay\').style.display=\'none\';';
+
+ document.getElementById('searchResultsOverlay').style.display='inline';
+ var waitAction='';
+ 
+ var totalResults=document.getElementById('results').value;
+ var order=document.getElementById('resultsOrder').value;
+ var searchURL='';
+ var endPos=pos;
+ var startPos=pos;
+ 
+ 
+ //alert('Position:'+pos+' Limit:'+limit);
+ 
+ var f=document.getElementById('searchVariables');
+ var cat=f.category.value;
+ var brand=f.brand.value;
+ var item=f.item.value;
+ var pattern=f.pattern.value;
+ var searchCat=f.searchCategory.value;
+ var recent=f.recent.value;
+ 
+ pos=parseInt(pos);
+ limit=parseInt(limit);
+ totalResults=parseInt(totalResults);
+ 
+ if((pos+limit)<totalResults){
+	 endPos=pos+limit-1;
+ }
+
+ else{
+	 endPos=totalResults;
+ }
+ 
+ document.getElementById('searchResultsPosition').innerHTML = 'Now Showing '+startPos+ ' - ' + endPos;
+ 
+ var links=document.getElementById('searchPageNavs').childNodes;
+ 
+    for(i=0;i<links.length;i++){
+	    if(links[i].id==linkID){
+		    links[i].style.textDecoration='none';
+		    links[i].style.fontWeight='bold';
+	    }
+	    else{
+		    try{
+		    links[i].style.textDecoration='underline';
+			links[i].style.fontWeight='normal';    
+		    }
+		    catch(err){}
+	    }
+	    
+    }
+
+ if(cat){searchURL=searchURL+'&cat='+cat;}
+  if(searchCat){
+  	searchURL=searchURL+'&searchCategory='+searchCat;
+  }
+  else{
+	if(brand){searchURL=searchURL+'&brand='+brand;}
+ 	if(item){searchURL=searchURL+'&searchItem='+item;}
+ 	if(pattern){searchURL=searchURL+'&pattern='+pattern;}
+ 	if(recent){searchURL=searchURL+'&recent='+recent;}
+  }
+ 
+ if(pos){searchURL=searchURL+'&pos='+pos;}
+ if(limit){searchURL=searchURL+'&limit='+limit;}
+ if(order){searchURL=searchURL+'&order='+order;}
+ 
+ requestURL(url,searchURL,action,waitAction);
+ 
+}
+
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31581272-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body class="sub" onLoad="preLoad();">
+<div id="container">
+<!-- begin page head -->
+<div class="pageHead" id="defaultPageHead">
+
+  <!-- begin cart container --> 
+  <div id="cartContainer">
+  <p class="homenav">
+   YOUR SILVER CHEST HAS 
+   <img src='/images/c__.gif' name=nums3 align=bottom>
+   <img src='/images/c__.gif' name=nums2 align=bottom>
+   <img src='/images/c_0.gif' name=nums1 align=bottom> ITEMS.
+   <a href="/orderdetails.php" class="top">
+     <img class="silverChest" src="/images/silverchest_empty.gif" name=chest>
+   </a>
+  </p>
+ </div> <!-- end cart container -->
+
+  <!-- page Header image -->
+  <div class="pageHeaderImage" id="defaultHead">
+    <img class="pageBanner" src="/images/ayliss_title_r.jpg" alt="<!--pageHeadImageAlt-->" title="<!--pageHeadImageTitle-->">
+  </div>  
+   <!-- end page header image -->
+
+<!-- begin other links -->
+<!-- begin other links 
+<div id="otherLinksContainer">
+
+   <div class="otherLink" id="giftsLink">
+  		
+    
+    <a href="/gifts.html" onMouseOver="document.blair.src=greatgiftson.src" onMouseOut="document.blair.src=greatgiftsoff.src">
+                 <img name="blair" title="Great Sterling Silver Gift Ideas at As You Like It Silver Shop" alt="Great Sterling Silver Gift Ideas at As You Like It Silver Shop" src="/images/nav_greatgifts_1.gif" width="101" height="29" alt="Great Gifts" border="0">
+                </a>
+   </div>
+
+   <div class="starContainer">		
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+   </div>
+   <div class="otherLink" id="cleaningLink">
+		<a href="/cleaning.php" onMouseOver="document.chuck.src=cleaningon.src" onMouseOut="document.chuck.src=cleaningoff.src">
+                  <img name="chuck" src="/images/nav_cleaning_1.gif" width="200" height="29" title="View our inventory of sterling silver cleaning and storage products at As You Like It Silver Shop" alt="View our inventory of sterling silver cleaning and storage products at As You Like It Silver Shop" border="0">
+               </a>
+  </div>
+   <div class="starContainer">		
+		<img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+   </div>
+
+
+   <div class="otherLink" id="servicesLink">
+	 <a href="/otherservices.php" onMouseOver="document.daniel.src=otheron.src" onMouseOut="document.daniel.src=otheroff.src">
+                  <img name="daniel" src="/images/nav_other_1.gif" width="135" height="29" alt="Other Products" border="0">
+          </a>
+   </div>
+ 
+ <div class="starContainer">
+   <img src="/images/nav_star.gif" width="15" height="29" alt="" border="0">
+ </div>
+
+  <div class="otherLink" id="searchLink">
+
+    <a href="/search.php" onMouseOver="document.fritz.src=searchon.src" onMouseOut="document.fritz.src=searchoff.src">
+         <img name="fritz" src="/images/nav_search_1.gif" width="68" height="29" title="Search Our Inventory of Sterling Flatware, Hollowware, Baby Silver and More at As You Like It Silver Shop" alt="Search Our Inventory of Sterling Flatware, Hollowware, Baby Silver and More at As You Like It Silver Shop" border="0"></a>
+    </a>
+  </div>
+
+
+</div> end other links container -->  
+
+
+<!-- begin other links -->
+<div id="otherLinksContainer">
+<div id="otherLinksSub">
+   <div class="otherLink" id="giftsLink">
+    <a href="/gifts.html">Great Gifts</a>
+   </div>
+
+   <div class="starContainer">*</div>
+
+   <div class="otherLink" id="cleaningLink">
+      <a href="/cleaning.php">Caring for Your Silver</a>
+   </div>
+
+   <div class="starContainer">*</div>
+
+
+   <div class="otherLink" id="servicesLink">
+	 <a href="/otherservices.php">
+              Other Services
+          </a>
+   </div>
+ 
+ <div class="starContainer">
+   *
+ </div>
+
+  <div class="otherLink" id="searchLink">
+   <!-- <form name="searchField" target="searchInventory.php" method="post">
+     <input name="searchTerms" value="Search by Pattern, Maker or Item">
+     <input type="button" class="searchResultAddButton" value="Search">
+    </form> -->   
+
+ <a href="/search.php">Search</a>
+  </div>
+
+</div>
+
+</div> <!-- end other links container -->
+
+
+ <!--end other links -->
+
+<!-- begin category links -->
+<div class="categoryLinksContainer" id="defaultCatLinks">
+  <div class="categoryLinksContainerSub">
+      <ul class="dropdown dropdown-horizontal"><li><a class="red" href="/flatware.php">Flatware</a><ul><!--/home/asyoulik/public_html/silver-flatware/silver-chantilly-by-gorham.html,Chantilly by Gorham--><li class="defaultDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Gorham&pattern=Chantilly&h2=Chantilly+by+Gorham" class="red">Chantilly by Gorham</a>
+                    </li><!--/home/asyoulik/public_html/silver-flatware/silver-francis-i-by-reed-and-barton.html,Francis I by Reed & Barton--><li class="defaultDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Reed%20%26%20Barton&pattern=Francis%20I&h2=Francis+I+by+Reed+%26+Barton" class="red">Francis I by Reed & Barton</a>
+                    </li><!--/home/asyoulik/public_html/silver-flatware/silver-fairfax-by-durgin/gorham.html,Fairfax by Durgin/Gorham--><li class="defaultDropdownLI">
+                        <a href="/productSearchNew.php?category=f&pattern=Fairfax&h2=Fairfax+by+Durgin%2FGorham" class="red">Fairfax by Durgin/Gorham</a>
+                    </li><!--/home/asyoulik/public_html/silver-flatware/silver-strasbourg-by-gorham.html,Strasbourg by Gorham--><li class="defaultDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Gorham&pattern=Strasbourg&h2=Strasbourg+by+Gorham" class="red">Strasbourg by Gorham</a>
+                    </li><!--/home/asyoulik/public_html/silver-flatware/silver-old-master-by-towle.html,Old Master by Towle--><li class="defaultDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Towle&pattern=Old%20Master&h2=Old+Master+by+Towle" class="red">Old Master by Towle</a>
+                    </li><!--/home/asyoulik/public_html/silver-flatware/silver-buttercup-by-gorham.html,Buttercup by Gorham--><li class="defaultDropdownLI">
+                        <a href="/productSearchNew.php?category=f&brand=Gorham&pattern=Buttercup&h2=Buttercup+by+Gorham" class="red">Buttercup by Gorham</a>
+                    </li><!--/home/asyoulik/public_html/silver-flatware/silver-mother-of-pearl-items.html,Mother of Pearl Items--><li class="defaultDropdownLI">
+                        <a href="/silver-flatware/silver-mother-of-pearl-items.html" class="red">Mother of Pearl Items</a>
+                    </li></ul></li><li><a class="red" href="/hollowwareBeta.php">Hollowware</a><ul><!--/home/asyoulik/public_html/silver-hollowware/silver-bread-and-butter-plates.html,Bread & Butter Plates--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-bread-and-butter-plates.html" class="red">Bread & Butter Plates</a>
+                    </li><!--/home/asyoulik/public_html/silver-hollowware/silver-napkin-rings.html,Napkin Rings--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-napkin-rings.html" class="red">Napkin Rings</a>
+                    </li><!--/home/asyoulik/public_html/silver-hollowware/silver-mint-julep-cups.html,Mint Julep Cups--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-mint-julep-cups.html" class="red">Mint Julep Cups</a>
+                    </li><!--/home/asyoulik/public_html/silver-hollowware/silver-picture-frames.html,Picture Frames--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-picture-frames.html" class="red">Picture Frames</a>
+                    </li><!--/home/asyoulik/public_html/silver-hollowware/silver-goblets.html,Goblets--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-goblets.html" class="red">Goblets</a>
+                    </li><!--/home/asyoulik/public_html/silver-hollowware/silver-trays.html,Trays--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-trays.html" class="red">Trays</a>
+                    </li><!--/home/asyoulik/public_html/silver-hollowware/silver-tea-and-coffee-services.html,Tea & Coffee Services--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-tea-and-coffee-services.html" class="red">Tea & Coffee Services</a>
+                    </li><!--/home/asyoulik/public_html/silver-hollowware/silver-chafing-dishes.html,Chafing Dishes--><li class="defaultDropdownLI">
+                        <a href="/silver-hollowware/silver-chafing-dishes.html" class="red">Chafing Dishes</a>
+                    </li></ul></li><li><a class="red" href="/jewelry.php">Jewelry</a><ul><!--/home/asyoulik/public_html/silver-jewelry/silver-rings.html,Rings--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-rings.html" class="red">Rings</a>
+                    </li><!--/home/asyoulik/public_html/silver-jewelry/silver-cuff-links.html,Cuff Links--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-cuff-links.html" class="red">Cuff Links</a>
+                    </li><!--/home/asyoulik/public_html/silver-jewelry/silver-earrings.html,Earrings--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-earrings.html" class="red">Earrings</a>
+                    </li><!--/home/asyoulik/public_html/silver-jewelry/silver-necklaces-and-pendants.html,Necklaces and Pendants--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-necklaces-and-pendants.html" class="red">Necklaces and Pendants</a>
+                    </li><!--/home/asyoulik/public_html/silver-jewelry/silver-pins.html,Pins--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-pins.html" class="red">Pins</a>
+                    </li><!--/home/asyoulik/public_html/silver-jewelry/silver-miscellaneous.html,Miscellaneous--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-miscellaneous.html" class="red">Miscellaneous</a>
+                    </li><!--/home/asyoulik/public_html/silver-jewelry/silver-bracelets.html,Bracelets--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-bracelets.html" class="red">Bracelets</a>
+                    </li><!--/home/asyoulik/public_html/silver-jewelry/silver-charms.html,Charms--><li class="defaultDropdownLI">
+                        <a href="/silver-jewelry/silver-charms.html" class="red">Charms</a>
+                    </li></ul></li><li><a class="red" href="/babySilverBeta.php">Baby Silver</a><ul><!--/home/asyoulik/public_html/baby-silver/silver-baby-cups.html,Baby Cups--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-baby-cups.html" class="red">Baby Cups</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-baby-picture-frames.html,Baby Picture Frames--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-baby-picture-frames.html" class="red">Baby Picture Frames</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-brush-and-comb-sets.html,Brush and Comb Sets--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-brush-and-comb-sets.html" class="red">Brush and Comb Sets</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-infant-feeding-spoons.html,Infant Feeding Spoons--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-infant-feeding-spoons.html" class="red">Infant Feeding Spoons</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-rattles.html,Rattles--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-rattles.html" class="red">Rattles</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-two-piece-baby-sets.html,Two-Piece Baby Sets--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-two-piece-baby-sets.html" class="red">Two-Piece Baby Sets</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-youth-sets.html,Youth Sets--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-youth-sets.html" class="red">Youth Sets</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-other-baby-accessories.html,Other Baby Accessories--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-other-baby-accessories.html" class="red">Other Baby Accessories</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-teething-rings.html,Teething Rings--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-teething-rings.html" class="red">Teething Rings</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-baby-food-pushers.html,Baby Food Pushers--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-baby-food-pushers.html" class="red">Baby Food Pushers</a>
+                    </li><!--/home/asyoulik/public_html/baby-silver/silver-charms.html,Charms--><li class="defaultDropdownLI">
+                        <a href="/baby-silver/silver-charms.html" class="red">Charms</a>
+                    </li></ul></li><li><a class="red" href="/collectibles.php">Collectibles</a><ul><!--/home/asyoulik/public_html/silver-collectibles/silver-souvenir-spoons.html,Souvenir Spoons--><li class="defaultDropdownLI">
+                        <a href="/silver-collectibles/silver-souvenir-spoons.html" class="red">Souvenir Spoons</a>
+                    </li><!--/home/asyoulik/public_html/silver-collectibles/silver-vestas.html,Vestas--><li class="defaultDropdownLI">
+                        <a href="/silver-collectibles/silver-vestas.html" class="red">Vestas</a>
+                    </li></ul></li><li><a class="red" href="/repairs.php">Repairs</a></li><li><a class="red" href="/giftRegistry.php">Gift Registry</a></li></ul></div>
+</div>
+<!-- end category links -->
+
+</div>
+<!-- end page head -->
+
+<!-- begin main content -->
+
+<div class="mainContent">
+  <!-- begin main content head with h1 -->
+  <div class="mainContentHead">
+ 
+    <div class="titleContainer" id="defaultH1Container">
+        <h1 class="h1PageCatTitle" id="defaultH1">
+            Harlequin by Reed & Barton Sterling Silver 
+        </h1>
+    </div>
+  
+  <div id="defaultImage" class="pageCatImage"></div>
+  
+</div>
+
+<!-- end main content head with h1 -->
+
+
+ <div class="searchResults">
+      
+   <div class="row tableHead bottomBorderDefault" id="searchResultsOptions">
+   <form name="searchValues" id="searchVariables">
+                    <input type="hidden" name="searchCategory" value="">
+                    <input type="hidden" name="category" value="">
+                    <input type="hidden" name="template" value="">
+                    <input type="hidden" name="searchItem" value="" id="item">
+                    <input type="hidden" name="recent" value="">
+                    <input type="hidden" name="brand" value="REED & BARTON">
+                    <input type="hidden" name="pattern" value="HARLEQUIN">
+                    <input type="hidden" name="pos" value="1">
+                    <input type="hidden" name="order" value="brand, pattern, listOrder, category, item">
+                    <input type="hidden" name="gift" value="">
+                    <input type="hidden" name="limit" value="100">
+                    <input type="hidden" id="results" name="nResults" value="9">
+                <div class="cell twoColumns middleAlign"><strong>9 results</strong></div><div class="cell fourColumns middleAlign" id="searchResultsPosition">
+                                Now Showing 1 - 9
+                            </div>
+            <div class="cell twoColumns middleAlign">Sort by:</div>
+	    <div class="cell fourColumns middleAlign">
+             <select id="resultsOrder" class="searchSort" onchange="sortResults('','REED & BARTON','HARLEQUIN','','','','','1','100');">
+                <option value="category,item,pattern,brand" >Item A to Z</option>
+                 <option value="category,item DESC,pattern,brand" >Item Z to A</option>
+                <option value="pattern,brand,category,item" >Pattern</option>
+                <option value="brand,pattern,category,item" >Manufacturer</option>
+                <option value="dimension,pattern,brand">Dimensions</option>
+                <option value="retail ASC" >Price: Low to High</option>
+                <option value="retail DESC" >Price: High to Low</option>
+             </select>  
+            </div><div class="cell threeColumns rightAlign"></div></form></div><div class="row tableHead twelvePixels bottomBorderDefault">
+               <div class="cell sixteenColumns" id="searchPageNavs">
+               </div>
+               </div><div class="searchResultsSub" id="searchResultsListing">
+				<div class="searchResultsSub" id="searchResultsOverlay">
+				 <div class="row">
+				   <div class="cell sixteenColumns centered">
+				    <img src="/images/resultsLoader.gif"><br>
+				    Loading...
+				   </div>
+				 </div>
+				</div>
+				<form name="itemsForm"><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - APPLE BLOSSOM-38765" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - apple blossom" alt="harlequin by reed & barton demitasse spoon - apple blossom">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - APPLE BLOSSOM-38765" class=search title="harlequin by reed & barton demitasse spoon - apple blossom">
+                 	Demitasse Spoon - Apple Blossom <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">3</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38765&quantity='+this.form.quantity38765.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38765">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - CALLA LILY-38766" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - calla lily" alt="harlequin by reed & barton demitasse spoon - calla lily">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - CALLA LILY-38766" class=search title="harlequin by reed & barton demitasse spoon - calla lily">
+                 	Demitasse Spoon - Calla Lily <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">2</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38766&quantity='+this.form.quantity38766.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38766">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - DAISY-39576" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - daisy" alt="harlequin by reed & barton demitasse spoon - daisy">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - DAISY-39576" class=search title="harlequin by reed & barton demitasse spoon - daisy">
+                 	Demitasse Spoon - Daisy <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=39576&quantity='+this.form.quantity39576.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity39576">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - GOLDENROD-38767" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - goldenrod" alt="harlequin by reed & barton demitasse spoon - goldenrod">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - GOLDENROD-38767" class=search title="harlequin by reed & barton demitasse spoon - goldenrod">
+                 	Demitasse Spoon - Goldenrod <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38767&quantity='+this.form.quantity38767.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38767">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - LILY OF THE VALLEY-46365" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - lily of the valley, monogrammed" alt="harlequin by reed & barton demitasse spoon - lily of the valley, monogrammed">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - LILY OF THE VALLEY-46365" class=search title="harlequin by reed & barton demitasse spoon - lily of the valley, monogrammed">
+                 	Demitasse Spoon - Lily Of The Valley  (monogrammed)<br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$25</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46365&quantity='+this.form.quantity46365.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46365">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - TREE ROSE-46230" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - tree rose" alt="harlequin by reed & barton demitasse spoon - tree rose">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - TREE ROSE-46230" class=search title="harlequin by reed & barton demitasse spoon - tree rose">
+                 	Demitasse Spoon - Tree Rose <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=46230&quantity='+this.form.quantity46230.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity46230">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - VIOLET-39577" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - violet" alt="harlequin by reed & barton demitasse spoon - violet">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - VIOLET-39577" class=search title="harlequin by reed & barton demitasse spoon - violet">
+                 	Demitasse Spoon - Violet <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=39577&quantity='+this.form.quantity39577.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity39577">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - WATER LILY-45204" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - water lily" alt="harlequin by reed & barton demitasse spoon - water lily">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - WATER LILY-45204" class=search title="harlequin by reed & barton demitasse spoon - water lily">
+                 	Demitasse Spoon - Water Lily <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">2</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=45204&quantity='+this.form.quantity45204.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity45204">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div><div class="row ">
+			
+			<div class="cell threeColumns centered imageThumbnail">
+               <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - WILD ROSE-38768" class=search>
+                 <img src='/productImages/_TN/noimage_th.jpg' class="productThumbnail" title="harlequin by reed & barton demitasse spoon - wild rose" alt="harlequin by reed & barton demitasse spoon - wild rose">
+                 <br>
+                 <span class="imgCaption">(click for details)</span>
+               </a>
+             <!-- end item image div -->
+            </div>
+
+			<div class="cell sevenColumns ">   
+               <h3 class="searchResultsH3">
+                 <a href="/staticHTML/Flatware/_REED AND BARTON/_HARLEQUIN/STERLING-SILVER-DEMITASSE SPOON - WILD ROSE-38768" class=search title="harlequin by reed & barton demitasse spoon - wild rose">
+                 	Demitasse Spoon - Wild Rose <br>
+                 	Harlequin by Reed & Barton
+                 </a>
+               </h3>
+                            
+               <p class=search>
+                  <strong>4 in.</strong>
+                            </p>
+                              <p class="search">
+                                <strong class="itemPrice">$35</strong>
+                            </p>
+              <!-- end item information div -->
+              </div><div class="cell fiveColumns ">
+                   <div class="spacer">
+                    <strong class="itemQty">In Stock: </strong>
+                   </div>
+
+                   <div class="spacer centered">
+                    <strong class="itemQty">1</strong>
+                   </div>
+                             
+                   <p class=search>
+                    <input type="button" value="Add" class="searchResultAddButton" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/addItem.php?id=38768&quantity='+this.form.quantity38768.value+'&temp=h'">
+ 
+                    <input class="staticItemAddQty" type="text" value="1" size="2" name="quantity38768">
+                  </p>       
+                  <p class=search>
+                    
+                  </p>
+                  
+                  <!-- end item purchase button div -->
+                </div><!-- end row -->
+                </div></form></div>
+    </div>    
+ </div>
+  <!-- end main content -->
+
+ <div id="footer">
+   
+ </div>
+
+</div>
+<!-- end container -->
+
+</body>
+</html>
+
+
+
+
+

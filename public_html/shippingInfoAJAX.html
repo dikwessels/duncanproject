@@ -1,0 +1,221 @@
+<div id="transition">
+	<div style="position: relative; width: 100%; top: 25%;">
+    	<img src="images/ajax-loader.gif">
+    	<br>Updating information...
+    </div>
+</div>
+
+<form id="shipping-info" name="shippingInfo">
+
+	<input type="hidden" name="action" value="getCredit">
+	<input id="subtotal" type="hidden" name="subtotal" value="">
+	<input id="tax" type="hidden" name="tax" value="">
+	<input id="shipping" type="hidden" name="shipping" value="">
+	<input id="total" type="hidden" name="total" value="">
+	<input id="gift-wrap-stored" type="hidden" value="<!-giftwrap">
+	<input id="shipping-method-stored" type="hidden" value="<!-shippingMethod">
+	<input id="shipping-state-stored" type="hidden" value="<!-state">
+	<span style="display:none" id="form-status"></span>
+	
+	<div class="row">
+		<div class="cell sixteenColumns formtext">
+		<h2>Shipping Information</h2>
+			<div class="row">Please enter your shipping information below.</div>
+			<div class="row">Fields marked with <span class="asterik">*</span> are required.</div>
+		</div>
+		</div>
+			<div class="row">
+				<div  class="cell fourColumns formtext">
+					<span class="asterik">*</span>First Name:
+				</div>
+				<div class="cell twelveColumns">
+					<input class="validate medium-input" id="fname" data-validate="true" name="fname"  err-msg-target="self" validation-rule="required" err-msg="Please enter your first name." value='<!-fname'>
+					<span id="fname-validate"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell fourColumns formtext">
+					<span class="asterik">*</span>Last Name:
+				</div>
+				<div class="cell twelveColumns">
+					<input class="validate medium-input" validation-rule="required" err-msg="Please enter your last name." err-msg-target="self" id="lname" name="lname" value='<!-lname' data-validate="true">
+					<span id="lname-validate"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell fourColumns formtext"><span style="color:red">* </span>Address:</div>
+				<div class="cell twelveColumns">
+				<input class="validate medium-input" id="address1" validation-rule="required" err-msg="Please specify your shipping address." err-msg-target="self" data-validate="true" name="address1" value='<!-address1'>
+				 <span id="address1-validate"></span>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="cell fourColumns formtext">&nbsp;</div>
+				<div class="cell twelveColumns">
+					<input class="medium-input" id="address2" name="address2" value='<!-address2' data-validate="false">
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell fourColumns formtext"><span class="asterik">*</span>City:</div>
+				<div class="cell twelveColumns formtext" >
+					<input class="validate small-input" id="city" name="city" data-validate="true" value='<!-city' validation-rule="required" err-msg="Please specify your city." err-msg-target="self"> 
+					<span id="city-validate"></span>
+				</div>
+			</div>
+			<div class="row">
+			<div class="cell fourColumns">State/Province:</div>
+			<div class="cell twelveColumns">
+			<select validation-rule="required" err-msg="Shipping state required." err-msg-target="self" class="validate small-input" id="shipping-state" name="state">
+			
+			  <option value="">State/Province (required) </option>
+	<option value="AL">Alabama</option> 
+	<option value="AK">Alaska</option> 
+	<option value="AZ">Arizona</option> 
+	<option value="AR">Arkansas</option> 
+	<option value="CA">California</option> 
+	<option value="CO">Colorado</option> 
+	<option value="CT">Connecticut</option> 
+	<option value="DE">Delaware</option> 
+	<option value="DC">District Of Columbia</option> 
+	<option value="FL">Florida</option> 
+	<option value="GA">Georgia</option> 
+	<option value="HI">Hawaii</option> 
+	<option value="ID">Idaho</option> 
+	<option value="IL">Illinois</option> 
+	<option value="IN">Indiana</option> 
+	<option value="IA">Iowa</option> 
+	<option value="KS">Kansas</option> 
+	<option value="KY">Kentucky</option> 
+	<option value="LA">Louisiana</option> 
+	<option value="ME">Maine</option> 
+	<option value="MD">Maryland</option> 
+	<option value="MA">Massachusetts</option> 
+	<option value="MI">Michigan</option> 
+	<option value="MN">Minnesota</option> 
+	<option value="MS">Mississippi</option> 
+	<option value="MO">Missouri</option> 
+	<option value="MT">Montana</option> 
+	<option value="NE">Nebraska</option> 
+	<option value="NV">Nevada</option> 
+	<option value="NH">New Hampshire</option> 
+	<option value="NJ">New Jersey</option> 
+	<option value="NM">New Mexico</option> 
+	<option value="NY">New York</option> 
+	<option value="NC">North Carolina</option> 
+	<option value="ND">North Dakota</option> 
+	<option value="OH">Ohio</option> 
+	<option value="OK">Oklahoma</option> 
+	<option value="OR">Oregon</option> 
+	<option value="PA">Pennsylvania</option> 
+	<option value="RI">Rhode Island</option> 
+	<option value="SC">South Carolina</option> 
+	<option value="SD">South Dakota</option> 
+	<option value="TN">Tennessee</option> 
+	<option value="TX">Texas</option> 
+	<option value="UT">Utah</option> 
+	<option value="VT">Vermont</option> 
+	<option value="VA">Virginia</option> 
+	<option value="WA">Washington</option> 
+	<option value="WV">West Virginia</option> 
+	<option value="WI">Wisconsin</option> 
+	<option value="WY">Wyoming</option>
+    <option value="">Canada</option>
+	<option value="AB">Alberta</option>
+	<option value="BC">British Columbia</option>
+	<option value="MB">Manitoba</option>
+	<option value="NB">New Brunswick</option>
+	<option value="NL">Newfoundland and Labrador</option>
+	<option value="NS">Nova Scotia</option>
+	<option value="NT">Northwest Territories</option>
+	<option value="NU">Nunavut</option>
+	<option value="ON">Ontario</option>
+	<option value="PE">Prince Edward Island</option>
+	<option value="QC">Quebec</option>
+	<option value="SK">Saskatchewan</option>
+	<option value="YT">Yukon</option>
+
+</select>
+			
+			
+			<!-- <input validation-rule="required" err-msg="Shipping state required." err-msg-target="self" class="validate small-input" id="state" name="state" value='<!-state' ><!--<select size='1' name='state' class='states'><option></option>
+<option value='AL'>Alabama</option><option value='AK'>Alaska</option><option value='AZ'>Arizona</option><option value='AR'>Arkansas</option><option value='CA'>California</option><option value='CO'>Colorado</option><option value='CT'>Connecticut</option><option value='DE'>Delaware</option><option value='DC'>Washington D.C.</option><option value='FL'>Florida</option><option value='GA'>Georgia</option><option value='HI'>Hawaii</option><option value='ID'>Idaho</option><option value='IL'>Illinois</option><option value='IN'>Indiana</option><option value='IA'>Iowa</option><option value='KS'>Kansas</option><option value='KY'>Kentucky</option><option value='LA'>Louisiana</option><option value='ME'>Maine</option><option value='MD'>Maryland</option><option value='MA'>Massachusetts</option><option value='MI'>Michigan</option><option value='MN'>Minnesota</option><option value='MS'>Mississippi</option><option value='MO'>Missouri</option><option value='MT'>Montana</option><option value='NE'>Nebraska</option><option value='NV'>Nevada</option><option value='NH'>New Hampshire</option><option value='NJ'>New Jersey</option><option value='NM'>New Mexico</option><option value='NY'>New York</option><option value='NC'>North Carolina</option><option value='ND'>North Dakota</option><option value='OH'>Ohio</option><option value='OK'>Oklahoma</option><option value='OR'>Oregon</option><option value='PA'>Pennsylvania</option><option value='RI'>Rhode Island</option><option value='SC'>South Carolina</option><option value='SD'>South Dakota</option><option value='TN'>Tennessee</option><option value='TX'>Texas</option><option value='UT'>Utah</option><option value='VT'>Vermont</option><option value='VA'>Virginia</option><option value='WA'>Washington</option><option value='WV'>West Virgina</option><option value='WI'>Wisconsin</option><option value='WY'>Wyoming</option></select>-->
+				<span id="shipping-state-validate"></span>
+			</div>
+			</div>
+			<div class="row">
+				<div class="cell fourColumns formtext">
+					<span class="asterik">*</span>Postal Code:
+				</div>
+				<div class="cell twelveColumns formtext">
+					<input class="validate small-input" validation-rule="required" id="zip" name="zip" title='Postal Code' err-msg="Zipcode is required." err-msg-target="self" value='<!-zip'>
+					<span id="zip-validate"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell fourColumns">	
+				 	Country: 				
+				 </div>
+				<div class="cell twelveColumns">
+					<select class="small-input" name="country">
+						<option value="US">US</option>
+						<option value="Canada">Canada</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="cell fourColumns formtext">Phone:</div>
+				<div class="cell twelveColumns">
+					<input class="small-input" id="phone" name="phone"  value='<!-phone'>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="cell fourColumns formtext">Shipping Method:</div>
+				<div class="cell twelveColumns">
+					<select id="shipping-method" class="medium-input" name="shipMethod">
+						<option value=4>Ground (8-10 days, add $4.00)</option>
+						<option value=10>3-day select (add $10.00)</option>
+						<option value=27>Second day air (add $27.00)</option>
+						<option value=53>Next day air (add $53.00)</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="row">
+		<div class="cell fourColumns formtext">Gift wrap,<br> free of charge.</div>
+		<div class="cell twelveColumns"> 
+			<select id="gift-wrap" class="small-input" name="giftwrap">
+				<option value="">Choose Below</option>
+				<option value="">None</option>
+				<option value="standard">Standard</option>
+				<option value="Christening">Christening</option>
+				<option value="Christmas">Christmas</option>
+				<option value="Wedding">Wedding</option>
+			</select>
+		</div>
+	</div>
+			<div class="row">
+				<div class="cell fourColumns formtext">Enclose a card<br>with this message: </div>
+				<div class="cell twelveColumns">
+					<textarea name="note" rows=4 cols=40><!-note</textarea>
+				</div>
+	</div>
+
+		<div class="row">
+				<div class="cell fourColumns"></div>
+				<div class="cell twelveColumns">
+				<button type="button" id="save-shipping">Next Step &rarr; Billing Information</button>
+			 </div>
+			</div>
+
+</form>
+<!--END SHIPPING BILLING FORM-->
+
+<!--<div class="row">
+	<div class="cell sixteenColumns centerAlign">
+		<button type="button" onClick="javascript:location='http://www.asyoulikeitsilvershop.com/'">
+			Resume Shopping
+		</button>
+	</div>
+</div>
+-->

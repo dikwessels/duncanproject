@@ -1,0 +1,50 @@
+body {background-color:#ffffff; margin:0px; font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+td {font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+  
+
+a:link, a:visited {color: #781212;}
+a:hover, a:active {color: #000000;}
+
+th {font-family: Arial, Helvetica, sans-serif; font-size:12px; text-align:center; color=#ffffff; font-weight: bold; background-color:#A27178; padding: 1px;}    
+th.control {font-family: Arial, Helvetica, sans-serif; font-size:18px; color:#ffffff; font-weight: bold; letter-spacing: 1px; background-color: #000000; padding: 10px;}
+  
+a.navi {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size: 14px; text-decoration: none; background-color: #ffcccc; border: 1px solid #781212; padding: 2px 8px 2px 8px;}
+
+h4 {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size:18px; font-weight: normal;}
+ 
+input {background-color: #ffcccc; font-size: 12px; color:#44050B;}
+input.imgFileInput{border:1px solid #aaa;width:274px;padding:0px 2px;}
+	
+select {background-color: #ffcccc; font-size: 10px;  color:#44050B;}	
+textarea {background-color: #ffcccc; font-size: 12px;  color:#44050B;}
+.submit {background-color: #ffcccc; font-size: 10px;  color:#44050B;}
+submit {background-color: #ffcccc; font-size: 10px;  color:#44050B;}
+.checkbox {background-color: #ffcccc; font-size: 10px;  color:#44050B;}
+.radio {background-color: #ffcccc; font-size: 10px;  color:#44050B;}
+
+  
+  
+  
+/*  
+  td {font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+  td.bigcell {text-align:center; vertical-align:top; border-color:white; background-color:#ffffff;}
+  td.smallcell {text-align:center; vertical-align:top; background-color:#000000;}
+  td.leftcell {text-align:left; vertical-align:top; background-color:#ffffff; width:50%;}
+  td.rightcell {text-align:center; vertical-align:top; background-color:#ffffff; width:50%;}
+  td.bottom {vertical-align:middle; background-color:#ffffff; width:50%;}
+  td.cart {text-align:right; vertical-align:top}
+  H3  {font-family: Arial, Helvetica, sans-serif; font-size:16px; color:#333333; letter-spacing: 2px; background-color:#eeeeee; padding: 5px;}
+  H5 {font-family: 'Century Gothic', 'Franklin Gothic', 'Trade Gothic', 'Capitals', Helvetica, sans-serif; font-size:18px; color:#ffffff; letter-spacing: 0px; font-weight: normal; background-color:#7A121B; padding-top: 2px; padding-bottom: 2px; padding-left: 10px;}
+  input {background-color: #ffcccc; font-size: 12px; color:#44050B;}	
+   table.bigcell {text-align:center; vertical-align:top; border-color:#9C1111; background-color:#ffffff;}
+  
+  td {font-family: Arial, Helvetica, sans-serif; font-size: 12px;}
+  td.bigcell {text-align:center; vertical-align:top; border-color:white; background-color:#ffffff;}
+  td.smallcell {text-align:center; vertical-align:top; background-color:#000000;}
+  td.leftcell {text-align:left; vertical-align:top; background-color:#ffffff; width:50%;}
+  td.rightcell {text-align:center; vertical-align:top; background-color:#ffffff; width:50%;}
+  td.bottom {vertical-align:middle; background-color:#ffffff; width:50%;}
+  td.cart {text-align:right; vertical-align:top}
+  
+  th {font-family: Arial, Helvetica, sans-serif; font-size:12px; text-align:center; color=#ffffff; font-weight: bold; background-color:#A27178; padding: 1px;}
+ */ 

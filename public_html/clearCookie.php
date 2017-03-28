@@ -1,0 +1,1 @@
+<?phpsetcookie("custNum","",time()-3600,"/");?>

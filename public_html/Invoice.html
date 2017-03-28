@@ -1,0 +1,113 @@
+{{testing}}
+{{header}}
+{{thankyou}}
+ <table style="width:100%;max-width:650px" id="invoice-items">
+         		<tbody style="text-align:left">
+         		<tr>
+         			<td colspan="3">
+         				<h3 style="color:#8d6b6b;font-weight:normal">Details for Order #{{invoiceID}}</h3>
+         			</td>
+         		</tr>
+         		<tr style="font-weight:bold">
+         				<td style="width:6%">Qty</td>
+         				<td style="width:60%">Item</td>
+         				<td style="padding-left:2%">Price</td>
+         		</tr>
+         		<tr>
+         			<td style="border-top:1px solid #aaa" colspan="3"></td>
+		 		</tr>
+		 		
+		 		{{invoiceItems}}
+		 		
+		 		<tr id="invoice-totals">
+			   	<td style="border-top:1px solid #aaa" colspan="3"></td></tr><tr>
+    					<td align="right" colspan="2">
+    						<strong>Sub-total</strong>  					
+    					</td>
+    					<td style="padding-left:2%"><strong>${{subtotal}}</strong></td>
+    				</tr><tr>
+    					<td align="right" colspan="2">
+    						<strong>Sales Tax</strong>  					
+    					</td>
+    					<td style="padding-left:2%"><strong>${{salestax}}</strong></td>
+    				</tr><tr>
+    					<td align="right" colspan="2">
+    						<strong>Shipping ({{shippingDescription}})</strong>  				
+    					</td>
+    					<td style="padding-left:2%">
+    						<strong>${{shipping}}</strong>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td align="right" colspan="2">
+    						<strong>Total</strong>  					
+    					</td>
+    					<td style="padding-left:2%">
+    						<strong>${{total}}</strong>
+    					</td>
+    				</tr>
+    				
+    				{{redeemedgiftcard}}
+    		
+    			<tr>
+	    			<td colspan="3"></td>
+    				</tr>
+    				<tr>
+    					<td colspan="3"></td>
+    				</tr>
+    				<tr>
+    					<td style="text-align:left" colspan="3">
+    						<strong>Optional Gift Wrap:</strong>{{giftwrap}}
+    					</td>
+    				</tr>
+    				  <tr>
+    					<td colspan="3"></td>
+    				</tr>
+    				<tr>
+    					<td style="text-align:left" colspan="3"><strong>Memo:</strong>{{note}}</td>
+    				</tr>
+    			</tbody>
+    			</table> 
+ <table style="width:100%;max-width:650px">
+ 		<tbody style="text-align:left">
+ 			<tr>
+ 				<td></td>
+ 			</tr>
+ 			<tr>
+ 				<td></td>
+ 			</tr>
+ 			<tr>
+ 				<td style="width:20%"></td>
+ 				<td style="padding-left:20px"></td>
+ 			</tr>
+ 			<tr>
+ 			<td valign="top">
+ 				<strong>Ship To:</strong>
+ 				<br>{{shiptoname}}
+ 				<br>{{shiptoaddress}}
+ 				<br>{{shiptocity}} {{shiptostate}} {{shiptozip}}
+ 				<br>{{shiptocountry}}
+ 				<br>{{billtoemail}}
+ 				Transaction ID:{{transactionID}}
+			</td>		
+			<td></td>	
+			<td valign="top">
+			<strong>Bill To:</strong>
+				<br>{{billtoname}}
+				<br>{{billtoaddress}}
+				<br>{{billtocity}} {{billtostate}} {{billtozip}}
+				<br>{{billtocountry}}
+			</td>
+ 		</tr>
+ 		</tbody>
+ </table>
+ 
+ <table style="width:100%;max-width:650px">
+ <tbody style="text-align:left">
+ 	<tr>
+ 		<td>
+ 		{{footer}}
+ 		</td>
+ 	</tr>
+ </tbody>
+ </table>

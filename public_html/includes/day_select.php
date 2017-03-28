@@ -1,0 +1,1 @@
+		<?php				$max=31;					if($m==4||$m==9||$m==6||$m==11){			$max=30;		}				if($m==2){			$max=29;		}											for($i=0;$i<=$max;$i++){		 	$v=($i==0?"Day":$i);			$selected=($i==$d?"selected=\"selected\"":"");			echo "<option value=\"$i\" $selected>$v</option>";		}				?>																						

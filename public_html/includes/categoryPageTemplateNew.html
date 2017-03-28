@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title><!--pageTitle--></title>
+
+<meta charset="UTF-8"/>
+<meta name="description" content="<!--pageDescription--> . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
+<meta name="keywords" content="<!--keywords-->, silver storage, silver cleaning, silver storage products, silver cleaning products, silver repair, monograms, sterling silver storage, sterling silver cleaning, sterling silver storage products, sterling silver cleaning products, sterling silver repair, sterling silver monograms" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<base href="//www.asyoulikeitsilvershop.com">
+
+<link rel="stylesheet" href="/css/dropdown/imports.css">
+<link rel="stylesheet" href="/ayliss_style<!--cs-->.css" type="text/css">
+<link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
+<link rel="stylesheet" href="/css/lightbox.css" type="text/css">
+
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/js/lightbox.js"></script>
+<script type="text/javascript" src="/js/images.js"></script>
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/cookie.js"></script>
+<script type="text/javascript" src="/js/giftRegistry.js"></script>
+<script type="text/javascript" src="/js/suggestedItems.js"></script>
+<script type="text/javascript" src="/js/share.js"></script>
+
+<!-- brand script below-->
+
+<!--brandScript-->
+
+
+<script type="text/javascript">
+
+	var featuredItemArray=new Array();
+	var imageData=[];
+
+	featuredItemArray[0]=new Array();
+	featuredItemArray[1]=new Array();
+	featuredItemArray[2]=new Array();
+
+	$.showFeaturedItem=function(id,showAll){ 
+			
+			$('#featuredItemOverlay').css('display','inline');
+			
+			var url='www.asyoulikeitsilvershop.com/featuredItems.php';
+			var url=('https:' == document.location.protocol ? 'https://'+ url: 'http://'+url);
+			var cat='<!--category-->';
+		    var params='cat='+cat+'&id='+id+'&showAll='+showAll;
+		
+			$.ajax({type:'GET',
+					url:url,
+					data:params,
+					success:function(result){
+					var results=result.split('<!--contentbreak-->');
+						$('#featuredItems').html(results[0]);
+						 imageData=JSON.parse(results[1]);
+						 $.bindChangePictures();
+						$('#showAllLink').bind('click',function(){
+							$.showFeaturedItem(0,1);
+						});
+						
+						if(showAll==1){
+						  $('.showItem').each(function(){
+						  	$(this).bind('click',function(){
+							 $.showFeaturedItem($(this).data('product'),0); 
+							});	
+						});
+						}
+						setTimeout(function(){
+							$('#featuredItemOverlay').fadeOut();
+						}, 500);
+						
+										
+					}
+			});
+		};
+
+$.refreshCart=function(){
+	
+	var msg='Your cart has ';
+	var items=' Items';
+	var c=unescape(document.cookie);
+	var begin=c.indexOf("items=");
+	
+	if(begin<0){  
+		$('#chest').attr('src','/images/silverchest_empty.gif');
+		$('#itemCount').html('Your Silver Chest Is Empty');
+	}
+	else{
+	
+	var end=c.indexOf(";",begin+6)
+	
+	if (end<1) {end=c.length;} 
+	
+	var items=c.substring((	begin+6),end);
+
+	var numItems=items.split("&");
+	var n=0;
+	var i=1;
+	var temp='';
+	var msgitems=' Items';
+	
+		for(i=1;i<(numItems.length);i++) {
+			temp=numItems[i].split(":");
+			if(temp[0]==0||temp[0].substring(0,2)=='gc'){
+			n+=1;
+        }
+        else{
+        	n+=parseInt(temp[1]);
+        }
+		}
+	
+	if(n>0){ 
+	  if(n==1){msgitems=' Item';}
+	  	$('#chest').attr('src','/images/silverchest_full.gif');		
+	  	$('#itemCount').html(msg+n+msgitems);
+	 }
+	 else{
+	  $('#chest').attr('src','/images/silverchest_empty.gif');		
+	  $('#itemCount').html('Your silver chest is empty');
+	 } 
+
+	
+	}
+	
+};
+
+$(document).ready(function(){
+   $.refreshCart();
+   $.showFeaturedItem(0,0);
+   
+}); 
+
+$.bindChangePictures=function(){
+	
+	$('.changepicture').each(function(){
+		$(this).on('click',function(){
+		
+	    var index=$(this).data('index');
+		var smallImage = imageData['image'+index].replace('.jpg', '_SM.jpg');
+		var description = imageData['desc'+index];
+		if(description){$('#itemDescription').html('<p>'+description+'</p>');} 
+		
+		$('#mainFeaturedImage').attr('src','/productImages/_SM/'+smallImage);
+		$('#mainFeaturedLink').attr('href','/productImages/_BG/'+imageData['image'+index]);
+		
+		});
+   });
+
+};
+
+function showFeaturedItems(id,showAll,cat){
+ $('#featuredItemOverlay').css('display','inline');
+    
+	document.getElementById('featuredItemOverlay').style.display='inline';
+	var url='www.asyoulikeitsilvershop.com/featuredItems.php';
+	var url=('https:' == document.location.protocol ? 'https://'+ url: 'http://'+url);
+	
+    var params='cat='+cat+'&id='+id+'&showAll='+showAll;
+    
+    var responseAction='document.getElementById(\'featuredItems\').innerHTML=request.responseText;';
+    responseAction=responseAction+'document.getElementById(\'featuredItemOverlay\').style.display=\'none\'';
+   
+    requestURL(url,params,responseAction,'');		
+}
+ 
+function changePicture(smallPic,bigPic,caption){
+ //updates featured item main image for lightbox
+ var mainImage=document.getElementById('mainFeaturedImage');
+ var mainImageLink=document.getElementById('mainFeaturedLink');
+ 
+ document.getElementById('itemDescription').innerHTML=caption;
+ mainImage.src=smallPic;
+ mainImageLink.href=bigPic;
+ mainImageLink.title=caption;
+
+}
+
+function addFeaturedItemToCart(id,temp){
+	var quantity=document.getElementById('qty'+id).value;
+	window.location='/addItem.php?id='+id+'&quantity='+quantity+'&temp='+temp;
+}
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31581272-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body class="sub" onLoad="preLoad('<!--onLoad-->');populate(0,'all');">
+	
+<div id="container">
+<!-- begin page head -->
+<div class="pageHead" id="<!--pageHeadID-->">
+ <!-- end cart container -->
+
+  <!-- page Header image -->
+  <div class="pageHeaderImage" id="<!--pageHeadImageID-->">
+  
+  <div class="row centered" id="mobilePageHeader">
+	As You Like It Silver Shop
+	<span id="mobileDescription">
+		Antique Silver Flatware, Hollowware, Jewelry, Baby Silver, Repairs
+	</span>
+ </div>
+
+    <img class="pageBanner" src="<!--pageHeadImage-->" alt="<!--pageHeadImageAlt-->" title="<!--pageHeadImageTitle-->">
+ 
+ <div id="contactInfo" class="cell sevenColumns">
+	<a href="contact.php" class="contactLink">Contact Us</a>
+	1-800-828-2311	
+</div>
+
+  <!-- begin cart container --> 
+  <div class="cell sevenColumns" id="cartContainer">
+  	<p class="homenav">
+  	
+  	<span id="itemCount"></span><br>
+  	<span id="cartStatus"></span>
+  	
+  	  <a href="https://www.asyoulikeitsilvershop.com/shoppingCart.php">
+     		<img alt="View your shopping cart" class="silverChest" src="/images/silverchest_empty.gif" id="chest">
+     	</a>
+  	</p>
+   <!--<a href="/shoppingCart.php" class="top">
+    Your Cart Has <img src='/images/c__.gif' name=nums3 align=bottom>
+	       <img src='/images/c__.gif' name=nums2 align=bottom>
+	       <img src='/images/c_0.gif' name=nums1 align=bottom>
+    Items
+     <img class="silverChest" src="/images/silverchest_empty.gif" name=chest>
+    <div style="display:none">
+    <button class="viewCart">
+     <span class="viewCartCaption" id="cartStatus">Your Cart Is Empty </span>   
+     <div class="cartImageContainer">
+     		<div id="itemCount"></div>
+     		<img src="/images/shoppingcart.png">
+     	</div>
+    </button>
+    </div>
+   </a>-->
+<!-- end cart link -->
+ </div>
+ <!-- end cart container -->
+ 
+  </div>  
+   <!-- end page header image -->
+
+<!-- begin other links -->
+<!--otherLinks-->
+
+
+ <!--end other links -->
+
+<!-- begin category links -->
+<div class="categoryLinksContainer" id="<!--catLinksID-->">
+  <!--catLinks-->
+</div>
+<!-- end category links -->
+
+</div>
+<!-- end page head -->
+
+<div class="mainContentHeadCatPage fullWidth nopad clearfix" id="<!--h1ContainerID-->">
+ 
+    <div class="titleContainer">
+        <h1 class="h1PageCatTitle" id="<!--h1ID-->">
+            <!--h1-->
+        </h1>
+        
+    </div>
+  
+  <div id="<!--mainContentHeaderImage-->" class="pageCatImage"></div>
+  
+</div>
+
+
+<!-- begin main content -->
+
+<div class="mainContent">
+  <!-- begin main content head with h1 -->
+  
+<!-- end main content head with h1 -->
+	<div class="sideMenuContainer" id="<!--sideMenuID-->">
+		<!--sideMenu-->
+	</div>
+
+	<div id="categoryMainContentSub">
+ 		<!--searchForm-->
+ 		<div class="row" id="featuredItems">
+	 		<div class="row" id="featuredItemOverlay" data-status="new">
+		 		<div class="cell sixteenColumns centered">
+				    <img src="//www.asyoulikeitsilvershop.com/images/ajax-loader.gif"><br>
+				    Loading featured item...
+				 </div>
+				</div>
+	 	</div>
+	 	
+	</div>    
+	
+	<!--brandLinks-->
+
+</div>
+  <!-- end main content -->
+
+<footer>
+   <!--copyright-->
+</footer>
+
+</div>
+<!-- end container -->
+
+</body>
+</html>
+
+
+
+
+

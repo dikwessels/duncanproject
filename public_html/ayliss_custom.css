@@ -1,0 +1,443 @@
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
+.navbar a.toggle, .navbar a.toggle.active, .navbar a.toggle:hover {
+  position: absolute;
+  top: -60px;
+  right: 10px;
+  color: white;
+  background-color: transparent;
+  width: 25px;
+  font-size: 2rem; }
+
+.borderTop {
+  border-top: 1px solid #aaa; }
+
+#categoryLinkContainer {
+  padding: 10px inherit; }
+
+#categoryPanels, #quickLinks {
+  width: 100%; }
+  #categoryPanels .row, #quickLinks .row {
+    border-bottom: 1px solid #aaa;
+    padding: 10px 4px; }
+    #categoryPanels .row a, #quickLinks .row a {
+      display: inline-flex;
+      width: 95%;
+      min-width: 95%;
+      height: 30px; }
+      #categoryPanels .row a h2, #quickLinks .row a h2 {
+        display: inline;
+        max-width: 100%;
+        margin-left: 10px;
+        width: 80%;
+        color: #444;
+        font-size: 1.08158rem;
+        padding: 5px;
+        width: 90%;
+        min-width: 90%; }
+      #categoryPanels .row a svg, #quickLinks .row a svg {
+        display: inline;
+        color: inherit;
+        max-height: 20px;
+        width: 10%;
+        display: inline-block;
+        position: relative;
+        top: 3px;
+        text-align: right; }
+
+.center {
+  text-align: center; }
+
+.contactInfo {
+  color: white;
+  font-size: .85rem; }
+  .contactInfo h5 {
+    color: inherit; }
+
+#contactInfo {
+  color: white;
+  position: absolute;
+  margin-left: 5px; }
+  #contactInfo a {
+    color: inherit; }
+  #contactInfo i {
+    color: inherit;
+    font-size: 1.75rem; }
+
+.columns.left, .row.left, .container.left {
+  text-align: left; }
+
+.columns.right, .row.right, .container.right {
+  text-align: right; }
+
+.columns.justify, .row.justify, .container.justify {
+  text-align: justify; }
+
+.custom.append.field {
+  padding-bottom: 0px; }
+  .custom.append.field .input {
+    width: 100%; }
+  .custom.append.field .input, .custom.append.field .medium.btn {
+    height: 28px;
+    line-height: 26px; }
+
+.footerCatDiv {
+  border-left: 1px solid #aaa; }
+  .footerCatDiv li:first-child a {
+    font-size: 0.92958rem;
+    text-decoration: underline; }
+  .footerCatDiv li {
+    margin-left: 5px;
+    padding: 0 inherit;
+    height: 25px;
+    max-height: 25px; }
+    .footerCatDiv li a {
+      font-size: 0.82629rem;
+      font-family: 'CardoRegular',serif;
+      font-style: italic;
+      color: #8C1111;
+      text-decoration: none; }
+
+.footerCatDiv.first {
+  border: none; }
+
+.fullWidth {
+  max-width: 100%;
+  width: 100%;
+  padding: inherit 0px;
+  margin: inherit 0px; }
+
+h1 {
+  font-size: 3.5rem; }
+
+h2 {
+  font-size: 2.16316rem; }
+
+h2.brandLink {
+  color: #808080;
+  padding: 0px;
+  margin: 0px;
+  line-height: 24px;
+  height: auto;
+  max-height: 24px;
+  transition: color .5s 0s ease;
+  -webkit-transition-property: color;
+  -webkit-transition-delay: 0s;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-propert: color;
+  -o-transition-delay: 0s;
+  -o-transition-duration: .5s;
+  -o-transition-timing-function: ease; }
+  h2.brandLink a.homepageBrandLink {
+    color: inherit;
+    font-family: serif,times;
+    font-size: 17px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 24px;
+    padding: 0px;
+    position: relative;
+    margin: 0px;
+    text-decoration: none;
+    transition: inherit;
+    top: 0px;
+    -webkit-transition: inherit;
+    -o-webkit-transition: inherit; }
+
+h2.brandLink:hover {
+  color: black; }
+
+h3 {
+  font-size: 1.33694rem; }
+
+i.icon-phone {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+i.icon-chevron-right:before {
+  height: inherit;
+  color: inherit;
+  content: url("//www.asyoulikeitsilvershop.com/fonts/icons/chevron-right.svg"); }
+  i.icon-chevron-right:before svg {
+    color: black; }
+
+.infoLink {
+  color: white; }
+
+.nopad {
+  padding: 0px;
+  margin: 0px; }
+
+.pageHead-main {
+  background-color: #a27178;
+  background-image: url("http://www.asyoulikeitsilvershop.com/images/window.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 120px;
+  max-height: 120px; }
+  .pageHead-main .row {
+    max-width: 100%;
+    padding: 0px; }
+  .pageHead-main h1 {
+    padding-bottom: 0; }
+  .pageHead-main h1, .pageHead-main h2 {
+    color: white;
+    font-family: 'CardoRegular'; }
+  .pageHead-main h2 {
+    font-size: 1.62237rem; }
+
+.field {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  top: -1px; }
+  .field .input {
+    margin-bottom: 0px;
+    padding-bottom: 0px; }
+
+.main-content {
+  background-color: white; }
+
+.mobileOnly {
+  display: none; }
+
+#mobileFooter {
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #333;
+  display: none;
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 0px;
+  height: 50px;
+  background-color: white;
+  z-index: 100;
+  padding-top: 10px;
+  width: 100%;
+  max-width: 100%; }
+
+.navbar.categoryMenuMain {
+  color: #79121B;
+  text-shadow: none;
+  font-size: 18px;
+  line-height: 1em;
+  height: 30px;
+  max-height: 30px;
+  min-height: 30px;
+  padding: 0px;
+  margin: 0px 0px 20px 0px;
+  font-family: 'CardoRegular';
+  font-variant: small-caps;
+  border-bottom: 1px solid #333;
+  width: 100%;
+  background-color: white; }
+  .navbar.categoryMenuMain ul {
+    background-color: inherit; }
+    .navbar.categoryMenuMain ul li {
+      height: inherit;
+      line-height: inherit;
+      max-height: inherit;
+      min-height: inherit;
+      background-color: inherit; }
+      .navbar.categoryMenuMain ul li h3 {
+        height: inherit;
+        line-height: inherit;
+        max-height: inherit;
+        min-height: inherit;
+        padding: 0px 20px;
+        font-family: inherit;
+        font-variant: inherit;
+        font-size: inherit; }
+        .navbar.categoryMenuMain ul li h3 a {
+          font-size: inherit;
+          height: inherit;
+          line-height: inherit;
+          max-height: inherit;
+          min-height: inherit;
+          font-family: inherit;
+          font-variant: inherit;
+          color: inherit;
+          background-color: inherit;
+          text-shadow: none;
+          transition-property: color;
+          transition-delay: 0s;
+          transition-timing-function: ease; }
+        .navbar.categoryMenuMain ul li h3 a:hover {
+          color: #e19c9c; }
+    .navbar.categoryMenuMain ul li:hover, .navbar.categoryMenuMain ul li:hover > a {
+      color: #e19c9c;
+      background-color: inherit; }
+
+.noborder {
+  border: 0px none; }
+
+.rounded {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  width: 100%;
+  min-width: 100%;
+  padding: 10px; }
+
+.row.navbar.searchMenu {
+  background-color: black;
+  color: #FAFBAB;
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  line-height: 28px;
+  padding: 0px;
+  margin-bottom: 0px;
+  max-width: 100%; }
+  .row.navbar.searchMenu ul {
+    border-image: none;
+    background-color: black;
+    position: relative;
+    top: -1px; }
+    .row.navbar.searchMenu ul li {
+      height: 26px;
+      max-height: 26px;
+      min-height: 26px;
+      line-height: 24px;
+      background-color: black; }
+      .row.navbar.searchMenu ul li i.icon-star {
+        font-size: .5rem;
+        height: 25px;
+        min-height: 25px;
+        max-height: 25px;
+        line-height: 23px;
+        position: relative;
+        top: -2px; }
+    .row.navbar.searchMenu ul li.mobileOnly {
+      display: none; }
+    .row.navbar.searchMenu ul li > a {
+      max-height: 27px;
+      background-color: black;
+      color: #FAFBAB;
+      font-variant: small-caps;
+      -moz-text-size-adjust: inherit;
+      letter-spacing: 1px;
+      transition: color 1s 0s ease;
+      min-height: 27px;
+      height: 27px;
+      line-height: 25px; }
+    .row.navbar.searchMenu ul li:hover {
+      background-color: black; }
+    .row.navbar.searchMenu ul li > a:hover {
+      color: white;
+      background-color: black; }
+  .row.navbar.searchMenu .columns {
+    position: relative;
+    top: 0px; }
+
+#siteDescription {
+  font-family: georgia; }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .pageHead-main h1 {
+    font-size: 2.8rem; }
+  .pageHead-main h2 {
+    font-size: 1.33694rem; }
+
+  .row.navbar.searchMenu ul {
+    top: 0px; }
+    .row.navbar.searchMenu ul li {
+      padding: inherit 0px;
+      margin: 0px; }
+      .row.navbar.searchMenu ul li a {
+        padding: inherit;
+        margin: inherit; } }
+@media only screen and (max-width: 767px) {
+  a.toggle {
+    z-index: 100; }
+
+  #footer {
+    position: fixed; }
+
+  .row.navbar.searchMenu {
+    height: 32px;
+    max-height: 32px; }
+    .row.navbar.searchMenu ul {
+      top: -30px; }
+      .row.navbar.searchMenu ul li {
+        max-height: 30px;
+        height: 30px;
+        margin-top: 5px; }
+      .row.navbar.searchMenu ul li.mobileOnly {
+        display: inline-block; }
+      .row.navbar.searchMenu ul li.desktopOnly {
+        display: none; }
+    .row.navbar.searchMenu ul.active {
+      border-top: 1px solid white;
+      top: 0px; }
+
+  .desktopOnly {
+    display: none; }
+
+  #mobileFooter {
+    display: inline-block; }
+
+  .mobileOnly, .row.mobileOnly {
+    display: inline-block; }
+
+  .pageHead-main {
+    height: 60px;
+    max-height: 60px;
+    min-height: 60px; }
+    .pageHead-main h1 {
+      font-size: 2.625rem; }
+
+  #searchContainer {
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+    top: 3px;
+    text-align: left; }
+    #searchContainer .field {
+      width: 100%;
+      padding: 0px; }
+    #searchContainer .input {
+      max-width: 100%;
+      width: 90%; }
+
+  #siteDescription {
+    border-top: none;
+    max-height: 30px;
+    overflow: hidden; }
+
+  #siteDescription.active {
+    max-height: 100%; } }
+@media only screen and (max-width: 480px) {
+  .pageHead-main {
+    height: 60px;
+    max-height: 60px;
+    min-height: 60px; }
+    .pageHead-main h1 {
+      top: 0px;
+      font-size: 1.75rem; } }
+@media only screen and (max-width: 384px) {
+  .pageHead-main h1 {
+    font-size: 1.75rem;
+    padding-top: 0px;
+    top: 0px; } }
+@media only screen and (max-width: 375px) {
+  #mobileFooter {
+    display: inline-block; }
+
+  .mobileOnly, .row.mobileOnly {
+    display: inline-block; }
+
+  .pageHead-main h1 {
+    font-size: 1.33694rem;
+    position: relative; } }
+@media only screen and (max-width: 320px) {
+  #mobileFooter {
+    display: inline-block; }
+
+  .mobileOnly, .row.mobileOnly {
+    display: inline-block; }
+
+  .pageHead-main h1 {
+    font-size: 1.33694rem; } }

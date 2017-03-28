@@ -1,0 +1,2 @@
+0 2 * * * lynx -dump http://asyoulikeitsilvershop.com/manage/makeIncs.php
+	

@@ -1,0 +1,21 @@
+CreateTableAdvertising.php
+CheckProductID.php
+AddAdvertiser.php
+AdvertiserSelect.php
+silver-hollowware/indexPDO.php
+ShowAdvertisers.php
+AlterTable.php
+TEST/GetInventory.php
+TEST/ItemSelect.php
+TEST/InventoryList2.php
+TEST/PatternSelect1.php
+TEST/InventoryList.php
+TEST/GetInventoryBU.php
+TEST/PatternSelect.php
+TEST/ManufacturerSelect.php
+Unused and Backups/pdo_test.php
+ShowTables123456.php
+sphider/settings/database.php
+manage/NoDescriptionInventory.php
+manage/InventoryList.php
+manage/backUp.php
