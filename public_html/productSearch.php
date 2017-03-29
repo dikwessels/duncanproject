@@ -3,12 +3,12 @@ ini_set("display_errors","1");
 extract($_GET);
 require("GzipCompress.php");
 
-include("/home/asyoulik/public_html/categoryArrays.php");
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
-include("/home/asyoulik/public_html/staticHTMLFunctions.php");
-include("/home/asyoulik/public_html/searchDisplayFunctions.php");
-include("/home/asyoulik/public_html/seoFunctions.php");
-include("/home/asyoulik/public_html/generateSearchResults.php");
+include("categoryArrays.php");
+include_once("../connect/mysql_pdo_connect.php");
+include("staticHTMLFunctions.php");
+include("searchDisplayFunctions.php");
+include("seoFunctions.php");
+include("generateSearchResults.php");
 
 $metaKeywords = "";
 $lastBrand = "";
@@ -75,7 +75,7 @@ silverware shop,silver ware $cat,silver ware,silverware,silver silverware,$cat s
 
   $styleSheet = $style[$category];
   
-  $otherLinkMenu = file_get_contents("/home/asyoulik/public_html/otherlinks.php");
+  $otherLinkMenu = file_get_contents("otherlinks.php");
 
 if($origin){
 	$arr=explode(",", $origin);
@@ -126,7 +126,7 @@ else{
 $content = $h2Content.$content;
 
 //this has to come at the end because it redefines a pre-existing variable.
-$catLinkMenu = include("/home/asyoulik/public_html/categoryLinks.php");
+$catLinkMenu = include("categoryLinks.php");
 
 $copyright = include_once("copyright.php");
 

@@ -141,9 +141,9 @@ global $origTerms;
 global $db;
 
 
-$rowTemplate		= file_get_contents("/home/asyoulik/public_html/includes/itemRowTemplate.html");
-$panelTemplate		= file_get_contents("/home/asyoulik/public_html/includes/itemPanelTemplate.html");
-$thumbNailTemplate	= file_get_contents("/home/asyoulik/public_html/includes/itemThumbnailTemplate.html");
+$rowTemplate		= file_get_contents("includes/itemRowTemplate.html");
+$panelTemplate		= file_get_contents("includes/itemPanelTemplate.html");
+$thumbNailTemplate	= file_get_contents("includes/itemThumbnailTemplate.html");
 
 //global $h2Content;
 
