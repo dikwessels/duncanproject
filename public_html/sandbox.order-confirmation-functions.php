@@ -13,7 +13,7 @@ Those scripts could likely be consolidated into one script.
 session_name('checkout');
 session_start();
 
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
+include_once("connect/mysql_pdo_connect.php");
 
 include_once("GiftCard.php");
 
@@ -58,7 +58,7 @@ function createPaymentResponseFromSession(){
 	'ZIPTOSHIP'=>$_SESSION['zip'],
 	'COUNTRYTOSHIP'=>$_SESSION['country'],
 	'BILLTOEMAIL'=>$_SESSION['cardemail'],
-	'AMT'=>$_SESSION['invoicetotal']-$_SESSION['giftcardamount'],	
+	'AMT'=>floatval($_SESSION['invoicetotal'])-floatval($_SESSION['giftcardamount']),
 	'TRANSACTIONID'=>'TRANSIDGIFTCARD'.$_SESSION['giftcardcode']
 	
 	);
