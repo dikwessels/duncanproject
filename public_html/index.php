@@ -86,12 +86,8 @@
 		include("checkoutNotice.php");
 	}
 	
-	if($vacation == "true"){
-		
-		include("vacationMessage.inc");
-		
-	}
-?>	
+	include_once("vacationMessage.inc");
+?>
 	
 	<span class="desktopOnly" id="tripAdvisorBadge">
 	<div id="TA_virtualsticker805" class="TA_virtualsticker">

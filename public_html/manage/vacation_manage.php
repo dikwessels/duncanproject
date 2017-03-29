@@ -48,7 +48,7 @@
 $notificationMsg = '';
 $enabled = 0;
 
-$focusOn = '';
+$focusOn = 'notificationMsg';
 $msg = "To change the notification message on the home page, please specify the following:";
 
 //Handle the database fetch

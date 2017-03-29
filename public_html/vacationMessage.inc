@@ -1,6 +1,28 @@
+<?
+
+/* connect to the database */
+include_once("../connect/mysql_connect.php");
+
+$enabled = 0;
+$notificationMsg = '';
+
+$query = mysql_query("SELECT enabled, message from tblNotification");
+$row = mysql_fetch_assoc($query);
+if (mysql_num_rows($query)) {
+    $notificationMsg = $row['message'];
+    $enabled = $row['enabled'];
+}
+
+if ($enabled == 1 && strlen($notificationMsg) > 0){
+
+?>
+
 <div class="row">
 		<p class="sixteen columns" style="text-align:center">
-		As You Like It Silver Shop will be closed September 7th-21st. All orders placed after September 7th, 2016 will ship on or after September 22nd, 2016. Thank you for your business!
+		<? echo $notificationMsg ?>
 		</p>
-	
 </div>
+
+<?
+}
+?>
