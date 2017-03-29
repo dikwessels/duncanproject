@@ -35,10 +35,6 @@
 	
 </head>
 
-<?
-    error_reporting(E_ALL ^ E_DEPRECATED);
-?>
-
 <body class="homePage">
 	<? include_once("analyticstracking.php"); ?>
 <header class="container sixteen colgrid pageHead-main">
