@@ -49,7 +49,7 @@ padding-left: 2px;
 extract($_POST);
      
        /* connect to the database */
-       include("/connect/mysql_connect.php");
+       include("connect/mysql_connect.php");
             
        /*update the password */
        $query="SELECT password as p FROM users WHERE username='duncan'";

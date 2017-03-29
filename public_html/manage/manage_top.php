@@ -100,7 +100,7 @@
         <!--<td><a href=searchCategories.php target=bottom class=navi>Search Categories</a></td>-->
         <td><a href=uploadHandle.php target=bottom class=navi>Upload Handles</a></td>
         <td><a class=navi href=#
-               onClick=parent.bottom.location='https://www.asyoulikeitsilvershop.com/manage/ordersFrame.html';location='manage_top.php?header=Order+Management'>Show
+               onClick=parent.bottom.location='ordersFrame.html';location='manage_top.php?header=Order+Management'>Show
                 Orders</a></td>
         <td><a href='passwordAdmin.php' target=bottom class=navi>Admin</a></td>
         <td><a href='//www.asyoulikeitsilvershop.com/searchCategories.frame.php' target='bottom' class='navi'>Search

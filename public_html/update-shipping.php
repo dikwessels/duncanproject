@@ -1,5 +1,5 @@
 <?php
-include("/connect/mysql_connect.php");
+include("../connect/mysql_connect.php");
 
 extract($_GET);
 $i=0;

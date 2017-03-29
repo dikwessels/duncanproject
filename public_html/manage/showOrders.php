@@ -188,7 +188,7 @@ mail($mailto,"Your 'As You like It Silver Shop' order has been shipped",$email,'
 
 }
 
-include("/home/asyoulik/connect/mysql_connect.php");
+include("../connect/mysql_connect.php");
 
 $methods=array(
 			4=>'Ground Ship',
