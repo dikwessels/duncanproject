@@ -6,15 +6,15 @@
 //includes 
 
 
-include_once('/home/asyoulik/public_html/GiftCard.php');
+include_once('GiftCard.php');
 
-include_once('/home/asyoulik/public_html/Invoice.php');
+include_once('Invoice.php');
 
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
+include_once("connect/mysql_pdo_connect.php");
 
-include_once("/home/asyoulik/public_html/checkoutSettings.php");
+include_once("checkoutSettings.php");
 
-include("/home/asyoulik/public_html/sandbox.order-confirmation-functions.php");
+include("sandbox.order-confirmation-functions.php");
 
 //variable declarations 
 global $giftCardAmt;
@@ -215,7 +215,7 @@ else{
 <link rel="stylesheet" href="/ayliss_style.css" type="text/css">
 <link rel="stylesheet" href="/ayliss_style_uni.css" type="text/css">
 
-<? include("/home/asyoulik/public_html/js/analytics.html"); ?>
+<? include("js/analytics.html"); ?>
 
 
 </head>

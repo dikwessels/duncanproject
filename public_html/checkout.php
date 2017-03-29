@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 session_name('checkout');
 session_start();
@@ -7,10 +8,10 @@ ob_start();
 
 ini_set("display_errors",1);
 
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
+include_once("connect/mysql_pdo_connect.php");
 
-include("/home/asyoulik/public_html/staticHTMLFunctions.php");
-include("/home/asyoulik/public_html/categoryArrays.php");
+include("staticHTMLFunctions.php");
+include("categoryArrays.php");
 
 
 //add this when error logging script is set
@@ -24,7 +25,7 @@ require_once("PayflowNVPAPI.php");
 $errorMessage = "";
 
 if(!$_SESSION['tempCustomerID']){
-	
+
 $values="'".$_SESSION['fname']."','".$_SESSION['lname']."','".$_SESSION['address1']."','".$_SESSION['address2']."','".$_SESSION['city']."','".$_SESSION['state']."','".$_SESSION['zip']."','','','".$_SESSION['shippingmethod']."','".$_SESSION['giftwrap']."','".$_SESSION['note']."','".$_SESSION['subtotal']."','','".$_SESSION['shipping']."','".$_COOKIE['items']."'";
 
 $stmt="INSERT into tblTempInvoiceData(fname,lname,address1,address2,city,state,zip,phone,country,shippingMethod,giftwrap,note,subtotal,tax,shipping,items) values($values)";
@@ -36,18 +37,18 @@ $query->execute();
 	if($db->lastInsertId()>0){
 		$tempID=$db->lastInsertId();
 	}
-	
+
 	else{
 		 //echo(mysql_error());
 	}
 
 
 	$_SESSION['tempCustomerID']=$tempID;
-	
-	setcookie('custNum',$tempID,time()+7200,'/'); 
+
+	setcookie('custNum',$tempID,time()+7200,'/');
 }
 else{
-	setcookie('custNum',$_SESSION['tempCustomerID'],time()+7200,'/'); 
+	setcookie('custNum',$_SESSION['tempCustomerID'],time()+7200,'/');
 }
 
 
@@ -55,7 +56,7 @@ else{
 	     echo "<script type='text/javascript'>
 	      	 document.write = 'Processing request...<img src = \'/images/ajax-loader.gif\'>';
 	     </script>";
-	     
+
 		  	//the iframe returned a response, likely an error if it's getting here
 		 	$_SESSION['payflowresponse'] = array_merge($_GET, $_POST);
 
@@ -65,22 +66,22 @@ else{
 		}
 
 		else{
-		
+
 			if( $_SESSION['payflowresponse'] ){
 							$errorMessage=$_SESSION['payflowresponse']['RESPMSG'];
-				
+
 				$errorMessage = "<div class='row'>
 						<div class='cell twoColumns'></div>
 						<div class='cell fourteenColumns error'><strong>$errorMessage</strong></div>
-					</div>";	
-				
+					</div>";
+
 				//email error report to webmaster
 				$emailBody = "There was an error for the following temp transaction: ";
 				$emailBody.= $_SESSION['tempCustomerID']."n\r";
 				$emailBody.="Error Details: ".$errorMessage;
-				
-				mail("wagnermichaeljames@gmail.com","AYLISS Checkout Error",$errorMessage);	
-				
+
+				mail("wagnermichaeljames@gmail.com","AYLISS Checkout Error",$errorMessage);
+
 				//clear out the error and response information
 				unset($_SESSION['payflowresponse']);
  			}
@@ -100,8 +101,8 @@ else{
 
 <!--ogTags-->
 
-<?php 
-	
+<?php
+
 	if(isset($_SERVER['HTTPS'])){
 		if($_SERVER['HTTPS']!=""){
 			$http="https:";
@@ -111,7 +112,7 @@ else{
 		}
 	}
 
-	echo "<base href='$http//www.asyoulikeitsilvershop.com/'>";
+	echo "<base href='$http//localhost:8888/'>";
 
 ?>
 
@@ -128,9 +129,9 @@ else{
 </head>
 
 <body class="sub">
-	
+
 <? include_once("analyticstracking.php"); ?>
-	
+
 <div id="container">
 <!-- begin page head -->
 <div class="pageHead" id="defaultPageHead" style="border-bottom:1px solid #333">
@@ -138,33 +139,33 @@ else{
   <div class="pageHeaderImage row nopad" id="<!--pageHeadImageID-->">
   <div class="row centered" id="mobilePageHeader">
   As You Like It Silver Shop
-	  <span id="mobileDescription"> 
+	  <span id="mobileDescription">
 		  Antique Silver Flatware, Hollowware, Jewelry, Baby Silver, Repairs
 		  </span>
   </div>
     <img class="pageBanner" src="/images/ayliss_title_r.jpg" alt="<!--pageHeadImageAlt-->" title="<!--pageHeadImageTitle-->">
- 
+
  <div id="contactInfo" class="cell eightColumns">
 	<a href="contact.php" class="contactLink">Contact Us</a>
-	1-800-828-2311	
+	1-800-828-2311
 </div>
 
-  </div>  
+  </div>
    <!-- end page header image -->
 
 <!-- begin other links -->
-<? 
+<?
 include("otherlinks.php");
 ?>
  <!--end other links -->
 
 <!-- begin category links -->
 <div class="categoryLinksContainer" id="defaultCatLinks">
-  <? 
+  <?
    include("categoryArrays.php");
   	$c=include("categoryLinks.php");
     echo $c;
-   ?> 
+   ?>
 
 </div>
 <!-- end category links -->
@@ -173,17 +174,17 @@ include("otherlinks.php");
 
 <div class="mainContent">
   <!-- begin main content head with h1 -->
-  
+
   <div class="mainContentHead" id="defaultH1Container">
     <div class="titleContainer border-bottom">
      <h1 class="h1PageCatTitle" id="defaultH1">Check Out</h1>
     </div>
     <div class="pageCatImage" style="text-align:right;top:2px;background-color:white;" title="Click to Verify - This site chose Thawte SSL for secure e-commerce and confidential communications.">
 <script type="text/javascript" src="https://seal.thawte.com/getthawteseal?host_name=www.asyoulikeitsilvershop.com&amp;size=S&amp;lang=en"></script>
-	    
+
     </div>
   </div>
- 
+
   <div class="row">
   	<div class="cell twoColumns"></div>
   	<div class="cell fourteenColumns">
@@ -195,18 +196,18 @@ include("otherlinks.php");
   	</div>
  </div>
 
-     <? 
-	    
+     <?
+
 	    if( $errorMessage != ""){
 		    echo $errorMessage;
 	    }
-	    
+
 	 ?>
 
 
- 
-  <div class="row" id="checkout-forms" style="display:none;">	  
-  	  <div class="cell twoColumns"></div>  	  
+
+  <div class="row" id="checkout-forms" style="display:none;">
+  	  <div class="cell twoColumns"></div>
 	  	<div class="cell eightColumns" id="checkout-form">
 	  	<div id="transition">
 		  	<div style="position: relative;width: 100%;top: 25%;">
@@ -215,23 +216,23 @@ include("otherlinks.php");
 			  	</div>
 			 </div>
 	<div id="shipping-container" class="no-display">
-		
+
 	<form id="shipping-info" name="shippingInfo">
-		  	
+
 	<span style="display:none" id="form-status"></span>
-	
+
 		<div class="row">
 		<div class="cell sixteenColumns formtext border-bottom">
 		<h3 class="inline">
-			<? 
+			<?
 				$header = "Shipping Information";
-				
+
 				if($_SESSION['shipmethod'] == 5){
 					$header = "Billing Information";
 				}
-				
+
 				echo $header;
-			?>	 
+			?>
 			<span class="inline caption">Fields marked with <span class="asterik">*</span> are required.</span>
 		</h3>
 		</div>
@@ -243,7 +244,7 @@ include("otherlinks.php");
 		<div class="cell twelveColumns" class="formtext">
 			<input id="email" class="validate medium-input" name="cardemail" validation-rule="email" err-msg="Please enter a valid email address." err-msg-target="self">
 			<span id="email-validate"></span>
-			
+
 		</div>
 		</div>
 		<div class="row">
@@ -274,8 +275,8 @@ include("otherlinks.php");
 					<div class="cell twelveColumns">
 				<input class="validate medium-input" id="address1" validation-rule="required" err-msg="Please specify your shipping address." err-msg-target="self" data-validate="true" name="address1">
 				 <span id="address1-validate"></span>
-				</div>	
-		
+				</div>
+
 			</div>
 		<div class="row" id="rowShippingAddress2">
 				<div class="cell fourColumns formtext">&nbsp;</div>
@@ -283,7 +284,7 @@ include("otherlinks.php");
 					<input class="medium-input" id="address2" name="address2" data-validate="false">
 				</div>
 			</div>
-			
+
 		<div class="row" id="rowShippingZip">
 				<div class="cell fourColumns formtext">
 					<span class="asterik">*</span>Zip Code:
@@ -298,7 +299,7 @@ include("otherlinks.php");
 					<span class="asterik">*</span>City:
 				</div>
 				<div class="cell twelveColumns formtext">
-					<input class="validate small-input" id="city" name="city" data-validate="true" validation-rule="required" err-msg="Please specify your city." err-msg-target="self"> 
+					<input class="validate small-input" id="city" name="city" data-validate="true" validation-rule="required" err-msg="Please specify your city." err-msg-target="self">
 					<span id="city-validate"></span>
 				</div>
 		</div>
@@ -309,56 +310,56 @@ include("otherlinks.php");
 
 <select validation-rule="required" err-msg="State required." err-msg-target="self" class="validate mini-input" id="state" name="state">
 	<option value=""></option>
-	<option value="AL">Alabama</option> 
-	<option value="AK">Alaska</option> 
-	<option value="AZ">Arizona</option> 
-	<option value="AR">Arkansas</option> 
-	<option value="CA">California</option> 
-	<option value="CO">Colorado</option> 
-	<option value="CT">Connecticut</option> 
-	<option value="DE">Delaware</option> 
-	<option value="DC">District Of Columbia</option> 
-	<option value="FL">Florida</option> 
-	<option value="GA">Georgia</option> 
-	<option value="HI">Hawaii</option> 
-	<option value="ID">Idaho</option> 
-	<option value="IL">Illinois</option> 
-	<option value="IN">Indiana</option> 
-	<option value="IA">Iowa</option> 
-	<option value="KS">Kansas</option> 
-	<option value="KY">Kentucky</option> 
-	<option value="LA">Louisiana</option> 
-	<option value="ME">Maine</option> 
-	<option value="MD">Maryland</option> 
-	<option value="MA">Massachusetts</option> 
-	<option value="MI">Michigan</option> 
-	<option value="MN">Minnesota</option> 
-	<option value="MS">Mississippi</option> 
-	<option value="MO">Missouri</option> 
-	<option value="MT">Montana</option> 
-	<option value="NE">Nebraska</option> 
-	<option value="NV">Nevada</option> 
-	<option value="NH">New Hampshire</option> 
-	<option value="NJ">New Jersey</option> 
-	<option value="NM">New Mexico</option> 
-	<option value="NY">New York</option> 
-	<option value="NC">North Carolina</option> 
-	<option value="ND">North Dakota</option> 
-	<option value="OH">Ohio</option> 
-	<option value="OK">Oklahoma</option> 
-	<option value="OR">Oregon</option> 
-	<option value="PA">Pennsylvania</option> 
-	<option value="RI">Rhode Island</option> 
-	<option value="SC">South Carolina</option> 
-	<option value="SD">South Dakota</option> 
-	<option value="TN">Tennessee</option> 
-	<option value="TX">Texas</option> 
-	<option value="UT">Utah</option> 
-	<option value="VT">Vermont</option> 
-	<option value="VA">Virginia</option> 
-	<option value="WA">Washington</option> 
-	<option value="WV">West Virginia</option> 
-	<option value="WI">Wisconsin</option> 
+	<option value="AL">Alabama</option>
+	<option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
 	<option value="WY">Wyoming</option>
     <option value="-"><i>Canada</i></option>
 	<option value="AB">Alberta</option>
@@ -376,15 +377,15 @@ include("otherlinks.php");
 	<option value="YT">Yukon</option>
 
 </select>
-			
+
 	<span id="state-validate"></span>
 			</div>
 		</div>
-		
-		
+
+
 		<div class="row">
-				<div class="cell fourColumns">	
-				 	Country: 				
+				<div class="cell fourColumns">
+				 	Country:
 				 </div>
 				<div class="cell twelveColumns">
 					<select class="small-input" name="country">
@@ -408,11 +409,11 @@ include("otherlinks.php");
 				<span class="caption">In case we need to contact you quickly for any reason regarding your order, we ask that you enter a contact phone number.<br> As You Like It Silver Shop will not share or otherwise use this number.</span>
 			</div>
 		</div>
-		
-		<?php 
-			
+
+		<?php
+
 			if( $_SESSION['shipmethod']!=5 ){
-			
+
 			echo '<div class="row" id="use-shipping-checkbox-container">
 			<div class="cell fourColumns"></div>
 			<div class="cell twelveColumns">
@@ -425,14 +426,14 @@ include("otherlinks.php");
 					<span class="caption">Uncheck this if you need to specify a different billing address.</span>
 					</div>
 			</div>';
-		
+
 			}
-		
+
 		?>
 
 		<div class="row nopad card-address-container" id="card-address-fields">
 			<div class="row border-bottom">
-				<h3 class="inline">Billing Information 
+				<h3 class="inline">Billing Information
 				<span class="inline caption">Fields marked with <span class="asterik">*</span> are required.</span>
 				</h3>
 		</div>
@@ -471,7 +472,7 @@ include("otherlinks.php");
 			<div class="cell twelveColumns formtext">
 				<input disabled="true" id="card-city" class="small-input" name="cardcity" validation-rule="required" err-msg="Please enter your billing city." err-msg-target="self">
 				<span id="card-city-validate"></span>
-			</div> 
+			</div>
 
 		</div>
 			<div class="row">
@@ -480,58 +481,58 @@ include("otherlinks.php");
 			</div>
 			<div class="cell twelveColumns">
 			<select disabled="true" validation-rule="required" err-msg="Billing state required." err-msg-target="self" class="mini-input" id="card-state" name="cardstate">
-			
+
 	<option value="">State(required)</option>
-	<option value="AL">Alabama</option> 
-	<option value="AK">Alaska</option> 
-	<option value="AZ">Arizona</option> 
-	<option value="AR">Arkansas</option> 
-	<option value="CA">California</option> 
-	<option value="CO">Colorado</option> 
-	<option value="CT">Connecticut</option> 
-	<option value="DE">Delaware</option> 
-	<option value="DC">District Of Columbia</option> 
-	<option value="FL">Florida</option> 
-	<option value="GA">Georgia</option> 
-	<option value="HI">Hawaii</option> 
-	<option value="ID">Idaho</option> 
-	<option value="IL">Illinois</option> 
-	<option value="IN">Indiana</option> 
-	<option value="IA">Iowa</option> 
-	<option value="KS">Kansas</option> 
-	<option value="KY">Kentucky</option> 
-	<option value="LA">Louisiana</option> 
-	<option value="ME">Maine</option> 
-	<option value="MD">Maryland</option> 
-	<option value="MA">Massachusetts</option> 
-	<option value="MI">Michigan</option> 
-	<option value="MN">Minnesota</option> 
-	<option value="MS">Mississippi</option> 
-	<option value="MO">Missouri</option> 
-	<option value="MT">Montana</option> 
-	<option value="NE">Nebraska</option> 
-	<option value="NV">Nevada</option> 
-	<option value="NH">New Hampshire</option> 
-	<option value="NJ">New Jersey</option> 
-	<option value="NM">New Mexico</option> 
-	<option value="NY">New York</option> 
-	<option value="NC">North Carolina</option> 
-	<option value="ND">North Dakota</option> 
-	<option value="OH">Ohio</option> 
-	<option value="OK">Oklahoma</option> 
-	<option value="OR">Oregon</option> 
-	<option value="PA">Pennsylvania</option> 
-	<option value="RI">Rhode Island</option> 
-	<option value="SC">South Carolina</option> 
-	<option value="SD">South Dakota</option> 
-	<option value="TN">Tennessee</option> 
-	<option value="TX">Texas</option> 
-	<option value="UT">Utah</option> 
-	<option value="VT">Vermont</option> 
-	<option value="VA">Virginia</option> 
-	<option value="WA">Washington</option> 
-	<option value="WV">West Virginia</option> 
-	<option value="WI">Wisconsin</option> 
+	<option value="AL">Alabama</option>
+	<option value="AK">Alaska</option>
+	<option value="AZ">Arizona</option>
+	<option value="AR">Arkansas</option>
+	<option value="CA">California</option>
+	<option value="CO">Colorado</option>
+	<option value="CT">Connecticut</option>
+	<option value="DE">Delaware</option>
+	<option value="DC">District Of Columbia</option>
+	<option value="FL">Florida</option>
+	<option value="GA">Georgia</option>
+	<option value="HI">Hawaii</option>
+	<option value="ID">Idaho</option>
+	<option value="IL">Illinois</option>
+	<option value="IN">Indiana</option>
+	<option value="IA">Iowa</option>
+	<option value="KS">Kansas</option>
+	<option value="KY">Kentucky</option>
+	<option value="LA">Louisiana</option>
+	<option value="ME">Maine</option>
+	<option value="MD">Maryland</option>
+	<option value="MA">Massachusetts</option>
+	<option value="MI">Michigan</option>
+	<option value="MN">Minnesota</option>
+	<option value="MS">Mississippi</option>
+	<option value="MO">Missouri</option>
+	<option value="MT">Montana</option>
+	<option value="NE">Nebraska</option>
+	<option value="NV">Nevada</option>
+	<option value="NH">New Hampshire</option>
+	<option value="NJ">New Jersey</option>
+	<option value="NM">New Mexico</option>
+	<option value="NY">New York</option>
+	<option value="NC">North Carolina</option>
+	<option value="ND">North Dakota</option>
+	<option value="OH">Ohio</option>
+	<option value="OK">Oklahoma</option>
+	<option value="OR">Oregon</option>
+	<option value="PA">Pennsylvania</option>
+	<option value="RI">Rhode Island</option>
+	<option value="SC">South Carolina</option>
+	<option value="SD">South Dakota</option>
+	<option value="TN">Tennessee</option>
+	<option value="TX">Texas</option>
+	<option value="UT">Utah</option>
+	<option value="VT">Vermont</option>
+	<option value="VA">Virginia</option>
+	<option value="WA">Washington</option>
+	<option value="WV">West Virginia</option>
+	<option value="WI">Wisconsin</option>
 	<option value="WY">Wyoming</option>
     <option value="-"><i>Canada</i></option>
 	<option value="AB">Alberta</option>
@@ -578,7 +579,7 @@ include("otherlinks.php");
 			</div>
 		</div>
 		</div>
-		
+
 		<div class="row">
 		<div class="cell sixteenColumns formtext border-bottom">
 			<h3 class="inline">Order Options</h3>
@@ -586,7 +587,7 @@ include("otherlinks.php");
 		</div>
 		<div class="row">
 		<div class="cell fourColumns formtext">Gift wrap,<br> free of charge.</div>
-		<div class="cell twelveColumns"> 
+		<div class="cell twelveColumns">
 			<select id="gift-wrap" class="small-input" name="giftwrap">
 				<option value="">Choose Below</option>
 				<option value="">None</option>
@@ -616,8 +617,8 @@ include("otherlinks.php");
 </form>
 
 </div>
-	
-  <div id="billing-container" class="no-display">	
+
+  <div id="billing-container" class="no-display">
 	  <div class="divOverlay" id="giftCardPayOverlay"><img src="/images/ajax-loader.gif"><br>Processing your order...</div>
 	  <div class="row">
 	  	<div class="cell sixteenColumns border-bottom"><h3>Review and Submit Payment</h3></div>
@@ -627,7 +628,7 @@ include("otherlinks.php");
 			  Please review your order at the right.<br>If everything looks good, please fill out the form below to submit payment and process your order.
 		</div>
 	</div>
-	
+
 <div style="padding: 15px;" class="row giftcard-container">
 
 <div id="gift-card-section" style="position: relative; width: 99.5%;">
@@ -656,12 +657,12 @@ include("otherlinks.php");
 			<button type="submit" id="process-giftcard" class="">Process Order</button>
 		</form>
 	</div>
-</div>	  
+</div>
 
-</div>	
+</div>
 
 
-	  
+
 </div>
 
 
@@ -673,7 +674,7 @@ include("otherlinks.php");
 </div>
 </div>
   </div>
-  
+
     <!-- end main content -->
 
 </div>
@@ -683,7 +684,7 @@ include("otherlinks.php");
    	$c=include("copyright.php");
    	echo $c;
    ?>
-    </footer>	
+    </footer>
 </div>
 <!-- end container -->
 
@@ -692,19 +693,19 @@ include("otherlinks.php");
 <script type="text/javascript">
 <?
 		$gcEmails=array();
-		$j=0;	
+		$j=0;
 			$hasGiftCard=0;
 			$giftCardOnly=1;
-			
+
 			$arrItems=explode("&",substr($_COOKIE["items"],1));
 			$item_count=count($arrItems);
-	
+
 			for($i=0;$i<$item_count;$i++){
 				if(substr($arrItems[$i],0,2)=="gc"){
 					$hasGiftCard=1;
 					$itemData=explode(":", $arrItems[$i]);
 					//echo "//checking item $arrItems[$i]";
-					
+
 					$gcEmails[$j]=$itemData[2];
 					$j++;
 				}
@@ -718,10 +719,10 @@ include("otherlinks.php");
 		   echo "giftCardEmails[$i]='$gcEmails[$i]';\n\r";
 	    }
     }
-    
+
     echo "var hasGiftCard=$hasGiftCard;\n\r";
 	echo "var giftCardOnly=$giftCardOnly;\n\r";
-	
+
 ?>
 
 	var beenclicked			= false;
@@ -730,14 +731,14 @@ include("otherlinks.php");
 	var haveBeenUnbound		= false;
 	var useShipping			= false;
 	var globalSessionData	= [];
- 	
+
  	$(document).ready(function(){
 
 	 	 $.main();
-	
+
 	 	 console.log(globalSessionData);
 	});
- 
+
 </script>
 
 <style type="text/css">
@@ -747,11 +748,11 @@ include("otherlinks.php");
 	#iframeContainer > .shadowBox {
     	display:none;
 	}
-	
+
 	#iframeContainer > .shadowBox ~ .shadowBox {
     	display:inline-block;
 	}
-	
+
 </style>
 
 </html>

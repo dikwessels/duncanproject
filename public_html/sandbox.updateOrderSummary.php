@@ -17,8 +17,8 @@ session_start();
 
 ini_set("display_errors", 1);
 
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
-include_once("/home/asyoulik/public_html/checkoutSettings.php");
+include_once("connect/mysql_pdo_connect.php");
+include_once("checkoutSettings.php");
 
 include("sandbox.checkoutCalcs.php");
 include("shippingSurcharges.php");

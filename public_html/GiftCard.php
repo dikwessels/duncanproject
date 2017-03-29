@@ -1,5 +1,5 @@
 <?php
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
+include_once("connect/mysql_pdo_connect.php");
 ini_set("display_errors",1);
 
 class GiftCard

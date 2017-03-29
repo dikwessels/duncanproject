@@ -15,7 +15,7 @@
   	 - changed connection string after server change
   	
 */
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
+include_once("connect/mysql_pdo_connect.php");
 
 class Invoice
 {

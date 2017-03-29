@@ -1,5 +1,5 @@
 <?
-include("/home/asyoulik/connect/mysql_pdo_connect.php");
+include("connect/mysql_pdo_connect.php");
 
 extract($_GET);
 

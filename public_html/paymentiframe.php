@@ -68,6 +68,8 @@ function randomString($length = 6) {
 	
 		$paymentamount = urldecode($_SESSION['invoicetotal']);
 
+
+        echo "<script>console.log( 'Debug Objects: " . $_SESSION['redeemedGiftCards'] . "' );</script>";
 		//subtract any gift cards from this payment
 		foreach($_SESSION['redeemedGiftCards'] as $k => $v){
 		 
@@ -92,9 +94,9 @@ $request = array(
   "TENDER" 				=> 	"C",
   "CREATESECURETOKEN" 	=> 	"Y",
   "SECURETOKENID" 		=> 	$token, //Should be unique, never used before
-  "RETURNURL" 			=>	"https://www.asyoulikeitsilvershop.com/$sandboxURL"."order-confirmation.php",
-  "CANCELURL" 			=> 	"https://www.asyoulikeitsilvershop.com/$sandboxURL"."checkout.php",
-  "ERRORURL" 			=> 	"https://www.asyoulikeitsilvershop.com/$sandboxURL"."checkout.php",
+  "RETURNURL" 			=>	"http://localhost:8888/$sandboxURL"."order-confirmation.php",
+  "CANCELURL" 			=> 	"http://localhost:8888/$sandboxURL"."checkout.php",
+  "ERRORURL" 			=> 	"http://localhost:8888/$sandboxURL"."checkout.php",
   "BILLTOEMAIL"			=>	urldecode($_SESSION['cardemail']),
   "BILLTOFIRSTNAME" 	=> 	urldecode($_SESSION['cardfname']),
   "BILLTOLASTNAME" 		=> 	urldecode($_SESSION['cardlname']),
