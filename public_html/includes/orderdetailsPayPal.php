@@ -274,7 +274,7 @@ echo $content;
 </table>
 <? 
 
-if (strstr($HTTP_SERVER_VARS['HTTP_ACCEPT_ENCODING'], 'gzip'))
+if (strstr($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip'))
 {	flush(); }
 ?>
 </body> 

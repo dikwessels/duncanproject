@@ -180,7 +180,7 @@ setcookie("items",$_COOKIE['items'],0,'/');
 
 echo $orderdetails;
  
-if (strstr($HTTP_SERVER_VARS['HTTP_ACCEPT_ENCODING'], 'gzip')){flush();}
+if (strstr($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')){flush();}
 
 ob_flush();
 

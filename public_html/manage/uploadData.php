@@ -14,8 +14,8 @@
 To Upload data to the inventory database, it must be stored as a tab delimited text file.  Make sure that the first line of the file contains the column names(ie... brand).<br>
 <?
 include("/home/asyoulik/connect/mysql_connect.php");
-if (is_uploaded_file($HTTP_POST_FILES['userfile']['tmp_name'])) {
-##	copy($HTTP_POST_FILES['userfile']['tmp_name'], "/home/ayliss/www/manage/temp/inventory.txt");
+if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+##	copy($_FILES['userfile']['tmp_name'], "/home/ayliss/www/manage/temp/inventory.txt");
 	$file=file("temp/inventory.txt");
 	echo $file[0]."<BR><BR>";
 	$fields=str_replace('"','',substr($file[0],0,-2));
@@ -26,7 +26,7 @@ if (is_uploaded_file($HTTP_POST_FILES['userfile']['tmp_name'])) {
 		$values="\"".str_replace(",","\",\"",substr($file[$i],0,-2))."\"";
 	mysql_query("REPLACE into new_inventory($fields) values($values)");
 	}
-	echo $HTTP_POST_FILES['userfile']['name']. " has been uploaded.  The inventory has been updated.<br>";
+	echo $_FILES['userfile']['name']. " has been uploaded.  The inventory has been updated.<br>";
 }
 ?>
 

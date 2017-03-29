@@ -1,15 +1,16 @@
 <?
 include("/home/asyoulik/connect/mysql_connect.php");
 
-$ac=$HTTP_COOKIE_VARS['accessLevel'];
+$_COOKIE = $_COOKIE;
+$ac=$_COOKIE['accessLevel'];
 
 if ($ac<2) {
 	echo "You are not authorized to view this page";
 	exit;
  	}
 if ($setLevel) { mysql_query("UPDATE users set groupNumber=$setLevel where username='$name'"); }
-if ($HTTP_GET_VARS['delete']) {mysql_query("DELETE from users where username='$delete'");}
-if ($HTTP_GET_VARS['username']) {
+if ($_GET['delete']) {mysql_query("DELETE from users where username='$delete'");}
+if ($_GET['username']) {
 
 	srand((double) microtime() * 1000000);
 	for ($i=0;$i<7;$i++) {
@@ -21,7 +22,7 @@ if ($HTTP_GET_VARS['username']) {
 		}	
 
 mysql_query("INSERT into users(username,email,password,temp,groupNumber) values ('$username','$email','$password','1',$groupNumber)");
-	if ($HTTP_GET_VARS['email']) {
+	if ($_GET['email']) {
 	echo $email;
 		mail($email,'Password',"Your username is $username.\r\nYour temporary password is $password.\r\nYou will have to change this password when you first log in to the control panel.\r\nClick the follwoing link to access the control panel- http://neworleansmarriott.com/management/control_panel.php\r\n",'From: New Orleans Marriott Administration');
 		mail('stoffak@bellsouth.net','Password',"The following password has been generated for $email.\r\nUsername: $username.\r\nPassword: $password.",'From: New Orleans Marriott Administration');

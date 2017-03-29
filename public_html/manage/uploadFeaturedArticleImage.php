@@ -32,9 +32,9 @@ imagedestroy($src_img);
 imagedestroy($dest_img);
 	}
 
-if (is_uploaded_file($HTTP_POST_FILES['userfile']['tmp_name'])) {		
-    $image=stripslashes($HTTP_POST_FILES['userfile']['name']);
-	createImage($HTTP_POST_FILES['userfile']['tmp_name'],$image,250,600,"_SM",100);	
+if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+    $image=stripslashes($_FILES['userfile']['name']);
+	createImage($_FILES['userfile']['tmp_name'],$image,250,600,"_SM",100);
 	list($w,$h)=getimagesize("../featuredArticles/images/$image");
 	$c="<img src='/featuredArticles/images/$image' align=$align width=$w height=$h>";
 echo"<html><head><script>	t=opener.document.forms[0].text;
