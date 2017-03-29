@@ -6,6 +6,6 @@
 	$environment = "live";
 
 	//set to "live" for live, "testing" for testing
-	$PayPalMode = "testing";
+	$PayPalMode = "live";
 	
 ?>
