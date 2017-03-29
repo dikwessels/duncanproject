@@ -122,7 +122,7 @@ function renameImageFileMain($oldImage, $newBG, $tn)
     }
 }
 
-include("/home/asyoulik/connect/mysql_connect.php");
+include("../../connect/mysql_connect.php");
 
 
 $lS = array(
@@ -413,7 +413,7 @@ origin='$row[origin]'
             <td colspan='2'><img src='../images/blank.gif' width='10' height='10' alt='' border='0'></td>
         </tr>
     </table>
-    <? if ($update) {
+    <? if (isset($update)) {
         echo "<br clear='all'>UPDATE TOOK " . (round(microtime() - $ti, 4)) . " SECONDS";
     } ?>
     <br clear='all'>
@@ -431,21 +431,22 @@ origin='$row[origin]'
 				<tr>
 					<td valign='top' width='300' align='center'>
                                             <div id='filedrag' style='width:300'><img id='prevImg' src='../productImages/_SM/";
-    if (!$row[image]) {
+    if (!$row['image']) {
         echo "noimage.jpg";
     } else {
-        echo substr($row[image], 0, -4) . "_SM.jpg";
+        echo substr($row['image'], 0, -4) . "_SM.jpg";
     }
 
-    $imageURL = str_replace(" ", "", $row[image] . $row[pattern] . $row[brand] . $row[item]);
+    $imageURL = str_replace(" ", "", $row['image'] . $row[pattern] . $row[brand] . $row[item]);
     $imageMono = $row[monogram] == '1' ? "monogrammed" : "";
     $imageURL .= $imageMono;
 
     //begin echo statement 1
-    echo "' width='300' alt=\"$row[image]\" title=\"$row[image]\"></div>
+    $imageName = $row[image];
+    echo "' width='300' alt=\"$imageName\" title=\"$imageName\"></div>
 <br>
 <br>
-					Image: <input type=\"text\" size=\"255\" value=\"$row[image]\" id=image name=image class=imgFileInput>
+					Image: <input type=\"text\" size=\"255\" value=\"$imageName\" id=image name=image class=imgFileInput>
                                         <br><br> or <input type=file id='userfile' name=userfile value='Browse' class='imgFileInput'><br><br>
 					Image2: <input type='text' size='255' value='$row[image2]' name=image2 class='imgFileInput'>
                                          <br><br> or <input type=file name=userfile2 value='Browse' class='imgFileInput'><br><br>
@@ -536,7 +537,7 @@ origin='$row[origin]'
 <input type=checkbox name=bs";
 
 
-    if ($row[bs]) {
+    if ($row['bs']) {
         echo " checked";
     }
     echo ">Baby Silver
@@ -641,7 +642,7 @@ origin='$row[origin]'
 	</td>
 </tr> -->";
 
-    if (strtolower($row[category]) == 'h') {
+    if (strtolower($row['category']) == 'h') {
         echo "
 <tr><td>Search Category (Holloware only)</td><td><select name=searchCategory><option value=0><option value=1>Baskets, Centerpieces, Vases and Epergnes<option value=2>Bowls, Compotes & Cake Stands<option value=3>Bread & Butter Items<option value=4>Candleware
 <option value=5>Gift
