@@ -1,7 +1,8 @@
 <?php
 /* standardized static HTML functions */
 
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php" );
+//include_once("/home/asyoulik/connect/mysql_pdo_connect.php" );
+include_once("../connect/mysql_pdo_connect.php");
 
 function createFile($folder, $fname,$conn_id,$content,$pattern,$brand,$item){
 	
