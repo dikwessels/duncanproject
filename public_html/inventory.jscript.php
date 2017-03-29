@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title><base href="//www.asyoulikeitsilvershop.com">
+<title></title><base href="//localhost:8888">
 <link rel="stylesheet" href="/css/Gumby/css/gumby.css">
 <link rel="stylesheet" href="ayliss_style_uni.css">
 

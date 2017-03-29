@@ -7,7 +7,7 @@ session_name('checkout');
 session_start();
 //ini_set("display_errors","1");
 
-include("/home/asyoulik/public_html/checkoutSettings.php");
+include("checkoutSettings.php");
 
 ?>
 
@@ -30,7 +30,7 @@ include("/home/asyoulik/public_html/checkoutSettings.php");
 		}
 	}
 
-	echo "<base href='$http//www.asyoulikeitsilvershop.com/'>";
+	echo "<base href='$http//localhost:8888/'>";
 
 ?>
 
@@ -263,7 +263,7 @@ Questions?
 <!-- begin other links -->
 
 <? 
-	$otherlinks=file_get_contents("/home/asyoulik/public_html/otherlinks.php");
+	$otherlinks=file_get_contents("otherlinks.php");
 	echo $otherlinks; 
 ?>
 
@@ -273,8 +273,8 @@ Questions?
 <!-- begin category links -->
 <div class="categoryLinksContainer" id="defaultCatLinks" data-note="2.0">
   <?
-	 include_once("/home/asyoulik/public_html/categoryArrays.php");
-  	$catLinks = include("/home/asyoulik/public_html/categoryLinks.php");
+	 include_once("categoryArrays.php");
+  	$catLinks = include("categoryLinks.php");
   
   	echo $catLinks; 
   ?>
@@ -299,7 +299,7 @@ Questions?
     </div>
   
   <div id="thawteseal" class="pageCatImage" style="text-align:right;top:2px;background-color:white;" title="Click to Verify - This site chose Thawte SSL for secure e-commerce and confidential communications.">
-<script type="text/javascript" src="https://seal.thawte.com/getthawteseal?host_name=www.asyoulikeitsilvershop.com&amp;size=S&amp;lang=en"></script>
+<script type="text/javascript" src="https://seal.thawte.com/getthawteseal?host_name=localhost:8888&amp;size=S&amp;lang=en"></script>
 </div>
 
   

@@ -520,7 +520,7 @@ $items.="
 <meta name="keywords" content="customer privacy policy, selling your silver, purchasing information, sterling silver, sterling flatware, silver flatware, antique silver, silver tableware, antique sterling, replacement silver, silver repair, corporate gifts, wedding gifts, silver identification, cleaning silver"/>
 
 <!--ogTags-->
-<base href="//www.asyoulikeitsilvershop.com/">
+<base href="//localhost:8888">
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/js/images.js"></script>
 <script type="text/javascript" src="/js/store.js"></script>

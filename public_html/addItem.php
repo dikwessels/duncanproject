@@ -2,16 +2,16 @@
 ob_start();
 extract($_GET);
 
- include("/home/asyoulik/connect/mysql_connect.php");
- include("/home/asyoulik/public_html/staticHTMLFunctions.php");
- include("/home/asyoulik/public_html/categoryArrays.php");
+ include("connect/mysql_connect.php");
+ include("staticHTMLFunctions.php");
+ include("categoryArrays.php");
 
- include("/home/asyoulik/public_html/checkoutSettings.php");
+ include("checkoutSettings.php");
 
 ini_set("display_errors","1");
 
 //include("/connect/mysql_connect.php");
-include("/home/asyoulik/connect/mysql_pdo_connect.php");
+include("connect/mysql_pdo_connect.php");
 
 global $PayPalMode;
 
@@ -238,7 +238,7 @@ Questions?
 <!-- begin other links -->
 
 <? 
-	$otherlinks=file_get_contents("/home/asyoulik/public_html/otherlinks.php");
+	$otherlinks=file_get_contents("otherlinks.php");
 	echo $otherlinks; 
 ?>
 
@@ -248,7 +248,7 @@ Questions?
 <!-- begin category links -->
 <div class="categoryLinksContainer" id="defaultCatLinks">
   <?
-  	$catLinks=include("/home/asyoulik/public_html/categoryLinks.php");
+  	$catLinks=include("categoryLinks.php");
   	echo $catLinks; 
   ?>
   <!--catLinks-->
@@ -289,7 +289,7 @@ Questions?
  <div class="row nopad">
  <?
 
-$message='<form action="https://www.asyoulikeitsilvershop.com/shoppingCart.php">
+$message='<form action="http://localhost:8888/shoppingCart.php">
 <div class="row">
 
 			<div class="cell twoColumns"></div>

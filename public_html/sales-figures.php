@@ -10,7 +10,7 @@
 <meta name="description" content="Sterling Silver Hollowware, Silver Tableware, Silver Holloware, silver goblets, silver picture frames, silver napkin rings, silver candleware, and silver trays from brands like Gorham, Reed & Barton, International, Tiffany 925 Inc and many more . Available at As You Like It Silver Shop in New Orleans, Louisiana." />
 <meta name="keywords" content=", silver storage, silver cleaning, silver storage products, silver cleaning products, silver repair, monograms, sterling silver storage, sterling silver cleaning, sterling silver storage products, sterling silver cleaning products, sterling silver repair, sterling silver monograms" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<base href="//www.asyoulikeitsilvershop.com">
+<base href="//localhost:8888">
 
 <link rel="stylesheet" href="/css/dropdown/imports.css">
 <link rel="stylesheet" href="/ayliss_style.css" type="text/css">

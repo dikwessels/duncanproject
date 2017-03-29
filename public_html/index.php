@@ -6,7 +6,8 @@
 		As You Like It Silver Shop: Sterling Silver Flatware, Hollowware, Gifts
 	</title>
 	
-	<base href="//www.asyoulikeitsilvershop.com">
+<!--	<base href="//localhost:8888">-->
+    <base href="//localhost:8888">
 	
 	<meta  name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	

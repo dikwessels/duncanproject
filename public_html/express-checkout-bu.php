@@ -359,7 +359,7 @@ $tbl=($environment=="sandbox")?"inventorySandbox":"inventory";
 <meta name="keywords" content="customer privacy policy, selling your silver, purchasing information, sterling silver, sterling flatware, silver flatware, antique silver, silver tableware, antique sterling, replacement silver, silver repair, corporate gifts, wedding gifts, silver identification, cleaning silver"/>
 
 <!--ogTags-->
-<base href="//www.asyoulikeitsilvershop.com/">
+<base href="//localhost:8888">
 <!--
 <script type="text/javascript" src="js/validate.js"></script>
 -->

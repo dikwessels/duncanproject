@@ -1,6 +1,7 @@
 <?php
 
-if (substr($_SERVER['HTTP_HOST'],0,3)!='www') { header("Location:http://".$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']."?".$_SERVER['QUERY_STRING']); }
+//if (substr($_SERVER['HTTP_HOST'],0,3)!='www') { header("Location:http://".$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']."?".$_SERVER['QUERY_STRING']); }
+
 // Gzip encode the contents of the output buffer.
 function compress_output_option($output)
 {

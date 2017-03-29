@@ -16,11 +16,11 @@ extract($_POST);
 
 require("GzipCompress.php");
 
-include_once("/home/asyoulik/connect/mysql_pdo_connect.php");
-include_once("/home/asyoulik/public_html/sandbox.checkoutCalcs.php");
-include_once("/home/asyoulik/public_html/checkoutSettings.php");
-include_once("/home/asyoulik/public_html/shippingSurcharges.php");
-include_once("/home/asyoulik/public_html/shippingMethodDescriptions.php");
+include_once("connect/mysql_pdo_connect.php");
+include_once("sandbox.checkoutCalcs.php");
+include_once("checkoutSettings.php");
+include_once("shippingSurcharges.php");
+include_once("shippingMethodDescriptions.php");
 
 $defaultSurcharge=array(
 		4,

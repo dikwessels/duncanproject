@@ -12,7 +12,7 @@
 <head>
 <title>Bridal & Gift Registry <? if($_GET['action']=="newreg"){echo " Create Your Registry "; } ?> | As You Like It Silver Shop, New Orleans, Louisiana</title>	
 
-<base href="//www.asyoulikeitsilvershop.com">
+<base href="//localhost:8888">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
 <meta charset="UTF-8" /><meta name="description" content="As You Like It Silver Shop in New Orleans Louisiana specializes in silver flatware and holloware in active, inactive and obsolete patterns, gifts for weddings, birthdays, corporate events and special occasions."/>
