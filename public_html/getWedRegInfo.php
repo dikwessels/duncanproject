@@ -17,7 +17,7 @@ User will get to this page 1 of two ways:
 
 ob_start();
 
-include("/home/asyoulik/connect/mysql_connect.php");
+include("connect/mysql_connect.php");
 //ini_set("display_errors","1");
 
 extract($_POST);

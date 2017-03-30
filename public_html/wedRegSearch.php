@@ -1,6 +1,6 @@
 <?php
 
-include("/home/asyoulik/connect/mysql_connect.php");
+include("connect/mysql_connect.php");
 
 if($_POST || $_GET){
 	extract($_POST);

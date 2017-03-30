@@ -91,9 +91,9 @@
 <!-- begin category links -->
 <div class="categoryLinksContainer" id="defaultCatLinks">
   <?php
-   include("/home/asyoulik/public_html/staticHTMLFunctions.php");
-   include("/home/asyoulik/public_html/categoryArrays.php");
-  	$c=include("/home/asyoulik/public_html/categoryLinks.php");
+  include("staticHTMLFunctions.php");
+   include("categoryArrays.php");
+  	$c=include("categoryLinks.php");
     echo $c;
    ?> 
 
@@ -118,7 +118,7 @@
   <?php
  //error_reporting(E_ALL);
 ini_set("display_errors","1");
-include("/home/asyoulik/connect/mysql_connect.php");
+include("connect/mysql_connect.php");
 
 	extract($_GET);
 	extract($_POST);

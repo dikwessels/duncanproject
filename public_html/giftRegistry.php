@@ -3,7 +3,7 @@
 	ob_start();
 
 	if( $_COOKIE['aylissWeddingReg'] <> "" ){
-		header("http://www.asyoulikeitsilvershop.com/giftRegistryEdit.php");	
+		header("http://localhost:8888/giftRegistryEdit.php");
 		ob_flush();
 	}	
 	
@@ -12,7 +12,7 @@
 
 	//ini_set("display_errors","1");
 	
-	include("/home/asyoulik/connect/mysql_connect.php");
+	include("connect/mysql_connect.php");
 
 	
 
@@ -38,7 +38,7 @@
 		}
 	}
 
-	echo "<base href='$http//www.asyoulikeitsilvershop.com/'>";
+	echo "<base href='http://localhost:8888/'>";
 
 ?>
 
@@ -68,8 +68,8 @@
 <script type="text/javascript" src="/js/giftRegistryFunctions-min.js"></script>
 
 <script type="text/javascript">
-	if (window.location.protocol != "https:")
-    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length)
+//	if (window.location.protocol != "https:")
+//    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length)
 	
 	
 	$(document).ready(function(){

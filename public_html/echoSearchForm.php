@@ -1,6 +1,6 @@
 <?php
 extract($_GET);
-readfile("/home/asyoulik/public_html/wedRegInvSearch.html");
+readfile("wedRegInvSearch.html");
 
 echo '<input type="hidden" id="regID" name="regID" value="'.$regID.'">
 </form>

@@ -1,5 +1,5 @@
 <?php
-include("/home/asyoulik/connect/mysql_connect.php");
+include("connect/mysql_connect.php");
 function createFileName($path,$v,$pattern,$brand){
 		$brand=str_replace(" ", "-",$brand);
 		
@@ -250,7 +250,7 @@ $result=mysql_query($query);
 
 else{
 // return wedding registry items
-	
+
 	$bgs=array('f'=>'#ffeedd','h'=>'#ffdddd','bs'=>'#dedeff','gift'=>'#dedeff','m'=>'#ffeedd','s'=>'#ffdddd','xm'=>'#ddffdd','j'=>'#6699CC');
 	$staticcats=array('sp'=>'Flatware','fcs'=>'Flatware','f'=>'Flatware','ps'=>'Flatware','h'=>'Hollowware','bs'=>'Baby Silver','j'=>'Jewelry','stp'=>'SilverStorage','cp'=>'SilverCare','xm'=>'Christmas');
 	$keyCat=array(''=>'All','sp'=>'Serving Pieces','ps'=>'Flatware','fcs'=>'Complete Sets','f'=>'Flatware','h'=>'Hollowware','bs'=>'Baby Silver','j'=>"Jewelry",'cp'=>'SilverCare','stp'=>'SilverStorage','xm'=>'Christmas');

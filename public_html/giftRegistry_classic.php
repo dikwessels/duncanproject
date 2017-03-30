@@ -19,7 +19,7 @@ User will get to this page 1 of two ways:
 extract($_POST);
 extract($_GET);
 
-include("/home/asyoulik/connect/mysql_pdo_connect.php");
+include("connect/mysql_pdo_connect.php");
 
 
 if($_GET || $_POST){
@@ -150,7 +150,7 @@ function cookieCheck($itemID,$showSplash){
 	 if(isset($_COOKIE['aylissWeddingReg'])){
 	 
 	 // $regID=$_COOKIE['aylissWeddingReg'];
-	   header("Location:http://www.asyoulikeitsilvershop.com/giftRegistryEdit.php?itemID=$itemID");
+	   header("Location:http://localhost:8888/giftRegistryEdit.php?itemID=$itemID");
 	 
 	 }
 	 
@@ -335,8 +335,8 @@ $title=$ref?"Please log into your gift registry using the form below:":"Please e
    	      </tr>
    	      
    	      <tr>
-   	      	<td><a href=\"//www.asyoulikeitsilvershop.com/giftRegistry_classic.php?action=newReg&itemID=$itemID\">New User</a></td>
-   	      	<td><a href=\"//www.asyoulikeitsilvershop.com/giftRegistry_classic.php?action=fp&itemID=$itemID\">Forgot your password?</a></td>
+   	      	<td><a href=\"//localhost:8888/giftRegistry_classic.php?action=newReg&itemID=$itemID\">New User</a></td>
+   	      	<td><a href=\"//localhost:8888/giftRegistry_classic.php?action=fp&itemID=$itemID\">Forgot your password?</a></td>
    	      </tr>
    	      
    	      </tbody>
@@ -552,7 +552,7 @@ function echoSearchForm(){
    		   			
    		   	echo $c;		
    		   	
-   		   	readfile("http://www.asyoulikeitsilvershop.com/includes/month_select.php?m=$sMonth");
+   		   	readfile("http://localhost:8888/includes/month_select.php?m=$sMonth");
    		   	
    		   	$c="</td>
 				
@@ -563,7 +563,7 @@ function echoSearchForm(){
 						<option value=\"0\">Year</option>";
 			echo $c;
 						
-			readfile("http://www.asyoulikeitsilvershop.com/includes/year_select.php?y=$sYear");
+			readfile("http://localhost:8888/includes/year_select.php?y=$sYear");
 			
 			$c="</select>
 					<span class=\"warning\">$wDateMsg</span>
@@ -656,7 +656,7 @@ $headers = 'From: do-not-reply@asyoulikeitsilvershop.com' . "\r\n" .
     'Reply-To: sales@asyoulikeitsilvershop.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 $message=$header . "
-To view your account, login at http://www.asyoulikeitsilvershop.com/giftRegistry_classic.php
+To view your account, login at http://localhost:8888/giftRegistry_classic.php
 \r\n
 USERNAME: $email \r\n
 PASSWORD: $pword 
@@ -696,7 +696,7 @@ function forgotPassword($emailsent,$errMsg){
 	 	  	</tr>
 	 	  	<tr>
 	 	  		<td>
-	 	  		<a href=\"//www.asyoulikeitsilvershop.com/giftRegistry_classic.php\">Return to Gift Registry Main Page</a>
+	 	  		<a href=\"//localhost:8888/giftRegistry_classic.php\">Return to Gift Registry Main Page</a>
 	 	  	 	</td>
 	 	  	</tr>
 	 	</tbody>
@@ -799,7 +799,7 @@ function LogUser($username,$password,$new,$itemID,$ref){
                    echo "<!--logged in -->"; //include("/addWedRegItem.php?id=$itemID&regID=$success&quantity=1");
                  }
                 else{
-                         header("Location://www.asyoulikeitsilvershop.com/giftRegistryEdit.php?itemID=$itemID&new=$new");
+                         header("Location://localhost:8888/giftRegistryEdit.php?itemID=$itemID&new=$new");
 	        }
         }
 
@@ -916,7 +916,7 @@ function main($action){
 	  		/*	
 	  		$rID=getRegistryID($rEmail);
 	  		setcookie("aylissWeddingReg", $rID, time()+3600);
-			header("Location:http://www.asyoulikeitsilvershop.com/giftRegistryEdit.php?itemID=$itemID&new=1");
+			header("Location:http://localhost:8888/giftRegistryEdit.php?itemID=$itemID&new=1");
 	  		$msg = "You're wedding registry account has been created at As You Like It Silver Shop.\r\n";
 	  		*/
 	  		}
